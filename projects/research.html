@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>阶段化康复与研究 — 王盛逸 Shengyi Wang</title>
+  <meta name="description" content="ACL 智能康复系统的研究：三阶段康复框架、ROM 进阶曲线、多通道反馈、五条设计原则与 N=10 被试内用户实验。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/project.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav__row">
+      <a class="nav__brand" href="../index.html">Shengyi Wang<span class="nav__brand-sub"> · 膝关节康复系统</span></a>
+      <nav class="nav__links">
+        <a href="hardware.html">硬件</a>
+        <a href="research.html" class="active">研究</a>
+        <a href="ui.html">UI</a>
+      </nav>
+      <a class="nav__back" href="../index.html">← 主页</a>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <section class="wrap phero">
+    <span class="t-eyebrow t-eyebrow--teal reveal">The Research</span>
+    <h1 class="t-hero reveal">让康复，<br /><span class="gradient-text">有节奏地</span>发生</h1>
+    <p class="t-lead reveal">家庭康复最稳定的失败不是动作做错，而是无人见证下的放弃。我们把康复组织成一套三阶段、可解释、会陪你走完的训练系统——并用被试内实验检验它是否真的有效。</p>
+    <div class="phero__cta reveal">
+      <a class="btn btn--blue" href="#framework">看阶段框架 <span class="chev">↓</span></a>
+      <a class="btn btn--ghost" href="#study">看实验结果 <span class="chev">→</span></a>
+    </div>
+  </section>
+
+  <!-- THREE-STAGE FRAMEWORK -->
+  <section class="section section--soft" id="framework">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="t-eyebrow t-eyebrow--teal">Three-Stage Framework</span>
+        <h2 class="t-h2">三阶段康复框架</h2>
+        <p class="t-body">以客观标准（criteria）而非单纯周数驱动进阶。每个阶段定义不同的目标、限制与反馈密度，系统的每一层都被阶段引导。</p>
+      </div>
+      <div class="stages" style="margin-bottom:40px">
+        <div class="stage stage--1 reveal">
+          <div class="stage__no">STAGE 01</div>
+          <div class="stage__t">早期保护期</div>
+          <div class="stage__b">控制活动度、保护愈合。屏幕信息密集、力反馈介入强、presence 显著，把患者牢牢托住。</div>
+        </div>
+        <div class="stage stage--2 reveal">
+          <div class="stage__no">STAGE 02</div>
+          <div class="stage__t">中期恢复期</div>
+          <div class="stage__b">逐步抬升 ROM 目标与节律要求。反馈开始淡出，力反馈降级为引导而非约束。</div>
+        </div>
+        <div class="stage stage--3 reveal">
+          <div class="stage__no">STAGE 03</div>
+          <div class="stage__t">后期功能期</div>
+          <div class="stage__b">面向功能与自主控制。屏幕退场、力反馈只剩安全网——「系统对我有信心了」。</div>
+        </div>
+      </div>
+      <div class="figure reveal">
+        <img src="../assets/img/diagrams/fig1_timeline.svg" alt="三阶段康复总览：周数 + ROM 双门槛" />
+        <div class="figure__cap">三阶段总览 · 周数为建议节奏，实际进阶以客观标准为准。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROM PROGRESSION -->
+  <section class="section">
+    <div class="wrap">
+      <div class="feature">
+        <div class="feature__media reveal"><img src="../assets/img/diagrams/fig5_rom_curve.svg" alt="屈曲 ROM 进阶曲线与角度墙" /></div>
+        <div class="feature__body reveal">
+          <span class="t-eyebrow t-eyebrow--teal">Range of Motion</span>
+          <h3 class="t-h3">目标随周数抬升，<br />角度墙如影随形</h3>
+          <p class="t-body">屈曲 ROM 目标按阶段逐步提高，硬件角度墙始终略高于当日目标作为安全冗余。患者总能感到「再多一点点」的挑战，但永远撞不穿那堵保护墙。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="wrap">
+      <div class="feature feature--reverse">
+        <div class="feature__media reveal"><img src="../assets/img/diagrams/fig4_return_assist.svg" alt="回退与返回路径机制" /></div>
+        <div class="feature__body reveal">
+          <span class="t-eyebrow t-eyebrow--teal">Adapt &amp; Recover</span>
+          <h3 class="t-h3">回退是保护，不是惩罚</h3>
+          <p class="t-body"><strong>软回退</strong>仅本次降目标、不留痕迹，语气是「今天我们走慢一点」；<strong>硬回退</strong>进入阶段轨迹，但必须附带返回路径承诺——「做 A，连续 N 次稳定后回到 B」。疼痛跨阈值即单次触发，其余指标需累积。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MULTI-CHANNEL -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="t-eyebrow t-eyebrow--teal">Multi-Channel Feedback</span>
+        <h2 class="t-h2">四通道反馈，按事件分级</h2>
+        <p class="t-body">力 · 触觉 · 声音 · 视觉，不是平等并列，而是按事件性质分工：安全冗余 vs. 学习差异化。</p>
+      </div>
+      <div class="figure reveal" style="margin-bottom:40px">
+        <img src="../assets/img/diagrams/four-channel.png" alt="四通道反馈架构图" />
+      </div>
+      <div class="cards cards--2">
+        <div class="card reveal">
+          <div class="card__k">安全相关事件</div>
+          <div class="card__t">多通道冗余</div>
+          <div class="card__b">接近角度墙、超墙、急停——多个通道同时触发。任何一个被错过都可能造成伤害，所以必须冗余。</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__k">学习相关事件</div>
+          <div class="card__t">单通道差异化</div>
+          <div class="card__b">节律错误走力反馈微振，角度偏短走组间脉冲计数，速度偏快走支具力反馈——同一时刻每个错误只占一个通道，可精确分辨。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGN PRINCIPLES -->
+  <section class="section section--dark">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="t-eyebrow">Design Principles</span>
+        <h2 class="t-h1">五条原则，零情感表演</h2>
+        <p class="t-body" style="max-width:640px;margin:18px auto 0">贯穿所有具体设计。系统传达「被看到」，但绝不假装关心。</p>
+      </div>
+      <div class="cards cards--3">
+        <div class="card card--dark reveal"><div class="card__k">01</div><div class="card__t">回退是保护性叙事</div><div class="card__b">不使用任何「失败 / 退步 / 落后」语义，每次硬回退附带返回路径承诺。</div></div>
+        <div class="card card--dark reveal"><div class="card__k">02</div><div class="card__t">Eyes-free 训练</div><div class="card__b">动作中视觉信息非必要，反馈走力 / 触觉 / 声音，让注意力回到身体。</div></div>
+        <div class="card card--dark reveal"><div class="card__k">03</div><div class="card__t">Non-anthropomorphic Empathy</div><div class="card__b">承担陪伴感但不表演情感、不命名、不用第一人称——研究的伦理立场。</div></div>
+        <div class="card card--dark reveal"><div class="card__k">04</div><div class="card__t">反馈密度随阶段递减</div><div class="card__b">从「被辅助」过渡到「自主控制」，递减本身被感受为信任。</div></div>
+        <div class="card card--dark reveal"><div class="card__k">05</div><div class="card__t">多通道分工</div><div class="card__b">安全冗余、学习差异化，本体感觉是反馈环的一部分。</div></div>
+        <div class="card card--dark reveal"><div class="card__k">＋</div><div class="card__t">用力反馈承载「语气」</div><div class="card__b">阶段参数的变化本身，就是非语言的陪伴。</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USER STUDY -->
+  <section class="section section--soft" id="study">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="t-eyebrow t-eyebrow--teal">Validation · User Study</span>
+        <h2 class="t-h2">它真的有效吗？</h2>
+        <p class="t-body">基于设计探针方法的被试内实验（N=10，三条件、拉丁方平衡），从身体觉知、系统关系、陪伴感知三个维度检验交互范式。</p>
+      </div>
+      <div class="statband" style="margin-bottom:44px">
+        <div class="stat reveal"><div class="stat__n gradient-text">N=10</div><div class="stat__l">被试内设计</div></div>
+        <div class="stat reveal"><div class="stat__n gradient-text">3</div><div class="stat__l">实验条件对比</div></div>
+        <div class="stat reveal"><div class="stat__n gradient-text">3</div><div class="stat__l">测量维度</div></div>
+        <div class="stat reveal"><div class="stat__n gradient-text">10+2</div><div class="stat__l">前期访谈 患者 / 医生</div></div>
+      </div>
+      <div class="cards cards--3">
+        <div class="card reveal"><div class="card__k">Conditions</div><div class="card__t">C1 · C2a · C2c</div><div class="card__b">视觉基线 / 早期配置 / 后期配置，拉丁方平衡顺序效应。</div></div>
+        <div class="card reveal"><div class="card__k">Measures</div><div class="card__t">客观 + 主观</div><div class="card__b">ROM、节律、反馈事件等行为数据，叠加三维度自评量表。</div></div>
+        <div class="card reveal"><div class="card__k">Analysis</div><div class="card__t">质性主题分析</div><div class="card__b">条件后短访 + 最终深度访谈，提炼身体觉知与陪伴感知主题。</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGER -->
+  <section class="section--tight">
+    <div class="wrap">
+      <div class="pager">
+        <a class="prev" href="hardware.html"><div class="dir">← 上一页</div><div class="ttl">硬件系统</div></a>
+        <a class="next" href="ui.html"><div class="dir">下一页 →</div><div class="ttl">移动端 UI 设计</div></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pfooter">
+    <div class="wrap pfooter__row">
+      <div>© 2026 Shengyi Wang · 王盛逸 · shengyiwang.design</div>
+      <nav class="pfooter__nav">
+        <a href="hardware.html">硬件</a><a href="research.html">研究</a><a href="ui.html">UI</a><a href="../index.html">主页</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/js/project.js" defer></script>
+</body>
+</html>

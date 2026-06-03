@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>膝关节外骨骼 · 硬件 — 王盛逸 Shengyi Wang</title>
+  <meta name="description" content="ACL 智能康复外骨骼的硬件系统：ESP32-S3 双 IMU 传感、重力向量法膝角融合、宇树关节电机直驱、FREE-SOFT-WALL 三段式虚拟墙力反馈。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/project.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav__row">
+      <a class="nav__brand" href="../index.html">Shengyi Wang<span class="nav__brand-sub"> · 膝关节康复系统</span></a>
+      <nav class="nav__links">
+        <a href="hardware.html" class="active">硬件</a>
+        <a href="research.html">研究</a>
+        <a href="ui.html">UI</a>
+      </nav>
+      <a class="nav__back" href="../index.html">← 主页</a>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <section class="wrap phero">
+    <span class="t-eyebrow reveal">The Hardware</span>
+    <h1 class="t-hero reveal">一只<span class="gradient-text">会施力</span>的<br />膝关节外骨骼</h1>
+    <p class="t-lead reveal">主动力反馈，不只是测量。ESP32-S3 双 IMU 实时感知膝角，宇树关节电机直驱，把诊所里治疗师的「手」带回家庭康复——精确、安全、可被身体轻易抵抗。</p>
+    <div class="phero__cta reveal">
+      <a class="btn btn--blue" href="#tour">看它转一圈 <span class="chev">↓</span></a>
+      <a class="btn btn--ghost" href="research.html">了解康复研究 <span class="chev">→</span></a>
+    </div>
+  </section>
+
+  <!-- SCRUB: scroll-linked rotation -->
+  <section class="scrub" id="tour"
+           data-frames="48" data-dir="../assets/img/product-seq"
+           data-prefix="frame_" data-pad="3" data-ext="jpg">
+    <div class="scrub__sticky">
+      <div class="scrub__stage">
+        <canvas></canvas>
+        <div class="scrub__vignette"></div>
+        <div class="scrub__notes">
+          <div class="scrub__note on">
+            <div class="n-t">双 IMU 传感前端</div>
+            <div class="n-b">大腿与小腿各一颗 IMU，ESP32-S3 双 I²C 总线同步采集。</div>
+          </div>
+          <div class="scrub__note">
+            <div class="n-t">重力向量法膝角融合</div>
+            <div class="n-b">零位校准 + 抗漂移，台架精度 R²≈0.97。</div>
+          </div>
+          <div class="scrub__note">
+            <div class="n-t">关节电机直驱</div>
+            <div class="n-b">宇树 Go-M8010-6，RS485 / RIS 协议，上位机直驱。</div>
+          </div>
+          <div class="scrub__note">
+            <div class="n-t">三段式虚拟墙</div>
+            <div class="n-b">FREE — SOFT — WALL，50 Hz 闭环力反馈与安全急停。</div>
+          </div>
+        </div>
+        <div class="scrub__bar"><i data-scrub-progress></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEC STATS -->
+  <section class="section section--soft">
+    <div class="wrap">
+      <div class="statband">
+        <div class="stat reveal"><div class="stat__n gradient-text">0.97</div><div class="stat__l">膝角融合 R²（台架）</div></div>
+        <div class="stat reveal"><div class="stat__n gradient-text">50 Hz</div><div class="stat__l">力反馈闭环频率</div></div>
+        <div class="stat reveal"><div class="stat__n gradient-text">2× IMU</div><div class="stat__l">双 I²C 总线同步</div></div>
+        <div class="stat reveal"><div class="stat__n gradient-text">3 段</div><div class="stat__l">虚拟墙力反馈结构</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE: sensing + fusion -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="t-eyebrow t-eyebrow--teal">Sensing &amp; Fusion</span>
+        <h2 class="t-h2">先把膝盖「看」准，再谈施力</h2>
+        <p class="t-body">传统单 IMU 角度估计在动态下漂移严重。这里用双 IMU 与重力向量法重建膝关节屈曲角度，零位校准抵消装配误差，抗漂移特性保证长时训练稳定。</p>
+      </div>
+      <div class="feature">
+        <div class="feature__media feature__media--dark reveal">
+          <img src="../assets/img/diagrams/device-arch.png" alt="支具 / Mac / iPhone / Apple Watch 多设备分工架构" />
+        </div>
+        <div class="feature__body reveal">
+          <span class="t-eyebrow t-eyebrow--teal">Architecture</span>
+          <h3 class="t-h3">四设备分工，各司其职</h3>
+          <p class="t-body">支具负责<strong>力</strong>，Mac 上位机负责<strong>运算与直驱</strong>，iPhone 承载<strong>反思界面</strong>，Apple Watch 提供<strong>触觉</strong>。安全事件多通道冗余，学习事件单通道差异化——按事件性质分配通道。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE: virtual wall -->
+  <section class="section section--soft">
+    <div class="wrap">
+      <div class="feature feature--reverse">
+        <div class="feature__media reveal">
+          <img src="../assets/img/diagrams/free-soft-wall.png" alt="FREE-SOFT-WALL 三段式虚拟墙结构" />
+        </div>
+        <div class="feature__body reveal">
+          <span class="t-eyebrow t-eyebrow--teal">Force Feedback</span>
+          <h3 class="t-h3">FREE — SOFT — WALL</h3>
+          <p class="t-body">关节电机配合位置环，把屈膝角度空间切成三段：<strong>自由段</strong>无阻力、<strong>缓冲段</strong>阻力渐增、<strong>硬墙段</strong>强约束。角度墙始终略高于当日目标，既给挑战空间，又守住安全边界。任何主动施力都可被身体轻易抵抗，唯有预测性缓停与反应性急停例外。</p>
+          <a class="btn btn--ghost" href="research.html" style="padding-left:0">阶段如何调节这堵墙 <span class="chev">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE: host dashboard -->
+  <section class="section">
+    <div class="wrap">
+      <div class="feature">
+        <div class="feature__media feature__media--dark reveal">
+          <img src="../assets/img/ui/host-dashboard.png" alt="PyQt6 上位机实时监测仪表盘" />
+        </div>
+        <div class="feature__body reveal">
+          <span class="t-eyebrow t-eyebrow--teal">Host &amp; Telemetry</span>
+          <h3 class="t-h3">上位机实时监测与直驱</h3>
+          <p class="t-body">Mac 端 PyQt6 仪表盘承担电机直驱运算、膝角融合可视化、力反馈调试，并打通支具 / 手机 / 手表三条通信链路的协同测试。50 Hz 控制频率下，曲线实时回放，参数即调即见。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFETY (dark) -->
+  <section class="section section--dark">
+    <div class="narrow center">
+      <span class="t-eyebrow reveal" style="display:block;margin-bottom:14px">Safety by design</span>
+      <h2 class="t-h1 reveal">安全，是硬件层<br />和软件判定<br />共同守护的</h2>
+      <p class="t-body reveal" style="max-width:620px;margin:22px auto 0">虚拟墙与急停构成硬件底线，缓停与降阶构成软件判定。疼痛跨阈值即可单次触发保护——这是医学安全底线，不需累积。</p>
+    </div>
+  </section>
+
+  <!-- PAGER -->
+  <section class="section--tight">
+    <div class="wrap">
+      <div class="pager">
+        <a class="prev" href="../index.html"><div class="dir">← 返回</div><div class="ttl">王盛逸 · 主页</div></a>
+        <a class="next" href="research.html"><div class="dir">下一页 →</div><div class="ttl">康复研究与阶段化训练</div></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pfooter">
+    <div class="wrap pfooter__row">
+      <div>© 2026 Shengyi Wang · 王盛逸 · shengyiwang.design</div>
+      <nav class="pfooter__nav">
+        <a href="hardware.html">硬件</a><a href="research.html">研究</a><a href="ui.html">UI</a><a href="../index.html">主页</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/js/scrubber.js" defer></script>
+  <script src="../assets/js/project.js" defer></script>
+</body>
+</html>

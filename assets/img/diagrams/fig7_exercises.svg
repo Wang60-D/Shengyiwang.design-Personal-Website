@@ -1,0 +1,63 @@
+<svg viewBox="0 0 960 360" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="360" fill="#FFFFFF"/>
+  <text x="40" y="40" font-size="22" font-weight="700" fill="#1F2933">四种设备可测训练动作</text>
+  <text x="40" y="64" font-size="13" fill="#8A96A3">设备通过双 IMU 测膝角、电机管限位与回撤助力</text>
+
+  <!-- panel template positions -->
+  <!-- 1 flex_extend -->
+  <g>
+    <rect x="40" y="90" width="210" height="220" rx="12" fill="#F5F7FA" stroke="#E2E8EF"/>
+    <!-- seated thigh horizontal, shank swinging -->
+    <circle cx="90" cy="150" r="12" fill="#3F6FB0"/>
+    <line x1="90" y1="162" x2="90" y2="205" stroke="#3F6FB0" stroke-width="6" stroke-linecap="round"/>
+    <line x1="90" y1="205" x2="160" y2="205" stroke="#3F6FB0" stroke-width="7" stroke-linecap="round"/>
+    <!-- shank options -->
+    <line x1="160" y1="205" x2="160" y2="255" stroke="#9AA7B4" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+    <line x1="160" y1="205" x2="205" y2="235" stroke="#3F6FB0" stroke-width="6" stroke-linecap="round"/>
+    <path d="M160 235 A 35 35 0 0 1 192 222" fill="none" stroke="#E8A33C" stroke-width="2"/>
+    <text x="145" y="288" font-size="13" font-weight="700" fill="#1F2933" text-anchor="middle">主动屈伸</text>
+    <text x="145" y="306" font-size="11" fill="#5A6573" text-anchor="middle">flex_extend</text>
+  </g>
+  <!-- 2 slr -->
+  <g>
+    <rect x="270" y="90" width="210" height="220" rx="12" fill="#F5F7FA" stroke="#E2E8EF"/>
+    <!-- lying, straight leg raised -->
+    <line x1="300" y1="250" x2="345" y2="250" stroke="#9AA7B4" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="305" cy="240" r="11" fill="#3F6FB0"/>
+    <!-- raised straight leg -->
+    <line x1="345" y1="250" x2="430" y2="190" stroke="#3F6FB0" stroke-width="7" stroke-linecap="round"/>
+    <text x="375" y="288" font-size="13" font-weight="700" fill="#1F2933" text-anchor="middle">直腿抬高</text>
+    <text x="375" y="306" font-size="11" fill="#5A6573" text-anchor="middle">slr · 膝锁 0°</text>
+    <path d="M345 250 L345 220" stroke="#E5564B" stroke-width="2" stroke-dasharray="3 3"/>
+  </g>
+  <!-- 3 sts -->
+  <g>
+    <rect x="500" y="90" width="210" height="220" rx="12" fill="#F5F7FA" stroke="#E2E8EF"/>
+    <!-- chair -->
+    <rect x="530" y="230" width="40" height="40" fill="none" stroke="#C7D0DA" stroke-width="3"/>
+    <line x1="530" y1="230" x2="530" y2="200" stroke="#C7D0DA" stroke-width="3"/>
+    <!-- standing person -->
+    <circle cx="610" cy="140" r="12" fill="#2F9E6B"/>
+    <line x1="610" y1="152" x2="610" y2="210" stroke="#2F9E6B" stroke-width="6" stroke-linecap="round"/>
+    <line x1="610" y1="210" x2="605" y2="270" stroke="#2F9E6B" stroke-width="6" stroke-linecap="round"/>
+    <path d="M560 250 C580 210 595 195 610 165" fill="none" stroke="#E8A33C" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#up)"/>
+    <text x="605" y="288" font-size="13" font-weight="700" fill="#1F2933" text-anchor="middle">坐站</text>
+    <text x="605" y="306" font-size="11" fill="#5A6573" text-anchor="middle">sts · 起身相位助力</text>
+  </g>
+  <!-- 4 squat -->
+  <g>
+    <rect x="730" y="90" width="210" height="220" rx="12" fill="#F5F7FA" stroke="#E2E8EF"/>
+    <circle cx="835" cy="135" r="12" fill="#D67D3E"/>
+    <line x1="835" y1="147" x2="835" y2="195" stroke="#D67D3E" stroke-width="6" stroke-linecap="round"/>
+    <!-- thigh back, shank down: squat -->
+    <line x1="835" y1="195" x2="800" y2="225" stroke="#D67D3E" stroke-width="6" stroke-linecap="round"/>
+    <line x1="800" y1="225" x2="815" y2="270" stroke="#D67D3E" stroke-width="6" stroke-linecap="round"/>
+    <path d="M800 225 A 30 30 0 0 1 822 205" fill="none" stroke="#E8A33C" stroke-width="2"/>
+    <text x="835" y="288" font-size="13" font-weight="700" fill="#1F2933" text-anchor="middle">深蹲 / 半蹲</text>
+    <text x="835" y="306" font-size="11" fill="#5A6573" text-anchor="middle">squat</text>
+  </g>
+
+  <defs>
+    <marker id="up" markerWidth="9" markerHeight="9" refX="4.5" refY="2" orient="auto"><path d="M0 7 L4.5 0 L9 7 z" fill="#E8A33C"/></marker>
+  </defs>
+</svg>

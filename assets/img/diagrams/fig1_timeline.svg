@@ -1,0 +1,66 @@
+<svg viewBox="0 0 960 380" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="380" fill="#FFFFFF"/>
+  <text x="40" y="44" font-size="22" font-weight="700" fill="#1F2933">三阶段康复总览 · 周数 + ROM 双门槛</text>
+  <text x="40" y="70" font-size="13" fill="#8A96A3">周数为建议节奏,实际进阶以客观标准(criteria)为准</text>
+
+  <!-- Phase blocks -->
+  <!-- P1 -->
+  <g>
+    <rect x="40" y="96" width="280" height="180" rx="12" fill="#E8F0FE"/>
+    <rect x="40" y="96" width="280" height="42" rx="12" fill="#3F6FB0"/>
+    <rect x="40" y="116" width="280" height="22" fill="#3F6FB0"/>
+    <text x="60" y="124" font-size="17" font-weight="700" fill="#FFFFFF">早期保护期</text>
+    <text x="300" y="124" font-size="14" fill="#D6E4F7" text-anchor="end">W0–W6</text>
+    <text x="60" y="166" font-size="13" fill="#3A4654">• 恢复完全伸直(0°,最优先)</text>
+    <text x="60" y="190" font-size="13" fill="#3A4654">• 屈曲到 ~110°、消肿</text>
+    <text x="60" y="214" font-size="13" fill="#3A4654">• 激活股四头肌、建训练习惯</text>
+    <text x="60" y="248" font-size="12" fill="#6B7785">主测:flex_extend · slr</text>
+    <text x="60" y="268" font-size="12" font-weight="600" fill="#3F6FB0">角度墙 60°→90°→110°</text>
+  </g>
+  <!-- P2 -->
+  <g>
+    <rect x="340" y="96" width="280" height="180" rx="12" fill="#E4F3EB"/>
+    <rect x="340" y="96" width="280" height="42" rx="12" fill="#2F9E6B"/>
+    <rect x="340" y="116" width="280" height="22" fill="#2F9E6B"/>
+    <text x="360" y="124" font-size="17" font-weight="700" fill="#FFFFFF">中期恢复期</text>
+    <text x="600" y="124" font-size="14" fill="#CDEAD9" text-anchor="end">W6–W14</text>
+    <text x="360" y="166" font-size="13" fill="#2C4438">• 全活动范围 0–130°+</text>
+    <text x="360" y="190" font-size="13" fill="#2C4438">• 动作控制与节律稳定</text>
+    <text x="360" y="214" font-size="13" fill="#2C4438">• 基础力量、步态正常化</text>
+    <text x="360" y="248" font-size="12" fill="#6B7785">主测:flex_extend · sts · squat</text>
+    <text x="360" y="268" font-size="12" font-weight="600" fill="#2F9E6B">角度墙 ~130°(保留保护)</text>
+  </g>
+  <!-- P3 -->
+  <g>
+    <rect x="640" y="96" width="280" height="180" rx="12" fill="#FBEEE2"/>
+    <rect x="640" y="96" width="280" height="42" rx="12" fill="#D67D3E"/>
+    <rect x="640" y="116" width="280" height="22" fill="#D67D3E"/>
+    <text x="660" y="124" font-size="17" font-weight="700" fill="#FFFFFF">后期功能期</text>
+    <text x="900" y="124" font-size="14" fill="#F6DCC5" text-anchor="end">W14+</text>
+    <text x="660" y="166" font-size="13" fill="#523722">• 功能动作质量、稳定性</text>
+    <text x="660" y="190" font-size="13" fill="#523722">• 力量与控制左右对称</text>
+    <text x="660" y="214" font-size="13" fill="#523722">• 过渡到自主管理</text>
+    <text x="660" y="248" font-size="12" fill="#6B7785">主测:squat · sts · 功能动作</text>
+    <text x="660" y="268" font-size="12" font-weight="600" fill="#D67D3E">角度墙 全范围(安全兜底)</text>
+  </g>
+
+  <!-- progression arrows -->
+  <path d="M320 186 L340 186" stroke="#B7C2CF" stroke-width="3" marker-end="url(#ah)"/>
+  <path d="M620 186 L640 186" stroke="#B7C2CF" stroke-width="3" marker-end="url(#ah)"/>
+
+  <!-- timeline axis -->
+  <line x1="40" y1="320" x2="920" y2="320" stroke="#D4DBE3" stroke-width="2"/>
+  <text x="40" y="348" font-size="12" fill="#8A96A3">术后 0 周</text>
+  <text x="320" y="348" font-size="12" fill="#8A96A3" text-anchor="middle">6 周</text>
+  <text x="620" y="348" font-size="12" fill="#8A96A3" text-anchor="middle">14 周</text>
+  <text x="920" y="348" font-size="12" fill="#8A96A3" text-anchor="end">返场 →</text>
+  <circle cx="40" cy="320" r="4" fill="#3F6FB0"/>
+  <circle cx="320" cy="320" r="4" fill="#2F9E6B"/>
+  <circle cx="620" cy="320" r="4" fill="#D67D3E"/>
+
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="#B7C2CF"/>
+    </marker>
+  </defs>
+</svg>

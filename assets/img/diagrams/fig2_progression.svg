@@ -1,0 +1,49 @@
+<svg viewBox="0 0 960 420" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="420" fill="#FFFFFF"/>
+  <text x="40" y="40" font-size="22" font-weight="700" fill="#1F2933">进阶 / 退阶状态机</text>
+  <text x="40" y="64" font-size="13" fill="#8A96A3">每次训练总结时重算一次 · 进阶=全部条件 AND 满足 · 退阶=任一触发命中</text>
+
+  <!-- phase nodes -->
+  <rect x="70" y="150" width="200" height="90" rx="14" fill="#E8F0FE" stroke="#3F6FB0" stroke-width="2"/>
+  <text x="170" y="190" font-size="17" font-weight="700" fill="#1F2933" text-anchor="middle">早期保护期</text>
+  <text x="170" y="214" font-size="12" fill="#5A6573" text-anchor="middle">W0–6</text>
+
+  <rect x="380" y="150" width="200" height="90" rx="14" fill="#E4F3EB" stroke="#2F9E6B" stroke-width="2"/>
+  <text x="480" y="190" font-size="17" font-weight="700" fill="#1F2933" text-anchor="middle">中期恢复期</text>
+  <text x="480" y="214" font-size="12" fill="#5A6573" text-anchor="middle">W6–14</text>
+
+  <rect x="690" y="150" width="200" height="90" rx="14" fill="#FBEEE2" stroke="#D67D3E" stroke-width="2"/>
+  <text x="790" y="190" font-size="17" font-weight="700" fill="#1F2933" text-anchor="middle">后期功能期</text>
+  <text x="790" y="214" font-size="12" fill="#5A6573" text-anchor="middle">W14+</text>
+
+  <!-- advance arrows (top) -->
+  <path d="M270 175 C320 150 330 150 380 175" fill="none" stroke="#34A853" stroke-width="2.5" marker-end="url(#g)"/>
+  <text x="325" y="138" font-size="12" font-weight="600" fill="#34A853" text-anchor="middle">进阶 ▲</text>
+  <path d="M580 175 C630 150 640 150 690 175" fill="none" stroke="#34A853" stroke-width="2.5" marker-end="url(#g)"/>
+  <text x="635" y="138" font-size="12" font-weight="600" fill="#34A853" text-anchor="middle">进阶 ▲</text>
+
+  <!-- regress arrows (bottom) -->
+  <path d="M380 222 C330 250 320 250 270 222" fill="none" stroke="#E5564B" stroke-width="2.5" marker-end="url(#r)"/>
+  <text x="325" y="272" font-size="12" font-weight="600" fill="#E5564B" text-anchor="middle">退阶 ▼</text>
+  <path d="M690 222 C640 250 630 250 580 222" fill="none" stroke="#E5564B" stroke-width="2.5" marker-end="url(#r)"/>
+  <text x="635" y="272" font-size="12" font-weight="600" fill="#E5564B" text-anchor="middle">退阶 ▼</text>
+
+  <!-- advance criteria card -->
+  <rect x="70" y="300" width="400" height="100" rx="10" fill="#F1F8F3" stroke="#CDE8D6"/>
+  <text x="86" y="324" font-size="13" font-weight="700" fill="#2F9E6B">进阶条件(示例:中→后)</text>
+  <text x="86" y="346" font-size="12" fill="#3A4654">✓ 全 ROM 对称 0–130°  ✓ 连续 3 次目标达标</text>
+  <text x="86" y="366" font-size="12" fill="#3A4654">✓ 动作无明显代偿  ✓ 难度自评连续 &lt;4</text>
+  <text x="86" y="386" font-size="12" fill="#3A4654">✓ 无疼痛峰值 ≥12 天  ✓ 回撤助力触发递减</text>
+
+  <!-- regress criteria card -->
+  <rect x="490" y="300" width="400" height="100" rx="10" fill="#FCF1F0" stroke="#F3D2CF"/>
+  <text x="506" y="324" font-size="13" font-weight="700" fill="#E5564B">退阶触发(任一即降阶)</text>
+  <text x="506" y="346" font-size="12" fill="#3A4654">✕ 肿胀/积液加重  ✕ 重现伸膝迟滞</text>
+  <text x="506" y="366" font-size="12" fill="#3A4654">✕ 疼痛峰值反复  ✕ 连续未达标</text>
+  <text x="506" y="386" font-size="12" fill="#3A4654">✕ 动作代偿明显  ✕ 回撤助力触发骤增</text>
+
+  <defs>
+    <marker id="g" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#34A853"/></marker>
+    <marker id="r" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#E5564B"/></marker>
+  </defs>
+</svg>
