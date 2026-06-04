@@ -2,404 +2,479 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8" />
-<title>毕设挂轴 · 2268×5911 · Figma 风格</title>
+<title>毕设挂轴 · 2268×5911 · Sentry 风格</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
 <style>
-  /* ===== Figma DESIGN.md tokens (getdesign.md/figma), 2268×5911 canvas ===== */
+  /* ═══ Sentry DESIGN.md tokens (getdesign.md/sentry), 2268×5911 canvas ═══ */
   :root{
-    --ink:#000000; --canvas:#ffffff;
-    --hairline:#e6e6e6; --surface-soft:#f7f7f5;
-    --lime:#dceeb1; --lilac:#c5b0f4; --cream:#f4ecd6;
-    --pink:#efd4d4; --mint:#c8e6cd; --coral:#f3c9b6; --navy:#1f1d3d;
-    --r-lg:44px; --r-md:32px; --r-pill:999px;
-    --sans:'Inter','Noto Sans SC','PingFang SC',sans-serif;
+    --primary:#150f23; --ink-deep:#1f1633; --white:#ffffff;
+    --lime:#c2ef4e; --pink:#fa7faa;
+    --violet:#6a5fc1; --violet-deep:#422082; --violet-mid:#79628c;
+    --hairline:#362d59;
+    --muted:rgba(255,255,255,.72); --faint:rgba(255,255,255,.18);
+    --r-xs:8px; --r-md:16px; --r-xl:24px; --r-xxl:36px;
+    --disp:'Archivo','Noto Sans SC','PingFang SC',sans-serif;
+    --ui:'Rubik','Noto Sans SC','PingFang SC',sans-serif;
     --mono:'JetBrains Mono','Noto Sans SC',monospace;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{
     width:2268px;height:5911px;overflow:hidden;position:relative;
-    background:var(--canvas);color:var(--ink);
-    font-family:var(--sans);font-weight:400;-webkit-font-smoothing:antialiased;
+    background:var(--ink-deep);color:var(--white);
+    font-family:var(--ui);-webkit-font-smoothing:antialiased;
   }
-  .page{width:2268px;height:5911px;padding:54px 100px 0;display:flex;flex-direction:column;}
+  /* starfield */
+  body::before{
+    content:'';position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.6px, transparent 1.6px),
+                     radial-gradient(rgba(255,255,255,.18) 1.2px, transparent 1.2px);
+    background-size:520px 520px, 290px 290px;
+    background-position:40px 80px, 160px 200px;
+  }
+  .page{position:relative;width:2268px;height:5911px;padding:64px 100px 0;display:flex;flex-direction:column;z-index:1;}
 
-  /* ===== type ===== */
+  /* ═══ type ═══ */
   .eyebrow{
-    font-family:var(--mono);font-size:30px;font-weight:600;letter-spacing:5px;
-    text-transform:uppercase;display:flex;align-items:center;gap:22px;
+    font-family:var(--mono);font-size:30px;font-weight:600;letter-spacing:6px;
+    text-transform:uppercase;color:var(--pink);display:flex;align-items:center;gap:24px;
   }
-  .eyebrow .num{background:var(--ink);color:#fff;border-radius:var(--r-pill);padding:6px 26px;letter-spacing:3px;}
-  .headline{font-size:84px;font-weight:700;line-height:1.06;letter-spacing:-2.4px;margin-top:16px;}
-  .headline em{font-style:normal;background:linear-gradient(transparent 62%, var(--lime) 62%);}
-  .lead{font-size:36px;font-weight:300;line-height:1.3;letter-spacing:-0.3px;margin-top:12px;}
-  .lead strong{font-weight:700;}
+  .eyebrow .num{
+    background:var(--pink);color:var(--primary);border-radius:var(--r-xs);
+    padding:6px 24px;font-weight:700;letter-spacing:3px;
+  }
+  .eyebrow .ln{flex:1;height:2px;background:var(--hairline);}
+  .display{
+    font-family:var(--disp);font-size:100px;font-weight:900;line-height:1.14;
+    letter-spacing:-1px;margin-top:22px;
+  }
+  .display .chip{
+    background:var(--lime);color:var(--ink-deep);border-radius:10px;
+    padding:0 22px;display:inline-block;line-height:1.22;transform:rotate(-1deg);
+  }
+  .sub{font-size:38px;font-weight:400;line-height:1.5;color:var(--muted);margin-top:18px;}
+  .sub strong{color:var(--white);font-weight:700;}
 
-  .gap{height:26px;flex:none;}
-  .gap-sec{height:54px;flex:none;}
+  .gap{height:30px;flex:none;}
 
-  /* ===== generic ===== */
+  /* ═══ squiggle divider ═══ */
+  .squiggle{margin:46px 0 40px;flex:none;}
+  .squiggle svg{display:block;width:100%;height:36px;}
+
+  /* ═══ cards ═══ */
   .row{display:flex;gap:24px;}
   .row>*{flex:1;}
-
-  .minicard{
-    border:3px solid var(--hairline);border-radius:var(--r-md);
-    padding:22px 30px;background:var(--canvas);
-    display:flex;align-items:baseline;gap:18px;
+  .night{
+    background:var(--primary);border:2px solid var(--hairline);border-radius:var(--r-xl);
+    padding:28px 34px;
   }
-  .minicard .k{font-family:var(--mono);font-size:24px;font-weight:600;letter-spacing:2px;white-space:nowrap;}
-  .minicard .t{font-size:34px;font-weight:700;letter-spacing:-0.7px;white-space:nowrap;}
+  .night .k{font-family:var(--mono);font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--pink);margin-bottom:10px;}
+  .night .t{font-size:37px;font-weight:700;line-height:1.18;color:var(--white);}
+  .night .b{font-size:28px;font-weight:400;line-height:1.4;color:var(--muted);margin-top:10px;}
+  .night .b strong{color:var(--white);font-weight:600;}
 
-  .fcard{
-    border:3px solid var(--hairline);border-radius:var(--r-md);
-    padding:26px 32px;background:var(--canvas);
+  .spotlight{
+    background:var(--violet-deep);border-radius:var(--r-xxl);padding:48px 56px;position:relative;
   }
-  .fcard .k{font-family:var(--mono);font-size:23px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
-  .fcard .t{font-size:38px;font-weight:700;letter-spacing:-0.9px;line-height:1.12;}
-  .fcard .b{font-size:28px;font-weight:400;line-height:1.32;margin-top:8px;color:#000;}
-  .fcard .b strong{font-weight:700;}
+  .sp-eyebrow{font-family:var(--mono);font-size:26px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--lime);margin-bottom:10px;}
+  .sp-title{font-family:var(--disp);font-size:60px;font-weight:800;line-height:1.15;letter-spacing:-0.5px;}
 
-  /* ===== color blocks ===== */
-  .block{border-radius:var(--r-lg);padding:44px 56px;}
-  .bk-eyebrow{
-    font-family:var(--mono);font-size:26px;font-weight:600;letter-spacing:4px;text-transform:uppercase;
-    margin-bottom:10px;opacity:.72;
+  /* ═══ S1 ═══ */
+  .probe{display:flex;align-items:center;gap:20px;background:var(--primary);border:2px solid var(--hairline);border-radius:var(--r-xl);padding:24px 32px;}
+  .probe .x{
+    flex:none;width:54px;height:54px;border-radius:50%;background:var(--pink);color:var(--primary);
+    font-size:32px;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:var(--disp);
   }
-  .bk-title{font-size:54px;font-weight:700;letter-spacing:-1.4px;line-height:1.1;}
+  .probe .pt{font-size:34px;font-weight:700;}
+  .probe .pb{font-size:26px;color:var(--muted);margin-top:2px;}
 
-  /* ===== S1 ===== */
-  .stages{display:flex;gap:22px;margin-top:26px;}
-  .stage{flex:1;background:rgba(255,255,255,.62);border-radius:30px;padding:24px 30px;}
-  .stage .no{font-family:var(--mono);font-size:22px;font-weight:600;letter-spacing:3px;margin-bottom:6px;}
-  .stage .t{font-size:38px;font-weight:700;letter-spacing:-0.9px;margin-bottom:6px;}
-  .stage .b{font-size:27px;font-weight:500;line-height:1.3;}
-  .stage-arrow{
-    margin-top:24px;display:flex;align-items:center;gap:22px;
-    font-size:30px;font-weight:700;letter-spacing:-0.3px;
-  }
-  .stage-arrow .bar{flex:1;height:5px;background:var(--ink);border-radius:3px;position:relative;}
+  .stages{display:flex;gap:22px;margin-top:30px;}
+  .stage{flex:1;background:rgba(21,15,35,.45);border-radius:var(--r-xl);padding:28px 32px;}
+  .stage .no{font-family:var(--mono);font-size:24px;font-weight:700;letter-spacing:3px;color:var(--lime);margin-bottom:8px;}
+  .stage .t{font-family:var(--disp);font-size:42px;font-weight:800;margin-bottom:8px;}
+  .stage .b{font-size:28px;font-weight:400;line-height:1.4;color:var(--muted);}
+  .stage .b strong{color:var(--white);}
+  .stage-arrow{margin-top:28px;display:flex;align-items:center;gap:24px;font-size:31px;font-weight:700;}
+  .stage-arrow .bar{flex:1;height:5px;background:var(--lime);border-radius:3px;position:relative;}
   .stage-arrow .bar::after{
     content:'';position:absolute;right:-2px;top:50%;transform:translateY(-50%);
-    border-left:24px solid var(--ink);border-top:13px solid transparent;border-bottom:13px solid transparent;
+    border-left:26px solid var(--lime);border-top:14px solid transparent;border-bottom:14px solid transparent;
   }
 
-  .benefit{background:var(--surface-soft);border-radius:var(--r-md);padding:24px 30px;}
-  .benefit .k{font-family:var(--mono);font-size:22px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
-  .benefit .t{font-size:36px;font-weight:700;letter-spacing:-0.8px;}
-  .benefit .b{font-size:27px;font-weight:400;line-height:1.3;margin-top:6px;}
+  .benefit{background:transparent;border:2px solid var(--hairline);border-radius:var(--r-xl);padding:22px 30px;}
+  .benefit .k{font-family:var(--mono);font-size:22px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--violet);margin-bottom:6px;}
+  .benefit .t{font-size:35px;font-weight:700;}
+  .benefit .b{font-size:27px;color:var(--muted);line-height:1.35;margin-top:6px;}
 
-  .pills{display:flex;gap:20px;}
-  .pill{
-    flex:1;display:flex;align-items:center;gap:16px;
-    border:3.5px solid var(--ink);border-radius:var(--r-pill);padding:16px 18px 16px 14px;
+  .stat{background:var(--primary);border:2px solid var(--hairline);border-radius:var(--r-xl);padding:24px 18px;text-align:center;}
+  .stat .n{font-family:var(--disp);font-size:64px;font-weight:900;color:var(--lime);line-height:1;}
+  .stat .l{font-size:26px;font-weight:500;color:var(--muted);margin-top:8px;}
+
+  /* ═══ S2 ═══ */
+  .scene{
+    position:relative;border-radius:var(--r-xxl);overflow:hidden;height:470px;flex:none;
+    transform:rotate(-0.6deg);border:3px solid var(--hairline);
   }
-  .pill .n{
-    flex:none;width:52px;height:52px;border-radius:50%;background:var(--ink);color:#fff;
-    font-family:var(--mono);font-size:27px;font-weight:600;display:flex;align-items:center;justify-content:center;
-  }
-  .pill .t{font-size:29px;font-weight:700;letter-spacing:-0.5px;line-height:1.12;}
-
-  .stats{display:flex;gap:24px;}
-  .stat{flex:1;background:var(--surface-soft);border-radius:var(--r-md);padding:26px 20px;text-align:center;}
-  .stat .n{font-size:62px;font-weight:800;letter-spacing:-1.8px;line-height:1;}
-  .stat .l{font-size:26px;font-weight:500;margin-top:8px;}
-
-  /* ===== S2 ===== */
-  .scene{position:relative;border-radius:var(--r-lg);overflow:hidden;height:430px;flex:none;}
   .scene img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;}
-  .scene .tags{position:absolute;left:0;right:0;bottom:26px;display:flex;justify-content:center;gap:20px;}
-  .scene .tag{
-    background:rgba(255,255,255,.93);border-radius:var(--r-pill);
-    padding:14px 30px;font-size:27px;font-weight:600;
+  .scene .tags{position:absolute;left:0;right:0;bottom:24px;display:flex;justify-content:center;gap:18px;}
+  .tagp{
+    background:var(--primary);border:2px solid var(--hairline);border-radius:var(--r-md);
+    padding:14px 28px;font-size:26px;font-weight:500;color:var(--muted);
     display:flex;align-items:baseline;gap:12px;white-space:nowrap;
   }
-  .scene .tag b{font-size:36px;font-weight:800;letter-spacing:-1px;}
+  .tagp b{font-family:var(--disp);font-size:36px;font-weight:800;color:var(--white);}
 
-  .hwcard{border:3px solid var(--hairline);border-radius:var(--r-lg);overflow:hidden;background:var(--canvas);}
-  .hwcard .ph{height:300px;overflow:hidden;}
-  .hwcard .ph img{width:100%;height:100%;object-fit:cover;display:block;}
-  .hwcard .tx{padding:20px 30px 24px;}
-  .hwcard .t{font-size:36px;font-weight:700;letter-spacing:-0.8px;}
-  .hwcard .b{font-size:27px;font-weight:400;line-height:1.3;margin-top:6px;}
-  .hwcard .steps{display:flex;gap:10px;margin-top:10px;}
-  .hwcard .steps span{
-    flex:1;background:var(--surface-soft);border-radius:var(--r-pill);
-    font-size:25px;font-weight:600;text-align:center;padding:8px 0;white-space:nowrap;
+  .hw{background:var(--primary);border:2px solid var(--hairline);border-radius:var(--r-xl);overflow:hidden;}
+  .hw .ph{height:290px;overflow:hidden;}
+  .hw .ph img{width:100%;height:100%;object-fit:cover;display:block;}
+  .hw .tx{padding:22px 30px 26px;}
+  .hw .t{font-size:35px;font-weight:700;}
+  .hw .b{font-size:27px;color:var(--muted);line-height:1.35;margin-top:6px;}
+  .hw .b strong{color:var(--white);}
+  .hw .steps{display:flex;gap:10px;margin-top:12px;}
+  .hw .steps span{
+    flex:1;background:var(--faint);border-radius:var(--r-xs);
+    font-size:24px;font-weight:600;text-align:center;padding:8px 0;white-space:nowrap;color:var(--white);
   }
 
-  .zonebar{display:flex;gap:14px;margin-top:26px;}
-  .zone{border-radius:26px;padding:22px 32px;color:var(--ink);display:flex;align-items:baseline;gap:18px;}
-  .zone .z{font-family:var(--mono);font-size:30px;font-weight:600;letter-spacing:3px;}
-  .zone .zt{font-size:34px;font-weight:700;letter-spacing:-0.6px;}
-  .zone .zb{font-size:26px;font-weight:500;}
-  .zone--free{flex:1.15;background:var(--mint);}
-  .zone--soft{flex:1;background:var(--cream);}
-  .zone--wall{flex:1;background:var(--coral);}
-  .navy-cols{display:flex;gap:40px;margin-top:24px;}
-  .navy-col{flex:1;color:#fff;font-size:28px;font-weight:500;line-height:1.35;display:flex;gap:16px;align-items:flex-start;}
-  .navy-col .dot{width:16px;height:16px;border-radius:50%;background:var(--lime);flex:none;margin-top:12px;}
-  .navy-col strong{font-weight:700;}
+  .zonebar{display:flex;gap:16px;margin-top:30px;}
+  .zone{border-radius:var(--r-md);padding:20px 30px;display:flex;align-items:baseline;gap:16px;}
+  .zone .z{font-family:var(--mono);font-size:30px;font-weight:700;letter-spacing:3px;}
+  .zone .zt{font-size:33px;font-weight:700;}
+  .zone .zb{font-size:26px;font-weight:500;opacity:.75;}
+  .zone--free{flex:1.15;background:var(--lime);color:var(--ink-deep);}
+  .zone--soft{flex:1;background:var(--pink);color:var(--ink-deep);}
+  .zone--wall{flex:1;background:var(--white);color:var(--ink-deep);}
+  .navy-cols{display:flex;gap:36px;margin-top:26px;}
+  .navy-col{flex:1;font-size:27px;font-weight:400;line-height:1.42;color:var(--muted);display:flex;gap:14px;align-items:flex-start;}
+  .navy-col .dot{width:14px;height:14px;border-radius:50%;background:var(--lime);flex:none;margin-top:13px;}
+  .navy-col strong{color:var(--white);font-weight:600;}
 
-  .hostrow{display:flex;gap:24px;}
+  .hostrow{display:flex;gap:26px;align-items:stretch;}
   .hostshot{
-    flex:1.35;border:3px solid var(--hairline);border-radius:var(--r-lg);overflow:hidden;background:#0e1217;
+    flex:1.4;border-radius:var(--r-xxl);overflow:hidden;background:#0e1217;
+    border:3px solid var(--hairline);transform:rotate(0.5deg);
   }
   .hostshot img{width:100%;height:100%;object-fit:cover;display:block;}
-  .hostinfo{flex:1;display:flex;flex-direction:column;gap:20px;}
-  .hostinfo .fcard{flex:1;}
+  .hostinfo{flex:1;display:flex;flex-direction:column;gap:22px;}
+  .hostinfo .night{flex:1;}
 
-  .devices{display:flex;gap:20px;}
   .device{
-    flex:1;background:var(--surface-soft);border-radius:var(--r-pill);
-    display:flex;align-items:center;justify-content:center;gap:14px;padding:16px 12px;
+    background:var(--violet-mid);border:2px solid var(--violet-deep);border-radius:var(--r-xl);
+    display:flex;align-items:center;justify-content:center;gap:14px;padding:16px 10px;
   }
-  .device .dn{font-size:31px;font-weight:800;letter-spacing:-0.6px;}
-  .device .dr{font-size:25px;font-weight:500;}
+  .device .dn{font-size:31px;font-weight:700;}
+  .device .dr{font-size:25px;font-weight:400;opacity:.85;}
 
-  /* ===== S3 ===== */
-  .phone{background:#000;border-radius:38px;padding:8px;flex:none;}
-  .phone .scr{border-radius:32px;overflow:hidden;display:block;font-size:0;}
+  /* ═══ S3 ═══ */
+  .phone{background:#000;border-radius:36px;padding:8px;flex:none;border:2px solid var(--hairline);}
+  .phone .scr{border-radius:28px;overflow:hidden;display:block;font-size:0;}
   .phone .scr img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;}
 
-  .efrow{display:flex;gap:50px;align-items:center;}
-  .efrow .phone{width:236px;height:502px;}
-  .efrow .phone .scr{width:220px;height:486px;}
+  .efrow{display:flex;gap:54px;align-items:center;background:var(--primary);border:2px solid var(--hairline);border-radius:var(--r-xxl);padding:40px 56px;position:relative;}
+  .efrow .phone{width:232px;height:494px;transform:rotate(-1.6deg);}
+  .efrow .phone .scr{width:212px;height:478px;}
   .ef-claims{flex:1;}
-  .claim{display:flex;align-items:center;gap:18px;font-size:32px;font-weight:700;letter-spacing:-0.5px;margin-top:14px;}
+  .ef-claims .sp-eyebrow{color:var(--lime);}
+  .ef-title{font-family:var(--disp);font-size:56px;font-weight:800;line-height:1.15;}
+  .claim{display:flex;align-items:center;gap:18px;font-size:31px;font-weight:500;margin-top:16px;color:var(--muted);}
+  .claim strong{color:var(--white);font-weight:700;}
   .claim .ic{
-    flex:none;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;
+    flex:none;width:44px;height:44px;border-radius:50%;background:var(--pink);color:var(--primary);
     display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;
   }
-  .ef-modes{display:flex;gap:16px;margin-top:20px;}
-  .ef-mode{background:rgba(255,255,255,.7);border-radius:var(--r-md);padding:16px 24px;flex:1;}
-  .ef-mode .mk{font-family:var(--mono);font-size:22px;font-weight:600;letter-spacing:2px;margin-bottom:4px;}
-  .ef-mode .mt{font-size:27px;font-weight:600;line-height:1.25;}
+  .ef-modes{display:flex;gap:16px;margin-top:22px;}
+  .ef-mode{background:var(--faint);border-radius:var(--r-md);padding:14px 24px;flex:1;}
+  .ef-mode .mk{font-family:var(--mono);font-size:22px;font-weight:600;letter-spacing:2px;color:var(--lime);margin-bottom:4px;}
+  .ef-mode .mt{font-size:26px;font-weight:500;line-height:1.3;color:var(--muted);}
 
   .iagrid{display:flex;gap:24px;}
   .iacell{flex:1;text-align:center;}
-  .iacell .phone{width:252px;height:536px;margin:0 auto;}
-  .iacell .phone .scr{width:236px;height:520px;}
-  .iacell .qk{
-    font-family:var(--mono);font-size:23px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-top:16px;
-  }
-  .iacell .q{font-size:33px;font-weight:700;letter-spacing:-0.7px;margin-top:4px;line-height:1.12;}
+  .iacell .phone{width:248px;height:528px;margin:0 auto;}
+  .iacell .phone .scr{width:228px;height:508px;}
+  .iacell:nth-child(odd) .phone{transform:rotate(-1.2deg);}
+  .iacell:nth-child(even) .phone{transform:rotate(1.2deg);}
+  .iacell .qk{font-family:var(--mono);font-size:23px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--pink);margin-top:18px;}
+  .iacell .q{font-size:33px;font-weight:700;margin-top:4px;}
 
   .layers{display:flex;gap:24px;}
-  .layer{flex:1;border:3px solid var(--hairline);border-radius:var(--r-md);padding:24px 30px;}
-  .layer .lk{font-family:var(--mono);font-size:23px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
-  .layer .lq{font-size:34px;font-weight:700;letter-spacing:-0.7px;}
-  .layer .lb{font-size:27px;font-weight:400;line-height:1.3;margin-top:8px;}
-  .layer .lb strong{font-weight:700;}
+  .layer{flex:1;background:var(--primary);border:2px solid var(--hairline);border-radius:var(--r-xl);overflow:hidden;}
+  .layer .lph{height:240px;overflow:hidden;border-bottom:2px solid var(--hairline);}
+  .layer .lph img{width:100%;display:block;}
+  .layer .ltx{padding:22px 30px 26px;}
+  .layer .lk{font-family:var(--mono);font-size:23px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--lime);margin-bottom:6px;}
+  .layer .lq{font-size:34px;font-weight:700;}
+  .layer .lb{font-size:27px;color:var(--muted);line-height:1.35;margin-top:6px;}
+  .layer .lb strong{color:var(--white);}
 
   .langrow{display:flex;gap:24px;}
-  .lang{border-radius:var(--r-md);padding:24px 32px;flex:1;}
-  .lang--bad{background:var(--pink);}
-  .lang--good{background:var(--mint);}
-  .lang .gk{font-family:var(--mono);font-size:23px;font-weight:600;letter-spacing:2px;margin-bottom:8px;}
-  .lang .gt{font-size:33px;font-weight:700;letter-spacing:-0.6px;line-height:1.25;}
-  .lang .gb{font-size:26px;font-weight:500;margin-top:8px;line-height:1.3;}
+  .lang{border-radius:var(--r-xl);padding:26px 34px;flex:1;}
+  .lang--bad{background:var(--primary);border:2px solid var(--pink);}
+  .lang--good{background:var(--lime);color:var(--ink-deep);}
+  .lang .gk{font-family:var(--mono);font-size:23px;font-weight:700;letter-spacing:2px;margin-bottom:8px;}
+  .lang--bad .gk{color:var(--pink);}
+  .lang .gt{font-size:34px;font-weight:700;line-height:1.3;}
+  .lang .gb{font-size:26px;margin-top:8px;line-height:1.35;}
+  .lang--bad .gb{color:var(--muted);}
+  .lang--good .gb{color:rgba(31,22,51,.75);}
 
-  .failrow{display:flex;gap:20px;}
-  .fail{flex:1;border-radius:var(--r-md);padding:20px 28px;display:flex;align-items:baseline;gap:16px;}
-  .fail .fk{font-size:36px;font-weight:800;letter-spacing:-0.8px;white-space:nowrap;}
-  .fail .fb{font-size:27px;font-weight:500;white-space:nowrap;}
-  .fail:nth-child(1){background:var(--pink);}
-  .fail:nth-child(2){background:var(--cream);}
-  .fail:nth-child(3){background:var(--mint);}
-  .fail:nth-child(4){background:var(--lime);}
-
-  /* ===== footer ===== */
-  .marquee{
-    margin:40px -100px 0;margin-top:auto;background:var(--ink);color:#fff;height:88px;flex:none;
-    display:flex;align-items:center;justify-content:center;gap:44px;
-    font-family:var(--mono);font-size:28px;font-weight:600;letter-spacing:5px;text-transform:uppercase;
+  .fail{
+    background:var(--violet-mid);border:2px solid var(--violet-deep);border-radius:var(--r-xl);
+    padding:18px 28px;display:flex;align-items:baseline;gap:14px;justify-content:center;
   }
-  .marquee span{opacity:.55;}
+  .fail .fk{font-family:var(--disp);font-size:37px;font-weight:800;white-space:nowrap;}
+  .fail .fb{font-size:27px;font-weight:400;opacity:.9;white-space:nowrap;}
+
+  /* ═══ stickers ═══ */
+  .stick{position:absolute;z-index:5;filter:drop-shadow(0 6px 0 rgba(0,0,0,.25));}
+
+  /* ═══ footer ═══ */
+  .marquee{
+    margin:44px -100px 0;margin-top:auto;background:var(--primary);height:96px;flex:none;
+    display:flex;align-items:center;justify-content:center;gap:44px;
+    font-family:var(--mono);font-size:28px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--muted);
+    border-top:3px solid var(--lime);
+  }
+  .marquee b{color:var(--lime);}
 </style>
 </head>
 <body>
 <div class="page">
 
   <!-- ════════════ 01 RESEARCH ════════════ -->
-  <div class="eyebrow"><span class="num">01</span> RESEARCH · 研究</div>
-  <div class="headline"><em>阶段化</em>，让康复有节奏</div>
-  <div class="lead">康复不该是一张静态的动作清单——家庭康复最大的问题不是「没有测量」，而是<strong>「不会解释」</strong>。</div>
-
-  <div class="gap"></div>
-
-  <div class="row">
-    <div class="minicard"><span class="k">✗ 静态清单</span><span class="t">目标不随恢复变化</span></div>
-    <div class="minicard"><span class="k">✗ 缺少解释</span><span class="t">做错了，没人纠正</span></div>
-    <div class="minicard"><span class="k">✗ 无人见证</span><span class="t">做对了，没人看见</span></div>
+  <div class="eyebrow"><span class="num">01</span> RESEARCH · 研究 <span class="ln"></span></div>
+  <div style="position:relative">
+    <div class="display"><span class="chip">阶段化</span>，让康复有节奏</div>
+    <div class="sub" style="max-width:1500px">家庭康复最大的问题不是「没有测量」，而是<strong>「不会解释」</strong>——做错没人纠正，做对没人看见。</div>
+    <!-- sticker: knee buddy -->
+    <svg class="stick" style="right:30px;top:-50px;transform:rotate(8deg)" width="330" height="300" viewBox="0 0 330 300">
+      <g stroke-linecap="round" stroke-linejoin="round">
+        <path d="M88,28 L150,118 Q166,140 154,166 L120,252" fill="none" stroke="#fff" stroke-width="58"/>
+        <path d="M88,28 L150,118 Q166,140 154,166 L120,252" fill="none" stroke="#6a5fc1" stroke-width="40"/>
+        <circle cx="152" cy="143" r="62" fill="#fa7faa" stroke="#fff" stroke-width="9"/>
+        <rect x="118" y="128" width="70" height="26" rx="13" fill="#c2ef4e" stroke="#1f1633" stroke-width="5" transform="rotate(-18 152 143)"/>
+        <circle cx="136" cy="122" r="6.5" fill="#1f1633"/>
+        <circle cx="172" cy="122" r="6.5" fill="#1f1633"/>
+        <path d="M140,165 Q154,176 168,164" fill="none" stroke="#1f1633" stroke-width="6"/>
+        <path d="M236,60 l10,24 24,10 -24,10 -10,24 -10,-24 -24,-10 24,-10 z" fill="#c2ef4e"/>
+        <circle cx="268" cy="170" r="9" fill="#fff"/>
+        <circle cx="60" cy="200" r="7" fill="#fa7faa"/>
+      </g>
+    </svg>
   </div>
 
   <div class="gap"></div>
 
-  <!-- formative findings 3×2 -->
+  <div class="row" style="max-width:1780px">
+    <div class="probe"><span class="x">✗</span><span><div class="pt">静态清单</div><div class="pb">目标不随恢复变化</div></span></div>
+    <div class="probe"><span class="x">✗</span><span><div class="pt">缺少解释</div><div class="pb">做错了，没人纠正</div></span></div>
+    <div class="probe"><span class="x">✗</span><span><div class="pt">无人见证</div><div class="pb">做对了，没人看见</div></span></div>
+  </div>
+
+  <div class="gap"></div>
+
   <div class="row">
-    <div class="fcard"><div class="k">发现 01 · 临床指南</div><div class="t">进阶由标准驱动，而非周数</div><div class="b">依据 ROM、疼痛与动作控制——<strong>成为三阶段框架的骨架</strong></div></div>
-    <div class="fcard"><div class="k">发现 02 · 反馈设计</div><div class="t">测量 ≠ 理解</div><div class="b">缺「为什么、错在哪、先改什么」——<strong>催生可解释反馈</strong></div></div>
-    <div class="fcard"><div class="k">发现 03 · 计划执行</div><div class="t">区分失败原因，再调整</div><div class="b">比单纯提醒坚持更有效——<strong>催生失败分型与保护性回退</strong></div></div>
+    <div class="night"><div class="k">发现 01 · 临床指南</div><div class="t">进阶由标准驱动，而非周数</div><div class="b">依据 ROM、疼痛与动作控制——<strong>三阶段框架的骨架</strong></div></div>
+    <div class="night"><div class="k">发现 02 · 反馈设计</div><div class="t">测量 ≠ 理解</div><div class="b">缺「为什么、错在哪、先改什么」——<strong>催生可解释反馈</strong></div></div>
+    <div class="night"><div class="k">发现 03 · 计划执行</div><div class="t">区分失败原因，再调整</div><div class="b">比提醒坚持更有效——<strong>催生失败分型与保护性回退</strong></div></div>
   </div>
   <div style="height:24px;flex:none"></div>
   <div class="row">
-    <div class="fcard"><div class="k">发现 04 · 进展理解</div><div class="t">用关键片段讲进展</div><div class="b">episode 叙事优于仪表盘——<strong>催生 episode 式进展设计</strong></div></div>
-    <div class="fcard"><div class="k">发现 05 · 运动学习</div><div class="t">反馈不必依赖屏幕</div><div class="b">听觉 / 触觉同样有效——<strong>催生 Eyes-free 与四通道分工</strong></div></div>
-    <div class="fcard"><div class="k">证据 · RCT</div><div class="t">数字康复确实有效</div><div class="b">已被随机对照试验证明——问题在<strong>怎么做得可理解</strong></div></div>
+    <div class="night"><div class="k">发现 04 · 进展理解</div><div class="t">用关键片段讲进展</div><div class="b">episode 叙事优于仪表盘——<strong>催生 episode 式进展</strong></div></div>
+    <div class="night"><div class="k">发现 05 · 运动学习</div><div class="t">反馈不必依赖屏幕</div><div class="b">听觉 / 触觉同样有效——<strong>催生 Eyes-free 范式</strong></div></div>
+    <div class="night"><div class="k">证据 · RCT</div><div class="t">数字康复确实有效</div><div class="b">问题不在该不该做，而在<strong>怎么做得可理解</strong></div></div>
   </div>
 
   <div class="gap"></div>
 
-  <div class="block" style="background:var(--lilac)">
-    <div class="bk-eyebrow">Research Output · 临床指南 + HCI 文献系统综述</div>
-    <div class="bk-title">三阶段训练模式：进阶由标准驱动，而非周数</div>
+  <div class="spotlight">
+    <div class="sp-eyebrow">Research Output · 三阶段训练模式</div>
+    <div class="sp-title">进阶由标准驱动，而非周数</div>
     <div class="stages">
-      <div class="stage"><div class="no">STAGE 01</div><div class="t">早期保护期</div><div class="b">强引导 · 强保护<br/>信息密集，把患者牢牢托住</div></div>
-      <div class="stage"><div class="no">STAGE 02</div><div class="t">中期恢复期</div><div class="b">目标抬升 · 反馈淡出<br/>力反馈降级为引导而非约束</div></div>
-      <div class="stage"><div class="no">STAGE 03</div><div class="t">后期功能期</div><div class="b">屏幕退场 · 走向自主<br/>「系统对我有信心了」</div></div>
+      <div class="stage"><div class="no">STAGE 01</div><div class="t">早期保护期</div><div class="b"><strong>强引导 · 强保护</strong><br/>信息密集，把患者牢牢托住</div></div>
+      <div class="stage"><div class="no">STAGE 02</div><div class="t">中期恢复期</div><div class="b"><strong>目标抬升 · 反馈淡出</strong><br/>力反馈降级为引导而非约束</div></div>
+      <div class="stage"><div class="no">STAGE 03</div><div class="t">后期功能期</div><div class="b"><strong>屏幕退场 · 走向自主</strong><br/>「系统对我有信心了」</div></div>
     </div>
     <div class="stage-arrow">反馈密度随阶段递减<div class="bar"></div>递减本身，被感受为信任</div>
+    <!-- sticker: climbing stairs -->
+    <svg class="stick" style="right:-26px;top:-86px;transform:rotate(6deg)" width="270" height="240" viewBox="0 0 270 240">
+      <g stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20,210 h70 v-50 h62 v-50 h62 v-60" fill="none" stroke="#fff" stroke-width="36"/>
+        <path d="M20,210 h70 v-50 h62 v-50 h62 v-60" fill="none" stroke="#150f23" stroke-width="22"/>
+        <line x1="214" y1="58" x2="214" y2="8" stroke="#fff" stroke-width="8"/>
+        <path d="M214,10 l46,14 -46,16 z" fill="#fa7faa" stroke="#fff" stroke-width="6"/>
+        <circle cx="96" cy="118" r="26" fill="#c2ef4e" stroke="#1f1633" stroke-width="6"/>
+        <circle cx="88" cy="112" r="4" fill="#1f1633"/>
+        <circle cx="106" cy="112" r="4" fill="#1f1633"/>
+        <path d="M88,128 Q97,135 106,127" fill="none" stroke="#1f1633" stroke-width="4.5"/>
+        <path d="M96,144 q-4,22 14,30 M96,144 q-22,12 -30,2" fill="none" stroke="#c2ef4e" stroke-width="9"/>
+      </g>
+    </svg>
   </div>
 
   <div class="gap"></div>
 
-  <!-- why staging works -->
   <div class="row">
-    <div class="benefit"><div class="k">01 · Safety</div><div class="t">安全</div><div class="b">角度墙始终冗余在目标之上，进阶不冒进</div></div>
-    <div class="benefit"><div class="k">02 · Explainable</div><div class="t">可解释</div><div class="b">知道为什么进阶、为什么不进阶</div></div>
-    <div class="benefit"><div class="k">03 · Motivation</div><div class="t">保持动机</div><div class="b">目标永远「再多一点点」，进步被看见</div></div>
-    <div class="benefit"><div class="k">04 · Autonomy</div><div class="t">走向自主</div><div class="b">从被辅助过渡到自主管理</div></div>
+    <div class="benefit"><div class="k">01 Safety</div><div class="t">安全</div><div class="b">角度墙始终冗余在目标之上</div></div>
+    <div class="benefit"><div class="k">02 Explainable</div><div class="t">可解释</div><div class="b">知道为什么进阶、为什么不进阶</div></div>
+    <div class="benefit"><div class="k">03 Motivation</div><div class="t">保持动机</div><div class="b">目标永远「再多一点点」</div></div>
+    <div class="benefit"><div class="k">04 Autonomy</div><div class="t">走向自主</div><div class="b">从被辅助过渡到自主管理</div></div>
   </div>
 
   <div class="gap"></div>
 
-  <div class="pills">
-    <div class="pill"><div class="n">1</div><div class="t">回退是保护<br/>不是惩罚</div></div>
-    <div class="pill"><div class="n">2</div><div class="t">Eyes-free<br/>训练</div></div>
-    <div class="pill"><div class="n">3</div><div class="t">不表演<br/>情感</div></div>
-    <div class="pill"><div class="n">4</div><div class="t">反馈密度<br/>递减</div></div>
-    <div class="pill"><div class="n">5</div><div class="t">多通道<br/>分工</div></div>
-  </div>
-
-  <div class="gap"></div>
-
-  <!-- user study -->
   <div class="row">
-    <div class="stats" style="flex:1.1">
-      <div class="stat"><div class="n">N=10</div><div class="l">被试内实验</div></div>
-      <div class="stat"><div class="n">3×3</div><div class="l">拉丁方平衡</div></div>
-    </div>
-    <div class="fcard"><div class="k">Conditions</div><div class="t">C1 · C2a · C2c</div><div class="b">视觉基线 / 早期配置 / 后期配置</div></div>
-    <div class="fcard"><div class="k">Measures</div><div class="t">客观 + 主观</div><div class="b">ROM、节律、事件 + 三维度自评量表</div></div>
-    <div class="fcard"><div class="k">Analysis</div><div class="t">质性主题分析</div><div class="b">身体觉知 · 系统关系 · 陪伴感知</div></div>
+    <div class="stat"><div class="n">N=10</div><div class="l">被试内实验</div></div>
+    <div class="stat"><div class="n">3×3</div><div class="l">拉丁方平衡</div></div>
+    <div class="night"><div class="k">Conditions</div><div class="t">C1 · C2a · C2c</div><div class="b">视觉基线 / 早期 / 后期配置</div></div>
+    <div class="night"><div class="k">Measures</div><div class="t">客观 + 主观</div><div class="b">ROM、节律 + 三维自评量表</div></div>
+    <div class="night"><div class="k">Analysis</div><div class="t">质性主题分析</div><div class="b">身体觉知 · 关系 · 陪伴感知</div></div>
   </div>
 
-  <div class="gap-sec"></div>
+  <!-- ════ divider ════ -->
+  <div class="squiggle"><svg viewBox="0 0 2068 36" preserveAspectRatio="none"><path d="M0,18 q28,-16 56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0" fill="none" stroke="#c2ef4e" stroke-width="5" stroke-linecap="round"/></svg></div>
 
   <!-- ════════════ 02 HARDWARE ════════════ -->
-  <div class="eyebrow"><span class="num">02</span> HARDWARE · 硬件</div>
-  <div class="headline">一副<em>会施力</em>的膝关节外骨骼</div>
-  <div class="lead">感知膝角，主动施力——给独自康复的人，多一层<strong>引导与保护</strong>。</div>
+  <div class="eyebrow"><span class="num">02</span> HARDWARE · 硬件 <span class="ln"></span></div>
+  <div style="position:relative">
+    <div class="display">一副<span class="chip">会施力</span>的膝关节外骨骼</div>
+    <div class="sub">感知膝角，主动施力——给独自康复的人，多一层<strong>引导与保护</strong>。</div>
+    <!-- sticker: dumbbell brace -->
+    <svg class="stick" style="right:10px;top:-46px;transform:rotate(-7deg)" width="300" height="250" viewBox="0 0 300 250">
+      <g stroke-linecap="round" stroke-linejoin="round">
+        <rect x="96" y="60" width="108" height="44" rx="20" fill="#6a5fc1" stroke="#fff" stroke-width="8"/>
+        <rect x="96" y="160" width="108" height="44" rx="20" fill="#6a5fc1" stroke="#fff" stroke-width="8"/>
+        <rect x="138" y="100" width="24" height="64" fill="#fff"/>
+        <circle cx="150" cy="132" r="40" fill="#fa7faa" stroke="#fff" stroke-width="8"/>
+        <circle cx="138" cy="124" r="5" fill="#1f1633"/>
+        <circle cx="162" cy="124" r="5" fill="#1f1633"/>
+        <path d="M138,144 Q150,153 162,143" fill="none" stroke="#1f1633" stroke-width="5"/>
+        <line x1="232" y1="70" x2="232" y2="194" stroke="#fff" stroke-width="10"/>
+        <rect x="216" y="58" width="32" height="34" rx="8" fill="#c2ef4e" stroke="#1f1633" stroke-width="5"/>
+        <rect x="216" y="172" width="32" height="34" rx="8" fill="#c2ef4e" stroke="#1f1633" stroke-width="5"/>
+        <path d="M52,84 q-12,10 -2,22 M40,120 q-14,8 -6,20" fill="none" stroke="#fa7faa" stroke-width="7"/>
+        <circle cx="62" cy="178" r="8" fill="#c2ef4e"/>
+      </g>
+    </svg>
+  </div>
 
   <div class="gap"></div>
 
   <div class="scene">
     <img src="../assets/img/photo/scene-main.jpg" alt="客厅训练场景" />
     <div class="tags">
-      <div class="tag"><b>R²≈0.97</b>膝角融合精度</div>
-      <div class="tag"><b>50 Hz</b>力反馈闭环</div>
-      <div class="tag"><b>2×IMU</b>双总线同步</div>
-      <div class="tag"><b>直驱</b>关节电机</div>
+      <div class="tagp"><b>R²≈0.97</b>膝角融合</div>
+      <div class="tagp"><b>50 Hz</b>力反馈闭环</div>
+      <div class="tagp"><b>2×IMU</b>双总线同步</div>
+      <div class="tagp"><b>直驱</b>关节电机</div>
     </div>
   </div>
 
   <div class="gap"></div>
 
-  <!-- three photo cards -->
   <div class="row">
-    <div class="hwcard">
-      <div class="ph"><img src="../assets/img/photo/imu-dock.jpg" alt="磁吸 IMU 模块" style="object-position:center 60%" /></div>
-      <div class="tx"><div class="t">磁吸 IMU · 吸上即连</div><div class="b">磁吸对位 + Pogo pin 触点；后期可独立穿戴——硬件形态随阶段递减</div></div>
+    <div class="hw">
+      <div class="ph"><img src="../assets/img/photo/imu-dock.jpg" style="object-position:center 60%" alt="磁吸 IMU" /></div>
+      <div class="tx"><div class="t">磁吸 IMU · 吸上即连</div><div class="b">磁吸对位 + Pogo pin；后期可<strong>独立穿戴</strong>——形态随阶段递减</div></div>
     </div>
-    <div class="hwcard">
-      <div class="ph"><img src="../assets/img/photo/motor-joint.jpg" alt="关节电机" style="object-position:center 55%" /></div>
-      <div class="tx"><div class="t">关节电机 · 同轴直驱</div><div class="b">宇树 Go-M8010-6，RS485 直驱——力的方向与屈伸完全一致</div></div>
+    <div class="hw">
+      <div class="ph"><img src="../assets/img/photo/motor-joint.jpg" style="object-position:center 55%" alt="关节电机" /></div>
+      <div class="tx"><div class="t">关节电机 · 同轴直驱</div><div class="b">宇树 Go-M8010-6 · RS485——<strong>力的方向与屈伸一致</strong></div></div>
     </div>
-    <div class="hwcard">
-      <div class="ph"><img src="../assets/img/photo/fidlock-steps.jpg" alt="开合腿环穿戴三步" /></div>
+    <div class="hw" style="position:relative">
+      <div class="ph"><img src="../assets/img/photo/fidlock-steps.jpg" alt="开合腿环" /></div>
       <div class="tx"><div class="t">开合腿环 · 单手穿戴</div>
         <div class="steps"><span>01 打开穿入</span><span>02 磁吸扣合</span><span>03 旋转锁紧</span></div>
       </div>
+      <!-- sticker: magnet -->
+      <svg class="stick" style="right:-20px;top:-46px;transform:rotate(10deg)" width="150" height="140" viewBox="0 0 150 140">
+        <g stroke-linecap="round" stroke-linejoin="round">
+          <path d="M38,96 a37,37 0 1 1 74,0 v-34 h-26 v34 a11,11 0 1 1 -22,0 v-34 h-26 z" fill="#fa7faa" stroke="#fff" stroke-width="7" transform="rotate(180 75 79)"/>
+          <rect x="49" y="96" width="26" height="18" fill="#fff"/>
+          <rect x="75" y="96" width="26" height="18" fill="#c2ef4e"/>
+          <path d="M30,28 q8,-10 18,-4 M104,22 q10,-6 16,2" fill="none" stroke="#c2ef4e" stroke-width="6"/>
+        </g>
+      </svg>
     </div>
   </div>
 
   <div class="gap"></div>
 
-  <div class="block" style="background:var(--navy);color:#fff">
-    <div class="bk-eyebrow" style="color:#fff">Force Feedback · 三段式虚拟墙</div>
-    <div class="bk-title" style="color:#fff">FREE — SOFT — WALL</div>
+  <div class="spotlight" style="background:var(--primary);border:2px solid var(--hairline)">
+    <div class="sp-eyebrow">Force Feedback · 三段式虚拟墙</div>
+    <div class="sp-title">FREE — SOFT — WALL</div>
     <div class="zonebar">
       <div class="zone zone--free"><span class="z">FREE</span><span class="zt">自由段</span><span class="zb">无阻力</span></div>
       <div class="zone zone--soft"><span class="z">SOFT</span><span class="zt">缓冲段</span><span class="zb">阻力渐增</span></div>
       <div class="zone zone--wall"><span class="z">WALL</span><span class="zt">硬墙段</span><span class="zb">安全约束</span></div>
     </div>
     <div class="navy-cols">
-      <div class="navy-col"><span class="dot"></span><span>角度墙<strong>始终略高于当日目标</strong>——给挑战空间，守安全边界</span></div>
-      <div class="navy-col"><span class="dot"></span><span>虚拟墙 + 急停是<strong>硬件底线</strong>；缓停 + 降阶是软件判定</span></div>
-      <div class="navy-col"><span class="dot"></span><span>疼痛跨阈值<strong>单次即触发</strong>保护——医学底线，不需累积</span></div>
+      <div class="navy-col"><span class="dot"></span><span>角度墙<strong>始终略高于当日目标</strong>——给挑战，守边界</span></div>
+      <div class="navy-col"><span class="dot"></span><span>虚拟墙 + 急停是<strong>硬件底线</strong>，缓停 + 降阶是软件判定</span></div>
+      <div class="navy-col"><span class="dot"></span><span>疼痛跨阈值<strong>单次即触发</strong>——医学底线，不需累积</span></div>
     </div>
   </div>
 
   <div class="gap"></div>
 
-  <!-- host dashboard + sensing -->
   <div class="hostrow">
-    <div class="hostshot"><img src="../assets/img/ui/host-dashboard-solo.png" alt="PyQt6 上位机仪表盘" /></div>
+    <div class="hostshot"><img src="../assets/img/ui/host-dashboard-solo.png" alt="PyQt6 上位机" /></div>
     <div class="hostinfo">
-      <div class="fcard"><div class="k">Sensing · 重力向量法</div><div class="t">双 IMU 膝角融合 R²≈0.97</div><div class="b">零位校准抵消装配误差，抗漂移保证长时训练稳定</div></div>
-      <div class="fcard"><div class="k">Host · PyQt6 仪表盘</div><div class="t">实时监测与电机直驱</div><div class="b">电机角 / IMU 膝角双曲线对比，FREE · SOFT · WALL 区随动作点亮</div></div>
+      <div class="night"><div class="k">Sensing · 重力向量法</div><div class="t">双 IMU 膝角融合 R²≈0.97</div><div class="b">零位校准抵消装配误差，<strong>抗漂移</strong>保证长时稳定</div></div>
+      <div class="night"><div class="k">Host · PyQt6 仪表盘</div><div class="t">实时监测与电机直驱</div><div class="b">电机角 / IMU 膝角双曲线，<strong>三区状态</strong>随动作点亮</div></div>
     </div>
   </div>
 
   <div class="gap"></div>
 
-  <div class="devices">
+  <div class="row">
     <div class="device"><span class="dn">支具</span><span class="dr">采集 · 力反馈</span></div>
     <div class="device"><span class="dn">Mac</span><span class="dr">运算 · 直驱</span></div>
     <div class="device"><span class="dn">iPhone</span><span class="dr">交互界面</span></div>
     <div class="device"><span class="dn">Watch</span><span class="dr">触觉提示</span></div>
   </div>
 
-  <div class="gap-sec"></div>
+  <!-- ════ divider ════ -->
+  <div class="squiggle"><svg viewBox="0 0 2068 36" preserveAspectRatio="none"><path d="M0,18 q28,-16 56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0" fill="none" stroke="#c2ef4e" stroke-width="5" stroke-linecap="round"/></svg></div>
 
   <!-- ════════════ 03 UI ════════════ -->
-  <div class="eyebrow"><span class="num">03</span> INTERFACE · UI</div>
-  <div class="headline">屏幕是<em>反思通道</em>，不是仪表盘</div>
-  <div class="lead">动作进行中，任何视觉信息<strong>都不应是必要的</strong>。</div>
-
-  <div class="gap"></div>
-
-  <div class="block" style="background:var(--cream);padding:36px 56px">
-    <div class="efrow">
-      <div class="phone"><span class="scr"><img src="../assets/img/ui/eyes-free.png" alt="Eyes-free 训练界面" /></span></div>
-      <div class="ef-claims">
-        <div class="bk-eyebrow">Eyes-free Paradigm</div>
-        <div class="bk-title">训练中的屏幕，几乎是空的</div>
-        <div class="claim"><span class="ic">力</span>动作指令走力反馈、声音与触觉</div>
-        <div class="claim"><span class="ic">瞥</span>字号与层级按「一瞥可读」设计</div>
-        <div class="claim"><span class="ic">语</span>语言只在组间休息与总结出现</div>
-        <div class="ef-modes">
-          <div class="ef-mode"><div class="mk">务实 Eyes-free</div><div class="mt">手机移开，手表保留最小可瞥视</div></div>
-          <div class="ef-mode"><div class="mk">严格 Eyes-free</div><div class="mt">全部反馈走力 / 声音 / 触觉</div></div>
-        </div>
-      </div>
-    </div>
+  <div class="eyebrow"><span class="num">03</span> INTERFACE · UI <span class="ln"></span></div>
+  <div style="position:relative">
+    <div class="display">屏幕是<span class="chip">反思通道</span>，不是仪表盘</div>
+    <div class="sub">动作进行中，任何视觉信息<strong>都不应是必要的</strong>。</div>
   </div>
 
   <div class="gap"></div>
 
-  <!-- IA five phones -->
+  <div class="efrow">
+    <div class="phone"><span class="scr"><img src="../assets/img/ui/eyes-free.png" alt="Eyes-free" /></span></div>
+    <div class="ef-claims">
+      <div class="sp-eyebrow">Eyes-free Paradigm</div>
+      <div class="ef-title">训练中的屏幕，几乎是空的</div>
+      <div class="claim"><span class="ic">力</span>动作指令走<strong>力反馈、声音与触觉</strong></div>
+      <div class="claim"><span class="ic">瞥</span>字号与层级按<strong>「一瞥可读」</strong>设计</div>
+      <div class="claim"><span class="ic">语</span>语言只在<strong>组间休息与总结</strong>出现</div>
+      <div class="ef-modes">
+        <div class="ef-mode"><div class="mk">务实 Eyes-free</div><div class="mt">手机移开，手表保留最小可瞥视</div></div>
+        <div class="ef-mode"><div class="mk">严格 Eyes-free</div><div class="mt">全部反馈走力 / 声音 / 触觉</div></div>
+      </div>
+    </div>
+    <!-- sticker: sleeping phone -->
+    <svg class="stick" style="right:34px;top:-58px;transform:rotate(7deg)" width="190" height="210" viewBox="0 0 190 210">
+      <g stroke-linecap="round" stroke-linejoin="round">
+        <rect x="38" y="40" width="100" height="160" rx="24" fill="#6a5fc1" stroke="#fff" stroke-width="8"/>
+        <rect x="50" y="56" width="76" height="128" rx="14" fill="#150f23"/>
+        <path d="M68,118 q6,6 14,0 M96,118 q6,6 14,0" fill="none" stroke="#c2ef4e" stroke-width="5"/>
+        <path d="M80,142 q9,6 18,0" fill="none" stroke="#c2ef4e" stroke-width="5"/>
+        <text x="128" y="38" font-family="Rubik,sans-serif" font-size="34" font-weight="700" fill="#fa7faa">z</text>
+        <text x="146" y="22" font-family="Rubik,sans-serif" font-size="26" font-weight="700" fill="#fa7faa">z</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="gap"></div>
+
   <div class="iagrid">
     <div class="iacell">
       <div class="phone"><span class="scr"><img src="../assets/img/ui/ia-stage.png" alt="阶段管理" /></span></div>
@@ -425,39 +500,46 @@
 
   <div class="gap"></div>
 
-  <!-- three layers -->
   <div class="layers">
-    <div class="layer"><div class="lk">Before · 训练前</div><div class="lq">「这个动作是干什么的」</div><div class="lb">动作目标 · <strong>为什么是现在</strong> · 达标标准——先懂，再练</div></div>
-    <div class="layer"><div class="lk">During · 训练中</div><div class="lq">「我哪里错了」</div><div class="lb"><strong>一次只纠正一个错误</strong>，先给方向、不先给数字</div></div>
-    <div class="layer"><div class="lk">After · 训练后</div><div class="lq">「我今天练得怎么样」</div><div class="lb">最好的一点 + 待改进的一点——<strong>总结，而不是打分</strong></div></div>
+    <div class="layer">
+      <div class="lph"><img src="../assets/img/ui/action-brief.png" alt="训练前" /></div>
+      <div class="ltx"><div class="lk">Before · 训练前</div><div class="lq">「这个动作是干什么的」</div><div class="lb">目标 · <strong>为什么是现在</strong> · 达标标准</div></div>
+    </div>
+    <div class="layer">
+      <div class="lph"><img src="../assets/img/ui/set-summary.png" alt="训练中" /></div>
+      <div class="ltx"><div class="lk">During · 训练中</div><div class="lq">「我哪里错了」</div><div class="lb"><strong>一次只纠正一个错误</strong>，先方向后数字</div></div>
+    </div>
+    <div class="layer">
+      <div class="lph"><img src="../assets/img/ui/session-summary.png" alt="训练后" /></div>
+      <div class="ltx"><div class="lk">After · 训练后</div><div class="lq">「我今天练得怎么样」</div><div class="lb"><strong>总结，而不是打分</strong>——最好一点+待改一点</div></div>
+    </div>
   </div>
 
   <div class="gap"></div>
 
-  <!-- language system -->
   <div class="langrow">
     <div class="lang lang--bad">
       <div class="gk">✗ 一般系统 · 只翻译数值</div>
       <div class="gt">「速度过快」</div>
-      <div class="gb">错在哪、为什么重要、该怎么改，全都没说</div>
+      <div class="gb">错在哪、为什么重要、怎么改——全都没说</div>
     </div>
     <div class="lang lang--good">
       <div class="gk">✓ 我们的总结 · 具体 · 数据锚 · 有路径</div>
-      <div class="gt">「最稳的是第二组——下一次试试整组都用第二组的速度」</div>
+      <div class="gt">「最稳的是第二组——下次试试整组都用这个速度」</div>
       <div class="gb">不安慰、不夸赞、没有感叹号与 emoji</div>
     </div>
   </div>
 
   <div class="gap"></div>
 
-  <div class="failrow">
+  <div class="row">
     <div class="fail"><span class="fk">太痛</span><span class="fb">先退一步观察</span></div>
     <div class="fail"><span class="fk">太难</span><span class="fb">聚焦一个要点</span></div>
     <div class="fail"><span class="fk">太忙</span><span class="fb">拆小，别拆掉</span></div>
     <div class="fail"><span class="fk">太轻</span><span class="fb">适度进阶</span></div>
   </div>
 
-  <div class="marquee">ACL 智能康复系统<span>·</span>研究 — 硬件 — UI<span>·</span>2026</div>
+  <div class="marquee">ACL 智能康复系统 <b>//</b> RESEARCH — HARDWARE — UI <b>//</b> 2026</div>
 
 </div>
 </body>
