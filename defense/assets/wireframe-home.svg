@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844">
+  <title>首页 / Home</title>
+  <desc>iPhone 15 Pro wireframe · 390x844pt · 见 design/00_设计语言与组件库.md</desc>
+
+  <!-- ====== 页面背景 ====== -->
+  <rect width="390" height="844" fill="#F8FAFC"/>
+
+  <!-- ====== iOS 状态栏区域（提示参考） ====== -->
+  <rect x="0" y="0" width="390" height="59" fill="#F8FAFC"/>
+  <rect x="125" y="11" width="125" height="36" rx="18" fill="#0F172A"/>
+  <text x="20" y="30" font-family="-apple-system, SF Pro Text, system-ui" font-size="13" font-weight="600" fill="#0F172A">15:42</text>
+  <line x1="0" y1="59" x2="390" y2="59" stroke="#E2E8F0" stroke-dasharray="2 4"/>
+  <text x="20" y="52" font-family="-apple-system" font-size="9" fill="#94A3B8">— iOS 安全区上沿 —</text>
+
+  <!-- ====== StatusBar 顶部状态条 ====== -->
+  <g transform="translate(0, 75)">
+    <circle cx="26" cy="14" r="5" fill="#059669"/>
+    <text x="38" y="19" font-family="-apple-system" font-size="14" font-weight="500" fill="#475569">阶段 · 中期恢复期</text>
+    <text x="370" y="19" font-family="-apple-system" font-size="14" fill="#94A3B8" text-anchor="end">Day 28</text>
+  </g>
+
+  <!-- ====== 问候语 ====== -->
+  <g transform="translate(20, 132)">
+    <text x="0" y="0" font-family="-apple-system" font-size="13" fill="#94A3B8">5 月 18 日 · 周一</text>
+    <text x="0" y="32" font-family="-apple-system" font-size="28" font-weight="600" fill="#0F172A">下午好，六十</text>
+  </g>
+
+  <!-- ====== 阶段卡（大）====== -->
+  <g transform="translate(20, 200)">
+    <rect x="0" y="0" width="350" height="148" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+
+    <!-- Badge -->
+    <rect x="16" y="16" width="58" height="22" rx="11" fill="#F1F5F9"/>
+    <text x="45" y="31" font-family="-apple-system" font-size="12" fill="#475569" text-anchor="middle">中期</text>
+
+    <!-- 标题 -->
+    <text x="16" y="64" font-family="-apple-system" font-size="20" font-weight="600" fill="#0F172A">恢复期 · 控制与稳定</text>
+
+    <!-- 进度条 -->
+    <rect x="16" y="84" width="318" height="6" rx="3" fill="#E2E8F0"/>
+    <rect x="16" y="84" width="195" height="6" rx="3" fill="#0F172A"/>
+
+    <!-- 进度说明 -->
+    <text x="16" y="112" font-family="-apple-system" font-size="13" fill="#475569">阶段进度 61%</text>
+    <text x="334" y="112" font-family="-apple-system" font-size="13" fill="#94A3B8" text-anchor="end">还差 3 次稳定训练</text>
+
+    <!-- 右下角入口箭头 -->
+    <text x="334" y="138" font-family="-apple-system" font-size="13" fill="#475569" text-anchor="end">查看阶段 →</text>
+
+    <!-- 注释 -->
+    <text x="0" y="170" font-family="-apple-system" font-size="9" fill="#94A3B8">[阶段卡 · 点击进入 06 阶段页]</text>
+  </g>
+
+  <!-- ====== 今日任务卡 ====== -->
+  <g transform="translate(20, 380)">
+    <rect x="0" y="0" width="350" height="160" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+
+    <!-- 顶部标签 -->
+    <text x="16" y="32" font-family="-apple-system" font-size="13" font-weight="500" fill="#475569">今天的训练</text>
+    <text x="334" y="32" font-family="-apple-system" font-size="13" fill="#94A3B8" text-anchor="end">约 15 分钟</text>
+
+    <!-- 主文字 -->
+    <text x="16" y="62" font-family="-apple-system" font-size="20" font-weight="600" fill="#0F172A">主动屈膝训练 · 三组</text>
+
+    <!-- 三组徽章 -->
+    <g transform="translate(16, 82)">
+      <rect x="0" y="0" width="100" height="42" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="50" y="18" font-family="-apple-system" font-size="11" fill="#94A3B8" text-anchor="middle">组 1 · 低</text>
+      <text x="50" y="34" font-family="-apple-system" font-size="14" font-weight="600" fill="#0F172A" text-anchor="middle">60% · 8 次</text>
+
+      <rect x="108" y="0" width="100" height="42" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="158" y="18" font-family="-apple-system" font-size="11" fill="#94A3B8" text-anchor="middle">组 2 · 标准</text>
+      <text x="158" y="34" font-family="-apple-system" font-size="14" font-weight="600" fill="#0F172A" text-anchor="middle">80% · 8 次</text>
+
+      <rect x="216" y="0" width="102" height="42" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="267" y="18" font-family="-apple-system" font-size="11" fill="#94A3B8" text-anchor="middle">组 3 · 挑战</text>
+      <text x="267" y="34" font-family="-apple-system" font-size="14" font-weight="600" fill="#0F172A" text-anchor="middle">95% · 8 次</text>
+    </g>
+
+    <!-- 重点提示 -->
+    <text x="16" y="148" font-family="-apple-system" font-size="13" fill="#475569">本次重点 · 控制下蹲速度，避免过快</text>
+
+    <text x="0" y="178" font-family="-apple-system" font-size="9" fill="#94A3B8">[今日任务卡 · 点击进入 02 训练准备页]</text>
+  </g>
+
+  <!-- ====== Episode 卡 ====== -->
+  <g transform="translate(20, 580)">
+    <rect x="0" y="0" width="350" height="84" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+
+    <rect x="16" y="16" width="32" height="32" rx="16" fill="#F1F5F9"/>
+    <text x="32" y="36" font-family="-apple-system" font-size="14" fill="#475569" text-anchor="middle">●</text>
+
+    <text x="60" y="32" font-family="-apple-system" font-size="11" fill="#94A3B8">昨天</text>
+    <text x="60" y="56" font-family="-apple-system" font-size="14" fill="#0F172A">连续四天伸膝角度提升，节律也更稳定。</text>
+
+    <text x="0" y="102" font-family="-apple-system" font-size="9" fill="#94A3B8">[最近 episode · 点击进入 08 进展页]</text>
+  </g>
+
+  <!-- ====== 主操作按钮 ====== -->
+  <g transform="translate(20, 690)">
+    <rect x="0" y="0" width="350" height="56" rx="28" fill="#0F172A"/>
+    <text x="175" y="35" font-family="-apple-system" font-size="17" font-weight="600" fill="#FFFFFF" text-anchor="middle">开始今天的训练</text>
+  </g>
+
+  <!-- ====== Bottom TabBar ====== -->
+  <g transform="translate(0, 754)">
+    <rect x="0" y="0" width="390" height="56" fill="#FFFFFF"/>
+    <line x1="0" y1="0" x2="390" y2="0" stroke="#E2E8F0"/>
+
+    <!-- 四个 Tab -->
+    <g transform="translate(48, 16)">
+      <rect x="2" y="0" width="20" height="20" rx="4" fill="#0F172A"/>
+      <text x="12" y="34" font-family="-apple-system" font-size="11" font-weight="600" fill="#0F172A" text-anchor="middle">首页</text>
+    </g>
+    <g transform="translate(140, 16)">
+      <rect x="2" y="0" width="20" height="20" rx="4" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+      <text x="12" y="34" font-family="-apple-system" font-size="11" fill="#94A3B8" text-anchor="middle">计划</text>
+    </g>
+    <g transform="translate(232, 16)">
+      <rect x="2" y="0" width="20" height="20" rx="4" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+      <text x="12" y="34" font-family="-apple-system" font-size="11" fill="#94A3B8" text-anchor="middle">进展</text>
+    </g>
+    <g transform="translate(324, 16)">
+      <rect x="2" y="0" width="20" height="20" rx="4" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+      <text x="12" y="34" font-family="-apple-system" font-size="11" fill="#94A3B8" text-anchor="middle">我的</text>
+    </g>
+  </g>
+
+  <!-- Safe area bottom marker -->
+  <line x1="0" y1="810" x2="390" y2="810" stroke="#E2E8F0" stroke-dasharray="2 4"/>
+  <text x="20" y="824" font-family="-apple-system" font-size="9" fill="#94A3B8">— iOS 安全区下沿（home indicator）—</text>
+
+  <!-- ====== 右侧设计注释（线框图阶段保留，高保真删除）====== -->
+  <g transform="translate(0, 0)" opacity="0.4">
+    <text x="385" y="200" font-family="-apple-system" font-size="9" fill="#475569" text-anchor="end" transform="rotate(-90 385 200)">问候语区</text>
+  </g>
+</svg>

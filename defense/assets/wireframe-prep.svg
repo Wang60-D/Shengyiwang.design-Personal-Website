@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844">
+  <title>训练准备页 / Pre-Training</title>
+  <desc>iPhone 15 Pro wireframe · 模态流第一页 · 无 TabBar</desc>
+
+  <!-- ====== 页面背景 ====== -->
+  <rect width="390" height="844" fill="#F8FAFC"/>
+
+  <!-- ====== iOS 状态栏 ====== -->
+  <rect x="0" y="0" width="390" height="59" fill="#F8FAFC"/>
+  <rect x="125" y="11" width="125" height="36" rx="18" fill="#0F172A"/>
+  <text x="20" y="30" font-family="-apple-system, SF Pro Text" font-size="13" font-weight="600" fill="#0F172A">15:43</text>
+  <line x1="0" y1="59" x2="390" y2="59" stroke="#E2E8F0" stroke-dasharray="2 4"/>
+
+  <!-- ====== 顶部导航：返回 + 关闭 ====== -->
+  <g transform="translate(0, 75)">
+    <text x="20" y="22" font-family="-apple-system" font-size="17" fill="#0F172A">‹ 返回</text>
+    <text x="370" y="22" font-family="-apple-system" font-size="14" fill="#94A3B8" text-anchor="end">关闭 ✕</text>
+  </g>
+
+  <!-- ====== 页面标题 ====== -->
+  <g transform="translate(20, 130)">
+    <text x="0" y="0" font-family="-apple-system" font-size="13" fill="#94A3B8">训练准备</text>
+    <text x="0" y="32" font-family="-apple-system" font-size="28" font-weight="600" fill="#0F172A">主动屈膝训练</text>
+    <text x="0" y="58" font-family="-apple-system" font-size="14" fill="#475569">中期阶段 · 控制与稳定</text>
+  </g>
+
+  <!-- ====== 动作说明卡 ====== -->
+  <g transform="translate(20, 220)">
+    <rect x="0" y="0" width="350" height="184" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+
+    <text x="16" y="32" font-family="-apple-system" font-size="13" font-weight="500" fill="#475569">这个动作要做什么</text>
+
+    <text x="16" y="60" font-family="-apple-system" font-size="14" fill="#0F172A">恢复膝关节的活动范围，让</text>
+    <text x="16" y="78" font-family="-apple-system" font-size="14" fill="#0F172A">股四头肌找回对屈伸节奏的控制。</text>
+
+    <line x1="16" y1="94" x2="334" y2="94" stroke="#E2E8F0"/>
+
+    <text x="16" y="116" font-family="-apple-system" font-size="13" font-weight="500" fill="#475569">本次注意</text>
+    <text x="16" y="138" font-family="-apple-system" font-size="14" fill="#0F172A">下蹲缓慢，避免速度突变。</text>
+    <text x="16" y="156" font-family="-apple-system" font-size="14" fill="#0F172A">疼痛任何时候可以按表冠暂停。</text>
+
+    <text x="0" y="206" font-family="-apple-system" font-size="9" fill="#94A3B8">[动作说明卡 · 文字遵循文档 02 §8 模板规范]</text>
+  </g>
+
+  <!-- ====== 本次目标卡 ====== -->
+  <g transform="translate(20, 432)">
+    <rect x="0" y="0" width="350" height="142" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+
+    <text x="16" y="32" font-family="-apple-system" font-size="13" font-weight="500" fill="#475569">本次目标</text>
+
+    <!-- 三组目标行 -->
+    <g transform="translate(16, 46)">
+      <!-- 组 1 -->
+      <text x="0" y="22" font-family="-apple-system" font-size="14" fill="#0F172A">组 1</text>
+      <text x="64" y="22" font-family="-apple-system" font-size="14" fill="#475569">8 次</text>
+      <text x="140" y="22" font-family="-apple-system" font-size="14" fill="#475569">目标 72°</text>
+      <text x="318" y="22" font-family="-apple-system" font-size="13" fill="#94A3B8" text-anchor="end">慢节律</text>
+
+      <line x1="0" y1="32" x2="318" y2="32" stroke="#E2E8F0"/>
+
+      <!-- 组 2 -->
+      <text x="0" y="54" font-family="-apple-system" font-size="14" fill="#0F172A">组 2</text>
+      <text x="64" y="54" font-family="-apple-system" font-size="14" fill="#475569">8 次</text>
+      <text x="140" y="54" font-family="-apple-system" font-size="14" fill="#475569">目标 96°</text>
+      <text x="318" y="54" font-family="-apple-system" font-size="13" fill="#94A3B8" text-anchor="end">标准</text>
+
+      <line x1="0" y1="64" x2="318" y2="64" stroke="#E2E8F0"/>
+
+      <!-- 组 3 -->
+      <text x="0" y="86" font-family="-apple-system" font-size="14" fill="#0F172A">组 3</text>
+      <text x="64" y="86" font-family="-apple-system" font-size="14" fill="#475569">8 次</text>
+      <text x="140" y="86" font-family="-apple-system" font-size="14" fill="#475569">目标 114°</text>
+      <text x="318" y="86" font-family="-apple-system" font-size="13" fill="#94A3B8" text-anchor="end">挑战 · 快</text>
+    </g>
+
+    <text x="0" y="164" font-family="-apple-system" font-size="9" fill="#94A3B8">[本次目标卡 · 数字基于个体最大屈膝角 120° 自动计算]</text>
+  </g>
+
+  <!-- ====== 硬件检查卡 ====== -->
+  <g transform="translate(20, 600)">
+    <rect x="0" y="0" width="350" height="120" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+
+    <text x="16" y="32" font-family="-apple-system" font-size="13" font-weight="500" fill="#475569">硬件检查</text>
+    <text x="334" y="32" font-family="-apple-system" font-size="13" fill="#059669" text-anchor="end">全部就绪</text>
+
+    <!-- 检查项 -->
+    <g transform="translate(16, 50)">
+      <circle cx="6" cy="10" r="4" fill="#059669"/>
+      <text x="20" y="14" font-family="-apple-system" font-size="13" fill="#0F172A">支具</text>
+
+      <circle cx="92" cy="10" r="4" fill="#059669"/>
+      <text x="106" y="14" font-family="-apple-system" font-size="13" fill="#0F172A">大腿 IMU</text>
+
+      <circle cx="196" cy="10" r="4" fill="#059669"/>
+      <text x="210" y="14" font-family="-apple-system" font-size="13" fill="#0F172A">小腿 IMU</text>
+
+      <circle cx="6" cy="40" r="4" fill="#059669"/>
+      <text x="20" y="44" font-family="-apple-system" font-size="13" fill="#0F172A">电机 · 31°C</text>
+
+      <circle cx="120" cy="40" r="4" fill="#059669"/>
+      <text x="134" y="44" font-family="-apple-system" font-size="13" fill="#0F172A">已校准 · ROM 120°</text>
+    </g>
+
+    <text x="0" y="142" font-family="-apple-system" font-size="9" fill="#94A3B8">[硬件检查卡 · 状态来自 Mac 端实时心跳]</text>
+  </g>
+
+  <!-- ====== 主操作按钮 ====== -->
+  <g transform="translate(20, 754)">
+    <rect x="0" y="0" width="350" height="56" rx="28" fill="#0F172A"/>
+    <text x="175" y="35" font-family="-apple-system" font-size="17" font-weight="600" fill="#FFFFFF" text-anchor="middle">开始</text>
+  </g>
+
+  <!-- Safe area bottom marker -->
+  <line x1="0" y1="820" x2="390" y2="820" stroke="#E2E8F0" stroke-dasharray="2 4"/>
+</svg>

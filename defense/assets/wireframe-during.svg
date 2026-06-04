@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844">
+  <title>训练中页 / In-Training (Eyes-free)</title>
+  <desc>iPhone 15 Pro wireframe · eyes-free 范式核心页 · 大量留白故意为之</desc>
+
+  <!-- ====== 页面背景 ====== -->
+  <rect width="390" height="844" fill="#F8FAFC"/>
+
+  <!-- ====== iOS 状态栏（保留以便用户查看时间，但不强调）====== -->
+  <rect x="0" y="0" width="390" height="59" fill="#F8FAFC"/>
+  <rect x="125" y="11" width="125" height="36" rx="18" fill="#0F172A"/>
+  <text x="20" y="30" font-family="-apple-system" font-size="13" font-weight="600" fill="#0F172A">15:51</text>
+  <line x1="0" y1="59" x2="390" y2="59" stroke="#E2E8F0" stroke-dasharray="2 4"/>
+
+  <!-- ====== 顶部存在感指示器（极小、呼吸动画）====== -->
+  <g transform="translate(195, 100)">
+    <!-- 外圈光晕（暗示呼吸动画）-->
+    <circle cx="0" cy="0" r="14" fill="#059669" opacity="0.12"/>
+    <circle cx="0" cy="0" r="10" fill="#059669" opacity="0.20"/>
+    <!-- 核心点 -->
+    <circle cx="0" cy="0" r="5" fill="#059669"/>
+  </g>
+  <text x="195" y="140" font-family="-apple-system" font-size="11" fill="#94A3B8" text-anchor="middle" letter-spacing="0.5">训练中</text>
+  <text x="195" y="160" font-family="-apple-system" font-size="11" fill="#94A3B8" text-anchor="middle">组 2 / 3 · 第 4 次</text>
+
+  <!-- ====== 中央指引文字（5 秒后淡出，wireframe 展示活动状态）====== -->
+  <g transform="translate(195, 380)">
+    <text x="0" y="0" font-family="-apple-system" font-size="22" font-weight="500" fill="#475569" text-anchor="middle">把手机放下</text>
+    <text x="0" y="34" font-family="-apple-system" font-size="14" fill="#94A3B8" text-anchor="middle">支具会陪你完成这一组</text>
+  </g>
+
+  <!-- ====== 注：本区在活动状态约 5 秒后淡出至几乎不可见 ====== -->
+  <g opacity="0.6">
+    <text x="195" y="448" font-family="-apple-system" font-size="9" fill="#94A3B8" text-anchor="middle" font-style="italic">[指引文字 · 出现 5 秒后透明度降至 0.1，本图示展示初始可见态]</text>
+  </g>
+
+  <!-- ====== 长大量留白 · 故意为之 ====== -->
+  <!-- 这中间什么都没有。这就是 eyes-free 的核心设计 -->
+
+  <!-- ====== 底部辅助操作 · 暂停按钮（次操作样式，避免视觉吸引）====== -->
+  <g transform="translate(95, 720)">
+    <rect x="0" y="0" width="200" height="48" rx="24" fill="none" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="100" y="30" font-family="-apple-system" font-size="15" fill="#475569" text-anchor="middle">暂停</text>
+  </g>
+
+  <!-- ====== 紧急停止按钮 · 角落 ====== -->
+  <g transform="translate(310, 88)">
+    <rect x="0" y="0" width="64" height="32" rx="16" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+    <text x="32" y="21" font-family="-apple-system" font-size="13" fill="#DC2626" text-anchor="middle">急停</text>
+  </g>
+
+  <!-- ====== 设计注释（高保真删除）====== -->
+  <g opacity="0.7">
+    <text x="20" y="800" font-family="-apple-system" font-size="9" fill="#94A3B8">[设计注 · 整页可视信息极少为故意设计：见 文档 02 §9.1 与 设计哲学 §3 原则二]</text>
+    <text x="20" y="814" font-family="-apple-system" font-size="9" fill="#94A3B8">[计数/状态主要走 Apple Watch；急停亦可通过表冠侧键触发]</text>
+  </g>
+
+  <!-- ====== 安全区下沿 ====== -->
+  <line x1="0" y1="820" x2="390" y2="820" stroke="#E2E8F0" stroke-dasharray="2 4"/>
+</svg>
