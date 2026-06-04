@@ -2,479 +2,450 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8" />
-<title>毕设挂轴 · 2268×5911 · Sentry 风格</title>
+<title>毕设挂轴 · 2268×5911 · 学术海报</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
 <style>
-  /* ═══ Sentry DESIGN.md tokens (getdesign.md/sentry), 2268×5911 canvas ═══ */
+  /* ═══ 学术海报 · 延续 shengyiwang.design 设计语言 ═══ */
   :root{
-    --primary:#150f23; --ink-deep:#1f1633; --white:#ffffff;
-    --lime:#c2ef4e; --pink:#fa7faa;
-    --violet:#6a5fc1; --violet-deep:#422082; --violet-mid:#79628c;
-    --hairline:#362d59;
-    --muted:rgba(255,255,255,.72); --faint:rgba(255,255,255,.18);
-    --r-xs:8px; --r-md:16px; --r-xl:24px; --r-xxl:36px;
-    --disp:'Archivo','Noto Sans SC','PingFang SC',sans-serif;
-    --ui:'Rubik','Noto Sans SC','PingFang SC',sans-serif;
-    --mono:'JetBrains Mono','Noto Sans SC',monospace;
+    --ink:#1d1d1f; --body:#3a3a3c; --mut:#6e6e73;
+    --blue:#0071e3; --teal:#0a7281; --warn:#d67d3e;
+    --soft:#f5f5f7; --line:#e3e4e6; --white:#fff;
+    --grad:linear-gradient(120deg,#0a7281,#0071e3 60%,#6e3bd1);
+    --sans:'Inter','Noto Sans SC','PingFang SC',sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{
     width:2268px;height:5911px;overflow:hidden;position:relative;
-    background:var(--ink-deep);color:var(--white);
-    font-family:var(--ui);-webkit-font-smoothing:antialiased;
+    background:var(--white);color:var(--ink);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
   }
-  /* starfield */
-  body::before{
-    content:'';position:absolute;inset:0;pointer-events:none;opacity:.5;
-    background-image:radial-gradient(rgba(255,255,255,.35) 1.6px, transparent 1.6px),
-                     radial-gradient(rgba(255,255,255,.18) 1.2px, transparent 1.2px);
-    background-size:520px 520px, 290px 290px;
-    background-position:40px 80px, 160px 200px;
-  }
-  .page{position:relative;width:2268px;height:5911px;padding:64px 100px 0;display:flex;flex-direction:column;z-index:1;}
+  .page{width:2268px;height:5911px;padding:50px 100px 0;display:flex;flex-direction:column;}
 
-  /* ═══ type ═══ */
-  .eyebrow{
-    font-family:var(--mono);font-size:30px;font-weight:600;letter-spacing:6px;
-    text-transform:uppercase;color:var(--pink);display:flex;align-items:center;gap:24px;
-  }
-  .eyebrow .num{
-    background:var(--pink);color:var(--primary);border-radius:var(--r-xs);
-    padding:6px 24px;font-weight:700;letter-spacing:3px;
-  }
-  .eyebrow .ln{flex:1;height:2px;background:var(--hairline);}
-  .display{
-    font-family:var(--disp);font-size:100px;font-weight:900;line-height:1.14;
-    letter-spacing:-1px;margin-top:22px;
-  }
-  .display .chip{
-    background:var(--lime);color:var(--ink-deep);border-radius:10px;
-    padding:0 22px;display:inline-block;line-height:1.22;transform:rotate(-1deg);
-  }
-  .sub{font-size:38px;font-weight:400;line-height:1.5;color:var(--muted);margin-top:18px;}
-  .sub strong{color:var(--white);font-weight:700;}
+  .gtext{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
 
-  .gap{height:30px;flex:none;}
-
-  /* ═══ squiggle divider ═══ */
-  .squiggle{margin:46px 0 40px;flex:none;}
-  .squiggle svg{display:block;width:100%;height:36px;}
-
-  /* ═══ cards ═══ */
-  .row{display:flex;gap:24px;}
-  .row>*{flex:1;}
-  .night{
-    background:var(--primary);border:2px solid var(--hairline);border-radius:var(--r-xl);
-    padding:28px 34px;
+  /* ── section banner ── */
+  .banner{
+    flex:none;background:var(--ink);color:#fff;border-radius:24px;
+    display:flex;align-items:center;gap:30px;padding:0 44px;height:100px;
   }
-  .night .k{font-family:var(--mono);font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--pink);margin-bottom:10px;}
-  .night .t{font-size:37px;font-weight:700;line-height:1.18;color:var(--white);}
-  .night .b{font-size:28px;font-weight:400;line-height:1.4;color:var(--muted);margin-top:10px;}
-  .night .b strong{color:var(--white);font-weight:600;}
-
-  .spotlight{
-    background:var(--violet-deep);border-radius:var(--r-xxl);padding:48px 56px;position:relative;
+  .banner .no{
+    font-size:46px;font-weight:800;background:var(--grad);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
   }
-  .sp-eyebrow{font-family:var(--mono);font-size:26px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--lime);margin-bottom:10px;}
-  .sp-title{font-family:var(--disp);font-size:60px;font-weight:800;line-height:1.15;letter-spacing:-0.5px;}
+  .banner .tt{font-size:46px;font-weight:800;letter-spacing:1px;}
+  .banner .en{margin-left:auto;font-size:28px;font-weight:600;letter-spacing:4px;color:rgba(255,255,255,.55);text-transform:uppercase;}
 
-  /* ═══ S1 ═══ */
-  .probe{display:flex;align-items:center;gap:20px;background:var(--primary);border:2px solid var(--hairline);border-radius:var(--r-xl);padding:24px 32px;}
-  .probe .x{
-    flex:none;width:54px;height:54px;border-radius:50%;background:var(--pink);color:var(--primary);
-    font-size:32px;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:var(--disp);
-  }
-  .probe .pt{font-size:34px;font-weight:700;}
-  .probe .pb{font-size:26px;color:var(--muted);margin-top:2px;}
+  /* ── subsection head ── */
+  .sec{display:flex;align-items:baseline;gap:20px;margin-bottom:20px;}
+  .sec .sn{font-size:32px;font-weight:800;color:var(--teal);}
+  .sec .st{font-size:42px;font-weight:800;letter-spacing:-0.5px;}
+  .sec .sd{font-size:28px;color:var(--mut);margin-left:6px;}
 
-  .stages{display:flex;gap:22px;margin-top:30px;}
-  .stage{flex:1;background:rgba(21,15,35,.45);border-radius:var(--r-xl);padding:28px 32px;}
-  .stage .no{font-family:var(--mono);font-size:24px;font-weight:700;letter-spacing:3px;color:var(--lime);margin-bottom:8px;}
-  .stage .t{font-family:var(--disp);font-size:42px;font-weight:800;margin-bottom:8px;}
-  .stage .b{font-size:28px;font-weight:400;line-height:1.4;color:var(--muted);}
-  .stage .b strong{color:var(--white);}
-  .stage-arrow{margin-top:28px;display:flex;align-items:center;gap:24px;font-size:31px;font-weight:700;}
-  .stage-arrow .bar{flex:1;height:5px;background:var(--lime);border-radius:3px;position:relative;}
-  .stage-arrow .bar::after{
-    content:'';position:absolute;right:-2px;top:50%;transform:translateY(-50%);
-    border-left:26px solid var(--lime);border-top:14px solid transparent;border-bottom:14px solid transparent;
-  }
+  .gap{height:34px;flex:none;}
+  .gap-sm{height:24px;flex:none;}
 
-  .benefit{background:transparent;border:2px solid var(--hairline);border-radius:var(--r-xl);padding:22px 30px;}
-  .benefit .k{font-family:var(--mono);font-size:22px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--violet);margin-bottom:6px;}
-  .benefit .t{font-size:35px;font-weight:700;}
-  .benefit .b{font-size:27px;color:var(--muted);line-height:1.35;margin-top:6px;}
+  .cap{font-size:27px;color:var(--mut);text-align:center;margin-top:14px;}
+  .cap b{color:var(--ink);font-weight:700;}
 
-  .stat{background:var(--primary);border:2px solid var(--hairline);border-radius:var(--r-xl);padding:24px 18px;text-align:center;}
-  .stat .n{font-family:var(--disp);font-size:64px;font-weight:900;color:var(--lime);line-height:1;}
-  .stat .l{font-size:26px;font-weight:500;color:var(--muted);margin-top:8px;}
+  /* ── 1.1 ── */
+  .intro{display:flex;gap:40px;align-items:stretch;}
+  .intro .tx{flex:1.45;font-size:33px;line-height:1.55;color:var(--body);}
+  .intro .tx strong{color:var(--ink);font-weight:700;}
+  .pains{flex:1;display:flex;flex-direction:column;gap:14px;}
+  .pain{display:flex;align-items:center;gap:18px;background:var(--soft);border-radius:18px;padding:14px 24px;}
+  .pain .x{flex:none;width:42px;height:42px;border-radius:50%;background:#fdeae3;color:#b04a3e;font-size:24px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+  .pain .pt{font-size:29px;font-weight:700;white-space:nowrap;}
+  .pain .pb{font-size:26px;color:var(--mut);white-space:nowrap;}
 
-  /* ═══ S2 ═══ */
-  .scene{
-    position:relative;border-radius:var(--r-xxl);overflow:hidden;height:470px;flex:none;
-    transform:rotate(-0.6deg);border:3px solid var(--hairline);
-  }
+  /* ── 1.2 table ── */
+  .ftable{width:100%;border-collapse:collapse;}
+  .ftable td{border-bottom:2px solid var(--line);padding:16px 18px 16px 0;vertical-align:middle;}
+  .ftable tr:last-child td{border-bottom:none;}
+  .ftable .c1{width:300px;font-size:25px;font-weight:700;color:var(--teal);letter-spacing:.5px;}
+  .ftable .c2{width:540px;font-size:31px;font-weight:700;color:var(--ink);}
+  .ftable .c3{font-size:28px;color:var(--body);}
+  .ftable .c3 b{color:var(--blue);font-weight:700;}
+  .refs{font-size:25px;color:var(--mut);margin-top:12px;}
+  .refs b{color:var(--body);}
+
+  /* ── 1.3 principles ── */
+  .prins{display:flex;gap:20px;}
+  .prin{flex:1;background:var(--soft);border-radius:18px;padding:16px 22px;display:flex;align-items:center;gap:16px;}
+  .prin .n{flex:none;width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;font-size:24px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .prin .t{font-size:27px;font-weight:700;line-height:1.2;}
+
+  /* ── 1.4 study ── */
+  .study{display:flex;gap:24px;align-items:stretch;}
+  .stat{flex:none;width:240px;background:var(--soft);border-radius:20px;padding:22px 12px;text-align:center;}
+  .stat .n{font-size:58px;font-weight:800;}
+  .stat .l{font-size:25px;color:var(--mut);margin-top:6px;}
+  .scard{flex:1;background:var(--soft);border-radius:20px;padding:20px 26px;}
+  .scard .k{font-size:24px;font-weight:700;color:var(--teal);letter-spacing:.5px;margin-bottom:4px;}
+  .scard .t{font-size:30px;font-weight:700;}
+  .scard .b{font-size:26px;color:var(--mut);margin-top:4px;line-height:1.3;}
+
+  /* ── photos ── */
+  .scene{position:relative;border-radius:32px;overflow:hidden;height:500px;flex:none;}
   .scene img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;}
-  .scene .tags{position:absolute;left:0;right:0;bottom:24px;display:flex;justify-content:center;gap:18px;}
+  .scene .tags{position:absolute;left:0;right:0;bottom:26px;display:flex;justify-content:center;gap:18px;}
   .tagp{
-    background:var(--primary);border:2px solid var(--hairline);border-radius:var(--r-md);
-    padding:14px 28px;font-size:26px;font-weight:500;color:var(--muted);
-    display:flex;align-items:baseline;gap:12px;white-space:nowrap;
+    background:rgba(255,255,255,.88);backdrop-filter:blur(8px);border-radius:999px;
+    padding:14px 30px;font-size:26px;font-weight:600;color:var(--body);
+    display:flex;align-items:baseline;gap:12px;white-space:nowrap;box-shadow:0 2px 12px rgba(0,0,0,.12);
   }
-  .tagp b{font-family:var(--disp);font-size:36px;font-weight:800;color:var(--white);}
+  .tagp b{font-size:34px;font-weight:800;color:var(--ink);}
 
-  .hw{background:var(--primary);border:2px solid var(--hairline);border-radius:var(--r-xl);overflow:hidden;}
-  .hw .ph{height:290px;overflow:hidden;}
-  .hw .ph img{width:100%;height:100%;object-fit:cover;display:block;}
-  .hw .tx{padding:22px 30px 26px;}
-  .hw .t{font-size:35px;font-weight:700;}
-  .hw .b{font-size:27px;color:var(--muted);line-height:1.35;margin-top:6px;}
-  .hw .b strong{color:var(--white);}
-  .hw .steps{display:flex;gap:10px;margin-top:12px;}
-  .hw .steps span{
-    flex:1;background:var(--faint);border-radius:var(--r-xs);
-    font-size:24px;font-weight:600;text-align:center;padding:8px 0;white-space:nowrap;color:var(--white);
+  .duo{display:flex;gap:30px;}
+  .ducard{flex:1;background:var(--soft);border-radius:28px;overflow:hidden;}
+  .ducard .ph{height:330px;overflow:hidden;position:relative;}
+  .ducard .ph img{width:100%;height:100%;object-fit:cover;display:block;}
+  .ducard .tx{padding:24px 34px 28px;}
+  .ducard .t{font-size:36px;font-weight:700;}
+  .ducard .b{font-size:28px;color:var(--body);line-height:1.4;margin-top:8px;}
+  .ducard .b strong{color:var(--ink);}
+  .annot{
+    position:absolute;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);
+    border-radius:999px;padding:10px 22px;font-size:25px;font-weight:600;color:var(--ink);
+    box-shadow:0 2px 10px rgba(0,0,0,.14);display:flex;align-items:center;gap:10px;white-space:nowrap;
   }
+  .annot i{width:10px;height:10px;border-radius:50%;background:var(--blue);}
 
-  .zonebar{display:flex;gap:16px;margin-top:30px;}
-  .zone{border-radius:var(--r-md);padding:20px 30px;display:flex;align-items:baseline;gap:16px;}
-  .zone .z{font-family:var(--mono);font-size:30px;font-weight:700;letter-spacing:3px;}
-  .zone .zt{font-size:33px;font-weight:700;}
-  .zone .zb{font-size:26px;font-weight:500;opacity:.75;}
-  .zone--free{flex:1.15;background:var(--lime);color:var(--ink-deep);}
-  .zone--soft{flex:1;background:var(--pink);color:var(--ink-deep);}
-  .zone--wall{flex:1;background:var(--white);color:var(--ink-deep);}
-  .navy-cols{display:flex;gap:36px;margin-top:26px;}
-  .navy-col{flex:1;font-size:27px;font-weight:400;line-height:1.42;color:var(--muted);display:flex;gap:14px;align-items:flex-start;}
-  .navy-col .dot{width:14px;height:14px;border-radius:50%;background:var(--lime);flex:none;margin-top:13px;}
-  .navy-col strong{color:var(--white);font-weight:600;}
+  /* ── FSW bar ── */
+  .fsw{display:flex;gap:14px;}
+  .zone{border-radius:20px;padding:18px 30px;display:flex;align-items:baseline;gap:16px;}
+  .zone .z{font-size:30px;font-weight:800;letter-spacing:2px;}
+  .zone .zt{font-size:31px;font-weight:700;}
+  .zone .zb{font-size:26px;opacity:.8;}
+  .zone--free{flex:1.15;background:#e7f2ef;color:#0a7281;}
+  .zone--soft{flex:1;background:#fdf0e3;color:#9a5b22;}
+  .zone--wall{flex:1;background:#fde5e0;color:#b04a3e;}
+  .fsw-note{font-size:28px;color:var(--body);margin-top:14px;display:flex;gap:40px;}
+  .fsw-note span{display:flex;align-items:center;gap:12px;}
+  .fsw-note i{width:12px;height:12px;border-radius:50%;background:var(--teal);flex:none;}
+  .fsw-note strong{color:var(--ink);}
 
-  .hostrow{display:flex;gap:26px;align-items:stretch;}
-  .hostshot{
-    flex:1.4;border-radius:var(--r-xxl);overflow:hidden;background:#0e1217;
-    border:3px solid var(--hairline);transform:rotate(0.5deg);
-  }
-  .hostshot img{width:100%;height:100%;object-fit:cover;display:block;}
-  .hostinfo{flex:1;display:flex;flex-direction:column;gap:22px;}
-  .hostinfo .night{flex:1;}
+  /* ── 2.5 trio ── */
+  .trio{display:flex;gap:24px;}
+  .tcard{flex:1;background:var(--soft);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;}
+  .tcard .ph{height:250px;overflow:hidden;}
+  .tcard .ph img{width:100%;height:100%;object-fit:cover;display:block;}
+  .tcard .tx{padding:18px 28px 22px;}
+  .tcard .t{font-size:31px;font-weight:700;}
+  .tcard .steps{display:flex;gap:8px;margin-top:10px;}
+  .tcard .steps span{flex:1;background:#fff;border-radius:999px;font-size:24px;font-weight:600;text-align:center;padding:8px 0;white-space:nowrap;color:var(--body);}
+  .tcard .b{font-size:26px;color:var(--body);line-height:1.45;margin-top:8px;}
+  .tcard .b strong{color:var(--ink);}
+  .tcard ul{list-style:none;margin-top:8px;}
+  .tcard li{font-size:26px;color:var(--body);line-height:1.4;padding:6px 0 6px 26px;position:relative;}
+  .tcard li::before{content:'';position:absolute;left:0;top:21px;width:12px;height:12px;border-radius:50%;background:var(--teal);}
+  .tcard li strong{color:var(--ink);}
 
-  .device{
-    background:var(--violet-mid);border:2px solid var(--violet-deep);border-radius:var(--r-xl);
-    display:flex;align-items:center;justify-content:center;gap:14px;padding:16px 10px;
-  }
-  .device .dn{font-size:31px;font-weight:700;}
-  .device .dr{font-size:25px;font-weight:400;opacity:.85;}
-
-  /* ═══ S3 ═══ */
-  .phone{background:#000;border-radius:36px;padding:8px;flex:none;border:2px solid var(--hairline);}
-  .phone .scr{border-radius:28px;overflow:hidden;display:block;font-size:0;}
+  /* ── 3.x ── */
+  .phone{background:#1d1d1f;border-radius:34px;padding:8px;flex:none;box-shadow:0 4px 18px rgba(0,0,0,.14);}
+  .phone .scr{border-radius:26px;overflow:hidden;display:block;font-size:0;}
   .phone .scr img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;}
 
-  .efrow{display:flex;gap:54px;align-items:center;background:var(--primary);border:2px solid var(--hairline);border-radius:var(--r-xxl);padding:40px 56px;position:relative;}
-  .efrow .phone{width:232px;height:494px;transform:rotate(-1.6deg);}
-  .efrow .phone .scr{width:212px;height:478px;}
+  .efrow{display:flex;gap:50px;align-items:center;background:var(--soft);border-radius:32px;padding:36px 50px;}
+  .efrow .phone{width:236px;height:502px;}
+  .efrow .phone .scr{width:220px;height:486px;}
   .ef-claims{flex:1;}
-  .ef-claims .sp-eyebrow{color:var(--lime);}
-  .ef-title{font-family:var(--disp);font-size:56px;font-weight:800;line-height:1.15;}
-  .claim{display:flex;align-items:center;gap:18px;font-size:31px;font-weight:500;margin-top:16px;color:var(--muted);}
-  .claim strong{color:var(--white);font-weight:700;}
-  .claim .ic{
-    flex:none;width:44px;height:44px;border-radius:50%;background:var(--pink);color:var(--primary);
-    display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;
-  }
-  .ef-modes{display:flex;gap:16px;margin-top:22px;}
-  .ef-mode{background:var(--faint);border-radius:var(--r-md);padding:14px 24px;flex:1;}
-  .ef-mode .mk{font-family:var(--mono);font-size:22px;font-weight:600;letter-spacing:2px;color:var(--lime);margin-bottom:4px;}
-  .ef-mode .mt{font-size:26px;font-weight:500;line-height:1.3;color:var(--muted);}
+  .ef-k{font-size:26px;font-weight:700;color:var(--teal);letter-spacing:.5px;margin-bottom:6px;}
+  .ef-title{font-size:48px;font-weight:800;letter-spacing:-0.5px;}
+  .claim{display:flex;align-items:center;gap:16px;font-size:30px;color:var(--body);margin-top:14px;}
+  .claim strong{color:var(--ink);font-weight:700;}
+  .claim .ic{flex:none;width:40px;height:40px;border-radius:50%;background:var(--ink);color:#fff;font-size:21px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .ef-modes{display:flex;gap:16px;margin-top:18px;}
+  .ef-mode{background:#fff;border-radius:16px;padding:12px 22px;flex:1;}
+  .ef-mode .mk{font-size:23px;font-weight:700;color:var(--teal);margin-bottom:2px;}
+  .ef-mode .mt{font-size:25px;color:var(--body);line-height:1.3;}
 
   .iagrid{display:flex;gap:24px;}
   .iacell{flex:1;text-align:center;}
-  .iacell .phone{width:248px;height:528px;margin:0 auto;}
-  .iacell .phone .scr{width:228px;height:508px;}
-  .iacell:nth-child(odd) .phone{transform:rotate(-1.2deg);}
-  .iacell:nth-child(even) .phone{transform:rotate(1.2deg);}
-  .iacell .qk{font-family:var(--mono);font-size:23px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--pink);margin-top:18px;}
-  .iacell .q{font-size:33px;font-weight:700;margin-top:4px;}
+  .iacell .phone{width:250px;height:532px;margin:0 auto;}
+  .iacell .phone .scr{width:234px;height:516px;}
+  .iacell .qk{font-size:24px;font-weight:700;color:var(--teal);letter-spacing:.5px;margin-top:16px;}
+  .iacell .q{font-size:32px;font-weight:700;margin-top:2px;}
 
   .layers{display:flex;gap:24px;}
-  .layer{flex:1;background:var(--primary);border:2px solid var(--hairline);border-radius:var(--r-xl);overflow:hidden;}
-  .layer .lph{height:240px;overflow:hidden;border-bottom:2px solid var(--hairline);}
+  .layer{flex:1;background:var(--soft);border-radius:24px;overflow:hidden;}
+  .layer .lph{height:230px;overflow:hidden;}
   .layer .lph img{width:100%;display:block;}
-  .layer .ltx{padding:22px 30px 26px;}
-  .layer .lk{font-family:var(--mono);font-size:23px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--lime);margin-bottom:6px;}
-  .layer .lq{font-size:34px;font-weight:700;}
-  .layer .lb{font-size:27px;color:var(--muted);line-height:1.35;margin-top:6px;}
-  .layer .lb strong{color:var(--white);}
+  .layer .ltx{padding:18px 28px 22px;}
+  .layer .lk{font-size:23px;font-weight:700;color:var(--teal);letter-spacing:.5px;margin-bottom:4px;}
+  .layer .lq{font-size:31px;font-weight:700;}
+  .layer .lb{font-size:26px;color:var(--body);line-height:1.35;margin-top:6px;}
+  .layer .lb strong{color:var(--ink);}
 
   .langrow{display:flex;gap:24px;}
-  .lang{border-radius:var(--r-xl);padding:26px 34px;flex:1;}
-  .lang--bad{background:var(--primary);border:2px solid var(--pink);}
-  .lang--good{background:var(--lime);color:var(--ink-deep);}
-  .lang .gk{font-family:var(--mono);font-size:23px;font-weight:700;letter-spacing:2px;margin-bottom:8px;}
-  .lang--bad .gk{color:var(--pink);}
-  .lang .gt{font-size:34px;font-weight:700;line-height:1.3;}
-  .lang .gb{font-size:26px;margin-top:8px;line-height:1.35;}
-  .lang--bad .gb{color:var(--muted);}
-  .lang--good .gb{color:rgba(31,22,51,.75);}
+  .lang{border-radius:24px;padding:22px 32px;flex:1;}
+  .lang--bad{background:#fdf2f0;}
+  .lang--good{background:#eef7f0;}
+  .lang .gk{font-size:24px;font-weight:700;margin-bottom:6px;}
+  .lang--bad .gk{color:#b04a3e;}
+  .lang--good .gk{color:#2f9e6b;}
+  .lang .gt{font-size:32px;font-weight:700;line-height:1.3;color:var(--ink);}
+  .lang .gb{font-size:26px;color:var(--mut);margin-top:6px;line-height:1.35;}
 
-  .fail{
-    background:var(--violet-mid);border:2px solid var(--violet-deep);border-radius:var(--r-xl);
-    padding:18px 28px;display:flex;align-items:baseline;gap:14px;justify-content:center;
-  }
-  .fail .fk{font-family:var(--disp);font-size:37px;font-weight:800;white-space:nowrap;}
-  .fail .fb{font-size:27px;font-weight:400;opacity:.9;white-space:nowrap;}
+  .failrow{display:flex;gap:20px;}
+  .fail{flex:1;background:var(--soft);border-radius:18px;padding:14px 24px;display:flex;align-items:baseline;gap:14px;justify-content:center;}
+  .fail .fk{font-size:31px;font-weight:800;white-space:nowrap;}
+  .fail .fb{font-size:26px;color:var(--mut);white-space:nowrap;}
 
-  /* ═══ stickers ═══ */
-  .stick{position:absolute;z-index:5;filter:drop-shadow(0 6px 0 rgba(0,0,0,.25));}
-
-  /* ═══ footer ═══ */
+  /* ── footer ── */
   .marquee{
-    margin:44px -100px 0;margin-top:auto;background:var(--primary);height:96px;flex:none;
-    display:flex;align-items:center;justify-content:center;gap:44px;
-    font-family:var(--mono);font-size:28px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--muted);
-    border-top:3px solid var(--lime);
+    margin:40px -100px 0;margin-top:auto;background:var(--ink);color:rgba(255,255,255,.75);height:84px;flex:none;
+    display:flex;align-items:center;justify-content:center;gap:40px;
+    font-size:26px;font-weight:600;letter-spacing:4px;text-transform:uppercase;
   }
-  .marquee b{color:var(--lime);}
+  .marquee b{color:#fff;}
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- ════════════ 01 RESEARCH ════════════ -->
-  <div class="eyebrow"><span class="num">01</span> RESEARCH · 研究 <span class="ln"></span></div>
-  <div style="position:relative">
-    <div class="display"><span class="chip">阶段化</span>，让康复有节奏</div>
-    <div class="sub" style="max-width:1500px">家庭康复最大的问题不是「没有测量」，而是<strong>「不会解释」</strong>——做错没人纠正，做对没人看见。</div>
-    <!-- sticker: knee buddy -->
-    <svg class="stick" style="right:30px;top:-50px;transform:rotate(8deg)" width="330" height="300" viewBox="0 0 330 300">
-      <g stroke-linecap="round" stroke-linejoin="round">
-        <path d="M88,28 L150,118 Q166,140 154,166 L120,252" fill="none" stroke="#fff" stroke-width="58"/>
-        <path d="M88,28 L150,118 Q166,140 154,166 L120,252" fill="none" stroke="#6a5fc1" stroke-width="40"/>
-        <circle cx="152" cy="143" r="62" fill="#fa7faa" stroke="#fff" stroke-width="9"/>
-        <rect x="118" y="128" width="70" height="26" rx="13" fill="#c2ef4e" stroke="#1f1633" stroke-width="5" transform="rotate(-18 152 143)"/>
-        <circle cx="136" cy="122" r="6.5" fill="#1f1633"/>
-        <circle cx="172" cy="122" r="6.5" fill="#1f1633"/>
-        <path d="M140,165 Q154,176 168,164" fill="none" stroke="#1f1633" stroke-width="6"/>
-        <path d="M236,60 l10,24 24,10 -24,10 -10,24 -10,-24 -24,-10 24,-10 z" fill="#c2ef4e"/>
-        <circle cx="268" cy="170" r="9" fill="#fff"/>
-        <circle cx="60" cy="200" r="7" fill="#fa7faa"/>
-      </g>
-    </svg>
-  </div>
+  <!-- ═══════════ 1 研究 ═══════════ -->
+  <div class="banner"><span class="no">1</span><span class="tt">研究 · 阶段化，让康复有节奏</span><span class="en">Research</span></div>
 
   <div class="gap"></div>
 
-  <div class="row" style="max-width:1780px">
-    <div class="probe"><span class="x">✗</span><span><div class="pt">静态清单</div><div class="pb">目标不随恢复变化</div></span></div>
-    <div class="probe"><span class="x">✗</span><span><div class="pt">缺少解释</div><div class="pb">做错了，没人纠正</div></span></div>
-    <div class="probe"><span class="x">✗</span><span><div class="pt">无人见证</div><div class="pb">做对了，没人看见</div></span></div>
-  </div>
-
-  <div class="gap"></div>
-
-  <div class="row">
-    <div class="night"><div class="k">发现 01 · 临床指南</div><div class="t">进阶由标准驱动，而非周数</div><div class="b">依据 ROM、疼痛与动作控制——<strong>三阶段框架的骨架</strong></div></div>
-    <div class="night"><div class="k">发现 02 · 反馈设计</div><div class="t">测量 ≠ 理解</div><div class="b">缺「为什么、错在哪、先改什么」——<strong>催生可解释反馈</strong></div></div>
-    <div class="night"><div class="k">发现 03 · 计划执行</div><div class="t">区分失败原因，再调整</div><div class="b">比提醒坚持更有效——<strong>催生失败分型与保护性回退</strong></div></div>
-  </div>
-  <div style="height:24px;flex:none"></div>
-  <div class="row">
-    <div class="night"><div class="k">发现 04 · 进展理解</div><div class="t">用关键片段讲进展</div><div class="b">episode 叙事优于仪表盘——<strong>催生 episode 式进展</strong></div></div>
-    <div class="night"><div class="k">发现 05 · 运动学习</div><div class="t">反馈不必依赖屏幕</div><div class="b">听觉 / 触觉同样有效——<strong>催生 Eyes-free 范式</strong></div></div>
-    <div class="night"><div class="k">证据 · RCT</div><div class="t">数字康复确实有效</div><div class="b">问题不在该不该做，而在<strong>怎么做得可理解</strong></div></div>
-  </div>
-
-  <div class="gap"></div>
-
-  <div class="spotlight">
-    <div class="sp-eyebrow">Research Output · 三阶段训练模式</div>
-    <div class="sp-title">进阶由标准驱动，而非周数</div>
-    <div class="stages">
-      <div class="stage"><div class="no">STAGE 01</div><div class="t">早期保护期</div><div class="b"><strong>强引导 · 强保护</strong><br/>信息密集，把患者牢牢托住</div></div>
-      <div class="stage"><div class="no">STAGE 02</div><div class="t">中期恢复期</div><div class="b"><strong>目标抬升 · 反馈淡出</strong><br/>力反馈降级为引导而非约束</div></div>
-      <div class="stage"><div class="no">STAGE 03</div><div class="t">后期功能期</div><div class="b"><strong>屏幕退场 · 走向自主</strong><br/>「系统对我有信心了」</div></div>
+  <!-- 1.1 -->
+  <div class="sec"><span class="sn">1.1</span><span class="st">背景与问题</span><span class="sd">家庭康复，为什么会失败？</span></div>
+  <div class="intro">
+    <div class="tx">ACL 术后康复主要发生在家中，面对面指导稀缺。前期调研显示，最大的问题不是<strong>「没有测量」</strong>，而是<strong>「不会解释」</strong>——系统能给出分数和角度，却说不清这个动作为什么重要、错在哪里、应该先改什么。</div>
+    <div class="pains">
+      <div class="pain"><span class="x">✗</span><span class="pt">静态清单</span><span class="pb">目标不随恢复变化</span></div>
+      <div class="pain"><span class="x">✗</span><span class="pt">缺少解释</span><span class="pb">做错了，没人纠正</span></div>
+      <div class="pain"><span class="x">✗</span><span class="pt">无人见证</span><span class="pb">做对了，没人看见</span></div>
     </div>
-    <div class="stage-arrow">反馈密度随阶段递减<div class="bar"></div>递减本身，被感受为信任</div>
-    <!-- sticker: climbing stairs -->
-    <svg class="stick" style="right:-26px;top:-86px;transform:rotate(6deg)" width="270" height="240" viewBox="0 0 270 240">
-      <g stroke-linecap="round" stroke-linejoin="round">
-        <path d="M20,210 h70 v-50 h62 v-50 h62 v-60" fill="none" stroke="#fff" stroke-width="36"/>
-        <path d="M20,210 h70 v-50 h62 v-50 h62 v-60" fill="none" stroke="#150f23" stroke-width="22"/>
-        <line x1="214" y1="58" x2="214" y2="8" stroke="#fff" stroke-width="8"/>
-        <path d="M214,10 l46,14 -46,16 z" fill="#fa7faa" stroke="#fff" stroke-width="6"/>
-        <circle cx="96" cy="118" r="26" fill="#c2ef4e" stroke="#1f1633" stroke-width="6"/>
-        <circle cx="88" cy="112" r="4" fill="#1f1633"/>
-        <circle cx="106" cy="112" r="4" fill="#1f1633"/>
-        <path d="M88,128 Q97,135 106,127" fill="none" stroke="#1f1633" stroke-width="4.5"/>
-        <path d="M96,144 q-4,22 14,30 M96,144 q-22,12 -30,2" fill="none" stroke="#c2ef4e" stroke-width="9"/>
-      </g>
-    </svg>
   </div>
 
   <div class="gap"></div>
 
-  <div class="row">
-    <div class="benefit"><div class="k">01 Safety</div><div class="t">安全</div><div class="b">角度墙始终冗余在目标之上</div></div>
-    <div class="benefit"><div class="k">02 Explainable</div><div class="t">可解释</div><div class="b">知道为什么进阶、为什么不进阶</div></div>
-    <div class="benefit"><div class="k">03 Motivation</div><div class="t">保持动机</div><div class="b">目标永远「再多一点点」</div></div>
-    <div class="benefit"><div class="k">04 Autonomy</div><div class="t">走向自主</div><div class="b">从被辅助过渡到自主管理</div></div>
+  <!-- 1.2 -->
+  <div class="sec"><span class="sn">1.2</span><span class="st">形成性研究</span><span class="sd">系统文献综述：临床指南 · CHI/IMWUT · RCT 证据，每条发现落成一个设计决策</span></div>
+  <table class="ftable">
+    <tr><td class="c1">发现 01 · 临床指南</td><td class="c2">进阶由标准驱动，而非周数</td><td class="c3">依据 ROM、疼痛与动作控制 → <b>三阶段框架的骨架</b></td></tr>
+    <tr><td class="c1">发现 02 · 反馈设计</td><td class="c2">测量 ≠ 理解</td><td class="c3">缺「为什么、错在哪、先改什么」→ <b>可解释反馈 · 三层动作理解</b></td></tr>
+    <tr><td class="c1">发现 03 · 计划执行</td><td class="c2">区分失败原因，再调整</td><td class="c3">太痛/太难/太忙/太轻各不同 → <b>失败分型与保护性回退</b></td></tr>
+    <tr><td class="c1">发现 04 · 进展理解</td><td class="c2">用关键片段讲进展</td><td class="c3">episode 叙事优于仪表盘 → <b>episode 式进展设计</b></td></tr>
+    <tr><td class="c1">发现 05 · 运动学习</td><td class="c2">反馈不必依赖屏幕</td><td class="c3">听觉/触觉同样有效且不争夺视觉 → <b>Eyes-free 与四通道分工</b></td></tr>
+    <tr><td class="c1">证据 · RCT</td><td class="c2">数字康复确实有效</td><td class="c3">依从性与结果均获验证 → 问题在<b>怎么做得可理解</b></td></tr>
+  </table>
+  <div class="refs"><b>References</b>　van Melick 2016 · Adams 2012 · Meredith 2020 · Brennan 2019 · Tang 2015 · Wang 2023 · Xu 2022 · Mohan 2019 · Raj 2023 · Sigrist 2012 · Dunphy 2021 · Höher 2023 · Lim 2024 · Schmidt 2024</div>
+
+  <div class="gap"></div>
+
+  <!-- 1.3 -->
+  <div class="sec"><span class="sn">1.3</span><span class="st">研究产出：三阶段训练框架</span><span class="sd">以客观标准（criteria）驱动进阶，每阶段定义不同的目标、限制与反馈密度</span></div>
+  <svg width="2068" height="430" viewBox="0 0 2068 430" font-family="Inter,'Noto Sans SC',sans-serif">
+    <!-- stage bands -->
+    <rect x="0" y="40" width="650" height="270" rx="24" fill="#0a7281"/>
+    <rect x="666" y="40" width="650" height="270" rx="24" fill="#5fa8ba"/>
+    <rect x="1332" y="40" width="736" height="270" rx="24" fill="#dceef2"/>
+    <!-- stage titles -->
+    <text x="40" y="106" font-size="27" font-weight="700" fill="rgba(255,255,255,.75)" letter-spacing="2">STAGE 01 · 0–2 周</text>
+    <text x="40" y="158" font-size="44" font-weight="800" fill="#fff">早期保护期</text>
+    <text x="40" y="212" font-size="28" fill="rgba(255,255,255,.92)">控制活动度 · 保护愈合</text>
+    <text x="40" y="252" font-size="28" fill="rgba(255,255,255,.92)">信息密集 · 力反馈强介入</text>
+    <text x="706" y="106" font-size="27" font-weight="700" fill="rgba(255,255,255,.8)" letter-spacing="2">STAGE 02 · 2–8 周</text>
+    <text x="706" y="158" font-size="44" font-weight="800" fill="#fff">中期恢复期</text>
+    <text x="706" y="212" font-size="28" fill="rgba(255,255,255,.95)">ROM 目标逐步抬升</text>
+    <text x="706" y="252" font-size="28" fill="rgba(255,255,255,.95)">反馈淡出 · 力反馈转为引导</text>
+    <text x="1372" y="106" font-size="27" font-weight="700" fill="#0a7281" letter-spacing="2">STAGE 03 · 8 周以上</text>
+    <text x="1372" y="158" font-size="44" font-weight="800" fill="#1d1d1f">后期功能期</text>
+    <text x="1372" y="212" font-size="28" fill="#3a3a3c">面向功能与自主控制</text>
+    <text x="1372" y="252" font-size="28" fill="#3a3a3c">屏幕退场 · 力反馈只剩安全网</text>
+    <!-- ROM thresholds -->
+    <g font-size="26" font-weight="700">
+      <rect x="440" y="60" width="170" height="46" rx="23" fill="rgba(255,255,255,.18)"/>
+      <text x="525" y="92" fill="#fff" text-anchor="middle">ROM 90°</text>
+      <rect x="1106" y="60" width="170" height="46" rx="23" fill="rgba(255,255,255,.22)"/>
+      <text x="1191" y="92" fill="#fff" text-anchor="middle">ROM 120°</text>
+      <rect x="1838" y="60" width="190" height="46" rx="23" fill="rgba(10,114,129,.12)"/>
+      <text x="1933" y="92" fill="#0a7281" text-anchor="middle">全范围功能</text>
+    </g>
+    <!-- gate arrows -->
+    <g stroke="#1d1d1f" stroke-width="4" fill="#1d1d1f">
+      <line x1="650" y1="175" x2="666" y2="175"/><path d="M658,165 l14,10 -14,10 z"/>
+      <line x1="1316" y1="175" x2="1332" y2="175"/><path d="M1324,165 l14,10 -14,10 z"/>
+    </g>
+    <!-- density arrow -->
+    <line x1="10" y1="358" x2="2030" y2="358" stroke="#0a7281" stroke-width="5" stroke-linecap="round"/>
+    <path d="M2026,344 l34,14 -34,14 z" fill="#0a7281"/>
+    <text x="10" y="412" font-size="29" font-weight="700" fill="#1d1d1f">反馈密度随阶段递减</text>
+    <text x="2058" y="412" font-size="29" fill="#3a3a3c" text-anchor="end">从「被辅助」到「自主管理」——递减本身，被感受为信任</text>
+  </svg>
+  <div class="cap"><b>图 1</b> · 三阶段训练框架总览。周数为建议节奏，实际进阶以 ROM、疼痛与动作控制等客观标准为准。</div>
+
+  <div class="gap-sm"></div>
+
+  <div class="prins">
+    <div class="prin"><span class="n">1</span><span class="t">回退是保护<br/>不是惩罚</span></div>
+    <div class="prin"><span class="n">2</span><span class="t">Eyes-free<br/>训练</span></div>
+    <div class="prin"><span class="n">3</span><span class="t">不表演情感<br/>稳定在场</span></div>
+    <div class="prin"><span class="n">4</span><span class="t">反馈密度<br/>随阶段递减</span></div>
+    <div class="prin"><span class="n">5</span><span class="t">多通道分工<br/>安全冗余</span></div>
   </div>
 
   <div class="gap"></div>
 
-  <div class="row">
-    <div class="stat"><div class="n">N=10</div><div class="l">被试内实验</div></div>
-    <div class="stat"><div class="n">3×3</div><div class="l">拉丁方平衡</div></div>
-    <div class="night"><div class="k">Conditions</div><div class="t">C1 · C2a · C2c</div><div class="b">视觉基线 / 早期 / 后期配置</div></div>
-    <div class="night"><div class="k">Measures</div><div class="t">客观 + 主观</div><div class="b">ROM、节律 + 三维自评量表</div></div>
-    <div class="night"><div class="k">Analysis</div><div class="t">质性主题分析</div><div class="b">身体觉知 · 关系 · 陪伴感知</div></div>
-  </div>
-
-  <!-- ════ divider ════ -->
-  <div class="squiggle"><svg viewBox="0 0 2068 36" preserveAspectRatio="none"><path d="M0,18 q28,-16 56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0" fill="none" stroke="#c2ef4e" stroke-width="5" stroke-linecap="round"/></svg></div>
-
-  <!-- ════════════ 02 HARDWARE ════════════ -->
-  <div class="eyebrow"><span class="num">02</span> HARDWARE · 硬件 <span class="ln"></span></div>
-  <div style="position:relative">
-    <div class="display">一副<span class="chip">会施力</span>的膝关节外骨骼</div>
-    <div class="sub">感知膝角，主动施力——给独自康复的人，多一层<strong>引导与保护</strong>。</div>
-    <!-- sticker: dumbbell brace -->
-    <svg class="stick" style="right:10px;top:-46px;transform:rotate(-7deg)" width="300" height="250" viewBox="0 0 300 250">
-      <g stroke-linecap="round" stroke-linejoin="round">
-        <rect x="96" y="60" width="108" height="44" rx="20" fill="#6a5fc1" stroke="#fff" stroke-width="8"/>
-        <rect x="96" y="160" width="108" height="44" rx="20" fill="#6a5fc1" stroke="#fff" stroke-width="8"/>
-        <rect x="138" y="100" width="24" height="64" fill="#fff"/>
-        <circle cx="150" cy="132" r="40" fill="#fa7faa" stroke="#fff" stroke-width="8"/>
-        <circle cx="138" cy="124" r="5" fill="#1f1633"/>
-        <circle cx="162" cy="124" r="5" fill="#1f1633"/>
-        <path d="M138,144 Q150,153 162,143" fill="none" stroke="#1f1633" stroke-width="5"/>
-        <line x1="232" y1="70" x2="232" y2="194" stroke="#fff" stroke-width="10"/>
-        <rect x="216" y="58" width="32" height="34" rx="8" fill="#c2ef4e" stroke="#1f1633" stroke-width="5"/>
-        <rect x="216" y="172" width="32" height="34" rx="8" fill="#c2ef4e" stroke="#1f1633" stroke-width="5"/>
-        <path d="M52,84 q-12,10 -2,22 M40,120 q-14,8 -6,20" fill="none" stroke="#fa7faa" stroke-width="7"/>
-        <circle cx="62" cy="178" r="8" fill="#c2ef4e"/>
-      </g>
-    </svg>
+  <!-- 1.4 -->
+  <div class="sec"><span class="sn">1.4</span><span class="st">用户实验设计</span><span class="sd">设计探针方法 · 被试内实验，检验交互范式</span></div>
+  <div class="study">
+    <div class="stat"><div class="n gtext">N=10</div><div class="l">被试内设计</div></div>
+    <div class="stat"><div class="n gtext">3×3</div><div class="l">拉丁方平衡</div></div>
+    <div class="scard"><div class="k">CONDITIONS</div><div class="t">C1 · C2a · C2c</div><div class="b">视觉基线 / 早期配置 / 后期配置</div></div>
+    <div class="scard"><div class="k">MEASURES</div><div class="t">客观 + 主观</div><div class="b">ROM、节律、反馈事件 + 三维度自评量表</div></div>
+    <div class="scard"><div class="k">ANALYSIS</div><div class="t">质性主题分析</div><div class="b">身体觉知 · 系统关系 · 陪伴感知</div></div>
   </div>
 
   <div class="gap"></div>
 
+  <!-- ═══════════ 2 硬件 ═══════════ -->
+  <div class="banner"><span class="no">2</span><span class="tt">硬件 · 一副会施力的膝关节外骨骼</span><span class="en">Hardware</span></div>
+
+  <div class="gap"></div>
+
+  <!-- 2.1 -->
+  <div class="sec"><span class="sn">2.1</span><span class="st">系统架构</span><span class="sd">四设备分工，各司其职</span></div>
+  <svg width="2068" height="250" viewBox="0 0 2068 250" font-family="Inter,'Noto Sans SC',sans-serif">
+    <g>
+      <rect x="0" y="30" width="440" height="160" rx="24" fill="#f5f5f7"/>
+      <text x="220" y="98" font-size="38" font-weight="800" fill="#1d1d1f" text-anchor="middle">支具</text>
+      <text x="220" y="148" font-size="27" fill="#6e6e73" text-anchor="middle">双 IMU 采集 · 电机力反馈</text>
+      <rect x="542" y="30" width="440" height="160" rx="24" fill="#f5f5f7"/>
+      <text x="762" y="98" font-size="38" font-weight="800" fill="#1d1d1f" text-anchor="middle">Mac 上位机</text>
+      <text x="762" y="148" font-size="27" fill="#6e6e73" text-anchor="middle">膝角融合 · 位置环运算</text>
+      <rect x="1084" y="30" width="440" height="160" rx="24" fill="#f5f5f7"/>
+      <text x="1304" y="98" font-size="38" font-weight="800" fill="#1d1d1f" text-anchor="middle">iPhone</text>
+      <text x="1304" y="148" font-size="27" fill="#6e6e73" text-anchor="middle">计划 · 阶段 · 总结回顾</text>
+      <rect x="1626" y="30" width="442" height="160" rx="24" fill="#f5f5f7"/>
+      <text x="1847" y="98" font-size="38" font-weight="800" fill="#1d1d1f" text-anchor="middle">Apple Watch</text>
+      <text x="1847" y="148" font-size="27" fill="#6e6e73" text-anchor="middle">训练中触觉提示</text>
+    </g>
+    <g stroke="#0a7281" stroke-width="4" fill="none">
+      <line x1="444" y1="92" x2="538" y2="92"/><line x1="444" y1="128" x2="538" y2="128"/>
+      <line x1="986" y1="110" x2="1080" y2="110"/>
+      <line x1="1528" y1="110" x2="1622" y2="110"/>
+    </g>
+    <g fill="#0a7281">
+      <path d="M530,82 l16,10 -16,10 z"/><path d="M452,118 l-16,10 16,10 z"/>
+      <path d="M1072,100 l16,10 -16,10 z"/>
+      <path d="M1614,100 l16,10 -16,10 z"/>
+    </g>
+    <g font-size="24" fill="#0a7281" font-weight="600" text-anchor="middle">
+      <text x="491" y="74">RS485 / RIS</text>
+      <text x="1033" y="98">训练数据</text>
+      <text x="1575" y="98">触觉事件</text>
+    </g>
+    <text x="0" y="238" font-size="27" fill="#6e6e73"><tspan font-weight="700" fill="#1d1d1f">图 2</tspan> · 系统架构：上位机经 RS485/RIS 直驱关节电机，50 Hz 闭环力反馈；屏幕设备只承担反思，不打扰动作。</text>
+  </svg>
+
+  <div class="gap"></div>
+
+  <!-- 2.2 -->
+  <div class="sec"><span class="sn">2.2</span><span class="st">实物与场景</span><span class="sd">在客厅，完成今天的训练</span></div>
   <div class="scene">
     <img src="../assets/img/photo/scene-main.jpg" alt="客厅训练场景" />
     <div class="tags">
-      <div class="tagp"><b>R²≈0.97</b>膝角融合</div>
+      <div class="tagp"><b>R²≈0.97</b>膝角融合精度</div>
       <div class="tagp"><b>50 Hz</b>力反馈闭环</div>
       <div class="tagp"><b>2×IMU</b>双总线同步</div>
-      <div class="tagp"><b>直驱</b>关节电机</div>
+      <div class="tagp"><b>直驱</b>无绳轮连杆</div>
     </div>
   </div>
 
   <div class="gap"></div>
 
-  <div class="row">
-    <div class="hw">
-      <div class="ph"><img src="../assets/img/photo/imu-dock.jpg" style="object-position:center 60%" alt="磁吸 IMU" /></div>
-      <div class="tx"><div class="t">磁吸 IMU · 吸上即连</div><div class="b">磁吸对位 + Pogo pin；后期可<strong>独立穿戴</strong>——形态随阶段递减</div></div>
+  <!-- 2.3 / 2.4 -->
+  <div class="duo">
+    <div class="ducard">
+      <div class="ph"><img src="../assets/img/photo/imu-dock.jpg" style="object-position:center 60%" alt="磁吸 IMU" />
+        <span class="annot" style="right:24px;top:24px"><i></i>JY901S 九轴 · 磁吸 + Pogo pin</span>
+      </div>
+      <div class="tx">
+        <div class="sec" style="margin-bottom:8px"><span class="sn">2.3</span><span class="st" style="font-size:36px">传感与融合</span></div>
+        <div class="b">双 IMU + <strong>重力向量法</strong>重建膝角，零位校准、抗漂移（台架 R²≈0.97）。模块<strong>吸上即连、取下即走</strong>，后期可独立穿戴——硬件形态随康复阶段递减。</div>
+      </div>
     </div>
-    <div class="hw">
-      <div class="ph"><img src="../assets/img/photo/motor-joint.jpg" style="object-position:center 55%" alt="关节电机" /></div>
-      <div class="tx"><div class="t">关节电机 · 同轴直驱</div><div class="b">宇树 Go-M8010-6 · RS485——<strong>力的方向与屈伸一致</strong></div></div>
+    <div class="ducard">
+      <div class="ph"><img src="../assets/img/photo/motor-joint.jpg" style="object-position:center 55%" alt="关节电机" />
+        <span class="annot" style="left:24px;top:24px"><i></i>宇树 Go-M8010-6</span>
+      </div>
+      <div class="tx">
+        <div class="sec" style="margin-bottom:8px"><span class="sn">2.4</span><span class="st" style="font-size:36px">执行与力反馈</span></div>
+        <div class="b">关节电机与膝关节<strong>同轴直驱</strong>——力的方向与屈伸完全一致。电机给出的是<strong>边界与引导</strong>，而不是替你完成动作。</div>
+      </div>
     </div>
-    <div class="hw" style="position:relative">
-      <div class="ph"><img src="../assets/img/photo/fidlock-steps.jpg" alt="开合腿环" /></div>
-      <div class="tx"><div class="t">开合腿环 · 单手穿戴</div>
+  </div>
+
+  <div class="gap-sm"></div>
+
+  <div class="fsw">
+    <div class="zone zone--free"><span class="z">FREE</span><span class="zt">自由段</span><span class="zb">无阻力</span></div>
+    <div class="zone zone--soft"><span class="z">SOFT</span><span class="zt">缓冲段</span><span class="zb">阻力渐增</span></div>
+    <div class="zone zone--wall"><span class="z">WALL</span><span class="zt">硬墙段</span><span class="zb">强约束 · 安全</span></div>
+  </div>
+  <div class="cap"><b>图 3</b> · 三段式虚拟墙：角度墙始终略高于当日目标——给挑战空间，守安全边界。</div>
+
+  <div class="gap"></div>
+
+  <!-- 2.5 -->
+  <div class="sec"><span class="sn">2.5</span><span class="st">穿戴与安全</span><span class="sd">单手可穿戴，安全由硬件层与软件判定共同守护</span></div>
+  <div class="trio">
+    <div class="tcard">
+      <div class="ph"><img src="../assets/img/photo/fidlock-steps.jpg" alt="FIDLOCK 三步" /></div>
+      <div class="tx"><div class="t">开合腿环 · FIDLOCK 磁扣</div>
         <div class="steps"><span>01 打开穿入</span><span>02 磁吸扣合</span><span>03 旋转锁紧</span></div>
       </div>
-      <!-- sticker: magnet -->
-      <svg class="stick" style="right:-20px;top:-46px;transform:rotate(10deg)" width="150" height="140" viewBox="0 0 150 140">
-        <g stroke-linecap="round" stroke-linejoin="round">
-          <path d="M38,96 a37,37 0 1 1 74,0 v-34 h-26 v34 a11,11 0 1 1 -22,0 v-34 h-26 z" fill="#fa7faa" stroke="#fff" stroke-width="7" transform="rotate(180 75 79)"/>
-          <rect x="49" y="96" width="26" height="18" fill="#fff"/>
-          <rect x="75" y="96" width="26" height="18" fill="#c2ef4e"/>
-          <path d="M30,28 q8,-10 18,-4 M104,22 q10,-6 16,2" fill="none" stroke="#c2ef4e" stroke-width="6"/>
-        </g>
-      </svg>
     </div>
-  </div>
-
-  <div class="gap"></div>
-
-  <div class="spotlight" style="background:var(--primary);border:2px solid var(--hairline)">
-    <div class="sp-eyebrow">Force Feedback · 三段式虚拟墙</div>
-    <div class="sp-title">FREE — SOFT — WALL</div>
-    <div class="zonebar">
-      <div class="zone zone--free"><span class="z">FREE</span><span class="zt">自由段</span><span class="zb">无阻力</span></div>
-      <div class="zone zone--soft"><span class="z">SOFT</span><span class="zt">缓冲段</span><span class="zb">阻力渐增</span></div>
-      <div class="zone zone--wall"><span class="z">WALL</span><span class="zt">硬墙段</span><span class="zb">安全约束</span></div>
-    </div>
-    <div class="navy-cols">
-      <div class="navy-col"><span class="dot"></span><span>角度墙<strong>始终略高于当日目标</strong>——给挑战，守边界</span></div>
-      <div class="navy-col"><span class="dot"></span><span>虚拟墙 + 急停是<strong>硬件底线</strong>，缓停 + 降阶是软件判定</span></div>
-      <div class="navy-col"><span class="dot"></span><span>疼痛跨阈值<strong>单次即触发</strong>——医学底线，不需累积</span></div>
-    </div>
-  </div>
-
-  <div class="gap"></div>
-
-  <div class="hostrow">
-    <div class="hostshot"><img src="../assets/img/ui/host-dashboard-solo.png" alt="PyQt6 上位机" /></div>
-    <div class="hostinfo">
-      <div class="night"><div class="k">Sensing · 重力向量法</div><div class="t">双 IMU 膝角融合 R²≈0.97</div><div class="b">零位校准抵消装配误差，<strong>抗漂移</strong>保证长时稳定</div></div>
-      <div class="night"><div class="k">Host · PyQt6 仪表盘</div><div class="t">实时监测与电机直驱</div><div class="b">电机角 / IMU 膝角双曲线，<strong>三区状态</strong>随动作点亮</div></div>
-    </div>
-  </div>
-
-  <div class="gap"></div>
-
-  <div class="row">
-    <div class="device"><span class="dn">支具</span><span class="dr">采集 · 力反馈</span></div>
-    <div class="device"><span class="dn">Mac</span><span class="dr">运算 · 直驱</span></div>
-    <div class="device"><span class="dn">iPhone</span><span class="dr">交互界面</span></div>
-    <div class="device"><span class="dn">Watch</span><span class="dr">触觉提示</span></div>
-  </div>
-
-  <!-- ════ divider ════ -->
-  <div class="squiggle"><svg viewBox="0 0 2068 36" preserveAspectRatio="none"><path d="M0,18 q28,-16 56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0" fill="none" stroke="#c2ef4e" stroke-width="5" stroke-linecap="round"/></svg></div>
-
-  <!-- ════════════ 03 UI ════════════ -->
-  <div class="eyebrow"><span class="num">03</span> INTERFACE · UI <span class="ln"></span></div>
-  <div style="position:relative">
-    <div class="display">屏幕是<span class="chip">反思通道</span>，不是仪表盘</div>
-    <div class="sub">动作进行中，任何视觉信息<strong>都不应是必要的</strong>。</div>
-  </div>
-
-  <div class="gap"></div>
-
-  <div class="efrow">
-    <div class="phone"><span class="scr"><img src="../assets/img/ui/eyes-free.png" alt="Eyes-free" /></span></div>
-    <div class="ef-claims">
-      <div class="sp-eyebrow">Eyes-free Paradigm</div>
-      <div class="ef-title">训练中的屏幕，几乎是空的</div>
-      <div class="claim"><span class="ic">力</span>动作指令走<strong>力反馈、声音与触觉</strong></div>
-      <div class="claim"><span class="ic">瞥</span>字号与层级按<strong>「一瞥可读」</strong>设计</div>
-      <div class="claim"><span class="ic">语</span>语言只在<strong>组间休息与总结</strong>出现</div>
-      <div class="ef-modes">
-        <div class="ef-mode"><div class="mk">务实 Eyes-free</div><div class="mt">手机移开，手表保留最小可瞥视</div></div>
-        <div class="ef-mode"><div class="mk">严格 Eyes-free</div><div class="mt">全部反馈走力 / 声音 / 触觉</div></div>
+    <div class="tcard">
+      <div class="tx" style="padding-top:26px">
+        <div class="t">安全机制</div>
+        <ul>
+          <li>虚拟墙 + 急停 = <strong>硬件底线</strong></li>
+          <li>缓停 + 降阶 = <strong>软件判定</strong></li>
+          <li>疼痛跨阈值<strong>单次即触发</strong>，不需累积</li>
+        </ul>
       </div>
     </div>
-    <!-- sticker: sleeping phone -->
-    <svg class="stick" style="right:34px;top:-58px;transform:rotate(7deg)" width="190" height="210" viewBox="0 0 190 210">
-      <g stroke-linecap="round" stroke-linejoin="round">
-        <rect x="38" y="40" width="100" height="160" rx="24" fill="#6a5fc1" stroke="#fff" stroke-width="8"/>
-        <rect x="50" y="56" width="76" height="128" rx="14" fill="#150f23"/>
-        <path d="M68,118 q6,6 14,0 M96,118 q6,6 14,0" fill="none" stroke="#c2ef4e" stroke-width="5"/>
-        <path d="M80,142 q9,6 18,0" fill="none" stroke="#c2ef4e" stroke-width="5"/>
-        <text x="128" y="38" font-family="Rubik,sans-serif" font-size="34" font-weight="700" fill="#fa7faa">z</text>
-        <text x="146" y="22" font-family="Rubik,sans-serif" font-size="26" font-weight="700" fill="#fa7faa">z</text>
-      </g>
-    </svg>
+    <div class="tcard">
+      <div class="ph"><img src="../assets/img/ui/host-dashboard-solo.png" alt="上位机仪表盘" /></div>
+      <div class="tx"><div class="t">PyQt6 上位机仪表盘</div>
+        <div class="b">双曲线实时对比 · 三区状态 · System Health 监控</div>
+      </div>
+    </div>
   </div>
 
   <div class="gap"></div>
 
+  <!-- ═══════════ 3 UI ═══════════ -->
+  <div class="banner"><span class="no">3</span><span class="tt">交互 · 屏幕是反思通道，不是仪表盘</span><span class="en">Interface</span></div>
+
+  <div class="gap"></div>
+
+  <!-- 3.1 -->
+  <div class="sec"><span class="sn">3.1</span><span class="st">交互范式：Eyes-free 训练</span><span class="sd">动作进行中，任何视觉信息都不应是必要的</span></div>
+  <div class="efrow">
+    <div class="phone"><span class="scr"><img src="../assets/img/ui/eyes-free.png" alt="Eyes-free 界面" /></span></div>
+    <div class="ef-claims">
+      <div class="ef-title">训练中的屏幕，几乎是空的</div>
+      <div class="claim"><span class="ic">力</span>动作指令走<strong>力反馈、声音与触觉</strong>，不与动作争夺视觉注意</div>
+      <div class="claim"><span class="ic">瞥</span>字号与层级按<strong>「一瞥可读」</strong>设计，安全事件四通道齐发</div>
+      <div class="claim"><span class="ic">语</span>语言只出现在<strong>反思窗口</strong>——组间休息与训练总结</div>
+      <div class="ef-modes">
+        <div class="ef-mode"><div class="mk">务实 Eyes-free（第一版原型）</div><div class="mt">手机移开，手表保留最小可瞥视状态</div></div>
+        <div class="ef-mode"><div class="mk">严格 Eyes-free（研究探针）</div><div class="mt">手表关、手机移开，反馈全走力/声/触</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gap"></div>
+
+  <!-- 3.2 -->
+  <div class="sec"><span class="sn">3.2</span><span class="st">信息架构</span><span class="sd">先回答「我在哪」，再谈数据——五个模块各回答患者的一个真实问题</span></div>
   <div class="iagrid">
     <div class="iacell">
       <div class="phone"><span class="scr"><img src="../assets/img/ui/ia-stage.png" alt="阶段管理" /></span></div>
@@ -497,49 +468,52 @@
       <div class="qk">05 · 计划修订</div><div class="q">做不到怎么办</div>
     </div>
   </div>
+  <div class="cap"><b>图 4</b> · 信息架构围绕三阶段框架组织——而不是先呈现一堆曲线图。</div>
 
   <div class="gap"></div>
 
+  <!-- 3.3 -->
+  <div class="sec"><span class="sn">3.3</span><span class="st">三层动作理解</span><span class="sd">训练前、中、后，各答一个问题</span></div>
   <div class="layers">
     <div class="layer">
       <div class="lph"><img src="../assets/img/ui/action-brief.png" alt="训练前" /></div>
-      <div class="ltx"><div class="lk">Before · 训练前</div><div class="lq">「这个动作是干什么的」</div><div class="lb">目标 · <strong>为什么是现在</strong> · 达标标准</div></div>
+      <div class="ltx"><div class="lk">BEFORE · 训练前</div><div class="lq">「这个动作是干什么的」</div><div class="lb">目标 · <strong>为什么是现在</strong> · 达标标准——先懂，再练</div></div>
     </div>
     <div class="layer">
       <div class="lph"><img src="../assets/img/ui/set-summary.png" alt="训练中" /></div>
-      <div class="ltx"><div class="lk">During · 训练中</div><div class="lq">「我哪里错了」</div><div class="lb"><strong>一次只纠正一个错误</strong>，先方向后数字</div></div>
+      <div class="ltx"><div class="lk">DURING · 训练中</div><div class="lq">「我哪里错了」</div><div class="lb"><strong>一次只纠正一个错误</strong>——先给方向，不先给数字</div></div>
     </div>
     <div class="layer">
       <div class="lph"><img src="../assets/img/ui/session-summary.png" alt="训练后" /></div>
-      <div class="ltx"><div class="lk">After · 训练后</div><div class="lq">「我今天练得怎么样」</div><div class="lb"><strong>总结，而不是打分</strong>——最好一点+待改一点</div></div>
+      <div class="ltx"><div class="lk">AFTER · 训练后</div><div class="lq">「我今天练得怎么样」</div><div class="lb"><strong>总结而非打分</strong>——最好的一点 + 待改进的一点</div></div>
     </div>
   </div>
 
   <div class="gap"></div>
 
+  <!-- 3.4 -->
+  <div class="sec"><span class="sn">3.4</span><span class="st">语言系统与计划修订</span><span class="sd">具体 · 有数据锚 · 有路径；失败有四种，回应各不同</span></div>
   <div class="langrow">
     <div class="lang lang--bad">
       <div class="gk">✗ 一般系统 · 只翻译数值</div>
       <div class="gt">「速度过快」</div>
-      <div class="gb">错在哪、为什么重要、怎么改——全都没说</div>
+      <div class="gb">一个结论扔给用户：错在哪、为什么重要、该怎么改，全都没说</div>
     </div>
     <div class="lang lang--good">
-      <div class="gk">✓ 我们的总结 · 具体 · 数据锚 · 有路径</div>
-      <div class="gt">「最稳的是第二组——下次试试整组都用这个速度」</div>
-      <div class="gb">不安慰、不夸赞、没有感叹号与 emoji</div>
+      <div class="gk">✓ 我们的训练总结 · 实机文案</div>
+      <div class="gt">「最稳的是第二组——下一次试试整组都用第二组的速度」</div>
+      <div class="gb">先说事实，再给数据锚，最后给路径；不安慰、不夸赞、无感叹号</div>
     </div>
   </div>
-
-  <div class="gap"></div>
-
-  <div class="row">
+  <div class="gap-sm"></div>
+  <div class="failrow">
     <div class="fail"><span class="fk">太痛</span><span class="fb">先退一步观察</span></div>
     <div class="fail"><span class="fk">太难</span><span class="fb">聚焦一个要点</span></div>
     <div class="fail"><span class="fk">太忙</span><span class="fb">拆小，别拆掉</span></div>
     <div class="fail"><span class="fk">太轻</span><span class="fb">适度进阶</span></div>
   </div>
 
-  <div class="marquee">ACL 智能康复系统 <b>//</b> RESEARCH — HARDWARE — UI <b>//</b> 2026</div>
+  <div class="marquee">ACL 智能康复系统 <b>·</b> 研究 — 硬件 — 交互 <b>·</b> 2026</div>
 
 </div>
 </body>

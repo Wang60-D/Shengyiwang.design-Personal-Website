@@ -261,7 +261,7 @@ img { display: block; max-width: 100%; }
 .hl__track {
   display: flex; gap: 20px;
   overflow-x: auto; overscroll-behavior-x: contain;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: x mandatory;
   /* 左右内边距与 wrap 的视觉边缘对齐，但加上限避免大屏上 padding 占满视窗 */
   padding: 8px clamp(22px, calc((100vw - 1076px) / 2), 80px);
   scroll-padding-inline: clamp(22px, calc((100vw - 1076px) / 2), 80px);
@@ -416,7 +416,7 @@ img { display: block; max-width: 100%; }
     gap: 18px;
     overflow-x: auto;
     overscroll-behavior-x: contain;
-    scroll-snap-type: x proximity;
+    scroll-snap-type: x mandatory;
     touch-action: pan-x;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
