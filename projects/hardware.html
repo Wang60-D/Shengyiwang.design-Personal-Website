@@ -28,7 +28,7 @@
   <section class="wrap phero">
     <span class="t-eyebrow reveal">The Hardware</span>
     <h1 class="t-hero reveal">一副<span class="gradient-text">会施力</span>的<br />膝关节外骨骼</h1>
-    <p class="t-lead reveal">感知膝角，主动施力。给独自康复的人，多一层引导与保护。</p>
+    <p class="t-lead reveal">感知膝角，主动施力。<br />给独自康复的人，多一层引导与保护。</p>
     <div class="phero__cta reveal">
       <a class="btn btn--blue" href="#tour">看它转一圈 <span class="chev">↓</span></a>
       <a class="btn btn--ghost" href="research.html">了解康复研究 <span class="chev">→</span></a>
@@ -91,6 +91,22 @@
     </div>
   </section>
 
+  <!-- WEARABILITY: 开合腿环 + FIDLOCK -->
+  <section class="section">
+    <div class="wrap">
+      <div class="feature feature--reverse">
+        <div class="feature__media reveal" style="padding:24px">
+          <img src="../assets/img/diagrams/fidlock-cuff.svg" alt="开合式腿环穿戴三步：打开穿入、FIDLOCK 磁吸扣合、旋转锁紧" />
+        </div>
+        <div class="feature__body reveal">
+          <span class="t-eyebrow t-eyebrow--teal">Wearability</span>
+          <h3 class="t-h3">打开，扣上，一拧</h3>
+          <p class="t-body">大小腿环均为<strong>开合式</strong>结构：打开穿入，<strong>FIDLOCK 磁扣</strong>自动吸合，旋转即锁紧——术后屈膝受限、弯腰不便时，单手也能完成。磁吸是这副支具的统一设计语言：腿环如此，IMU 模块亦然。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FEATURE: sensing + fusion -->
   <section class="section">
     <div class="wrap">
@@ -98,6 +114,16 @@
         <span class="t-eyebrow t-eyebrow--teal">Sensing &amp; Fusion</span>
         <h2 class="t-h2">准确感知，是施力的前提</h2>
         <p class="t-body">传统单 IMU 角度估计在动态下漂移严重。使用双 IMU 与重力向量法重建膝关节屈曲角度，零位校准抵消装配误差，抗漂移特性保证长时训练稳定。</p>
+      </div>
+      <div class="feature" style="margin-bottom:var(--section)">
+        <div class="feature__media reveal" style="padding:24px">
+          <img src="../assets/img/diagrams/imu-magnetic.svg" alt="磁吸式 IMU 两种形态：支具模式磁吸固定在框架上；后期取下吸附于绑带，作为独立穿戴传感器持续记录膝角" />
+        </div>
+        <div class="feature__body reveal">
+          <span class="t-eyebrow t-eyebrow--teal">Magnetic IMU</span>
+          <h3 class="t-h3">支具退场后，感知留下</h3>
+          <p class="t-body">IMU 模块内置 JY901S 九轴传感器，通过<strong>磁吸对位 + Pogo pin 触点</strong>吸附在支具框架上——吸上即连，取下即走。进入后期功能期、不再需要电机主动助力时，它可吸附在绑带上作为<strong>独立穿戴传感器</strong>，继续记录膝关节角度——硬件形态也随康复阶段递减。</p>
+        </div>
       </div>
       <div class="section__head reveal" style="margin-bottom:0;text-align:left;max-width:none">
         <span class="t-eyebrow t-eyebrow--teal">Architecture</span>

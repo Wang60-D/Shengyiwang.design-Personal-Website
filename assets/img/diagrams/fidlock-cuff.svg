@@ -1,0 +1,58 @@
+<svg viewBox="0 0 920 390" xmlns="http://www.w3.org/2000/svg" font-family="Inter, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arrG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#9e9ea0"/>
+    </marker>
+    <marker id="arrT" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0a7281"/>
+    </marker>
+  </defs>
+
+  <!-- ============ ① 打开，穿入 ============ -->
+  <g>
+    <!-- 开口腿环（缺口朝右） -->
+    <path d="M212.5,250 A75,75 0 1 1 212.5,120" fill="none" stroke="#d2d2d7" stroke-width="29" stroke-linecap="round"/>
+    <path d="M212.5,250 A75,75 0 1 1 212.5,120" fill="none" stroke="#ffffff" stroke-width="26" stroke-linecap="round"/>
+    <path d="M207,240.4 A64,64 0 1 1 207,129.6" fill="none" stroke="#1b2333" stroke-width="8" stroke-linecap="round"/>
+    <!-- 腿（虚线示意） -->
+    <circle cx="175" cy="185" r="38" fill="none" stroke="#c9ccd0" stroke-width="1.6" stroke-dasharray="5 5"/>
+    <text x="175" y="190" font-size="14" fill="#9e9ea0" text-anchor="middle">腿</text>
+    <!-- 穿入箭头 -->
+    <path d="M310,185 L240,185" fill="none" stroke="#9e9ea0" stroke-width="2" marker-end="url(#arrG)"/>
+    <text x="175" y="330" font-size="15.5" font-weight="600" fill="#1d1d1f" text-anchor="middle">① 打开，穿入</text>
+  </g>
+
+  <!-- ============ ② FIDLOCK 磁吸扣合 ============ -->
+  <g>
+    <path d="M531.3,208.2 A75,75 0 1 1 531.3,161.8" fill="none" stroke="#d2d2d7" stroke-width="29" stroke-linecap="round"/>
+    <path d="M531.3,208.2 A75,75 0 1 1 531.3,161.8" fill="none" stroke="#ffffff" stroke-width="26" stroke-linecap="round"/>
+    <path d="M520.9,204.8 A64,64 0 1 1 520.9,165.2" fill="none" stroke="#1b2333" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="460" cy="185" r="38" fill="none" stroke="#c9ccd0" stroke-width="1.6" stroke-dasharray="5 5"/>
+    <text x="460" y="190" font-size="14" fill="#9e9ea0" text-anchor="middle">腿</text>
+    <!-- FIDLOCK 两半即将吸合 -->
+    <circle cx="535" cy="169" r="9" fill="#1d1d1f"/>
+    <circle cx="535" cy="201" r="9" fill="#1d1d1f"/>
+    <path d="M535,146 L535,156" fill="none" stroke="#9e9ea0" stroke-width="2" marker-end="url(#arrG)"/>
+    <path d="M535,224 L535,214" fill="none" stroke="#9e9ea0" stroke-width="2" marker-end="url(#arrG)"/>
+    <text x="460" y="330" font-size="15.5" font-weight="600" fill="#1d1d1f" text-anchor="middle">② FIDLOCK 磁吸扣合</text>
+  </g>
+
+  <!-- ============ ③ 旋转锁紧 ============ -->
+  <g>
+    <circle cx="745" cy="185" r="75" fill="none" stroke="#d2d2d7" stroke-width="29"/>
+    <circle cx="745" cy="185" r="75" fill="none" stroke="#ffffff" stroke-width="26"/>
+    <circle cx="745" cy="185" r="64" fill="none" stroke="#1b2333" stroke-width="8"/>
+    <circle cx="745" cy="185" r="38" fill="none" stroke="#c9ccd0" stroke-width="1.6" stroke-dasharray="5 5"/>
+    <text x="745" y="190" font-size="14" fill="#9e9ea0" text-anchor="middle">腿</text>
+    <!-- FIDLOCK 锁扣 -->
+    <circle cx="820" cy="185" r="13" fill="#1d1d1f"/>
+    <circle cx="820" cy="185" r="6" fill="none" stroke="#5a5a5f" stroke-width="1.5"/>
+    <rect x="817" y="174" width="6" height="9" rx="2" fill="#3a3d42"/>
+    <!-- 旋转箭头 -->
+    <path d="M797.4,176.8 A24,24 0 1 1 838.4,200.4" fill="none" stroke="#0a7281" stroke-width="2.5" marker-end="url(#arrT)"/>
+    <text x="745" y="330" font-size="15.5" font-weight="600" fill="#1d1d1f" text-anchor="middle">③ 旋转锁紧</text>
+  </g>
+
+  <!-- 底注 -->
+  <text x="460" y="368" font-size="13" fill="#86868b" text-anchor="middle">开合式大小腿环 · 单手即可扣合锁紧</text>
+</svg>

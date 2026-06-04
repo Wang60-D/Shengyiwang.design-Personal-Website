@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>阶段化康复与研究 — 王盛逸 Shengyi Wang</title>
-  <meta name="description" content="ACL 智能康复系统的研究：三阶段康复框架、ROM 进阶曲线、多通道反馈、五条设计原则与 N=10 被试内用户实验。" />
+  <meta name="description" content="ACL 智能康复系统的研究：从临床指南与交互研究推导出三阶段训练模式，阶段化的好处、机制设计、五条设计原则与 N=10 被试内用户实验。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/project.css?v=20260605" />
+  <link rel="stylesheet" href="../assets/css/project.css?v=20260604" />
 </head>
 <body>
 
@@ -27,11 +27,88 @@
   <!-- INTRO -->
   <section class="wrap phero">
     <span class="t-eyebrow t-eyebrow--teal reveal">The Research</span>
-    <h1 class="t-hero reveal">让康复，<br /><span class="gradient-text">有节奏地</span>发生</h1>
-    <p class="t-lead reveal">家庭康复最稳定的失败不是动作做错，而是无人见证下的放弃。我们把康复组织成一套三阶段、可解释、会陪你走完的训练系统——并用被试内实验检验它是否真的有效。</p>
+    <h1 class="t-hero reveal"><span class="gradient-text">阶段化</span>，<br />让康复有节奏</h1>
+    <p class="t-lead reveal">康复不该是一张静态的动作清单。</p>
     <div class="phero__cta reveal">
-      <a class="btn btn--blue" href="#framework">看阶段框架 <span class="chev">↓</span></a>
+      <a class="btn btn--blue" href="#formative">看研究过程 <span class="chev">↓</span></a>
       <a class="btn btn--ghost" href="#study">看实验结果 <span class="chev">→</span></a>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="section section--soft" id="problem">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="t-eyebrow t-eyebrow--teal">The Problem</span>
+        <h2 class="t-h2">家庭康复，为什么会失败？</h2>
+        <p class="t-body">ACL 术后康复主要发生在家中，面对面指导稀缺。前期调研显示，最常见的问题不是「没有测量」，而是「不会解释」。</p>
+      </div>
+      <div class="cards cards--3">
+        <div class="card reveal">
+          <div class="card__k">静态清单</div>
+          <div class="card__t">目标不随恢复变化</div>
+          <div class="card__b">同一张动作清单从术后第一周用到第二十周，强度与目标和身体的实际恢复脱节。</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__k">缺少解释</div>
+          <div class="card__t">做错了，没人纠正</div>
+          <div class="card__b">系统能给出分数和角度，却说不清这个动作为什么重要、错在哪里、应该先改什么。</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__k">无人见证</div>
+          <div class="card__t">做对了，没人看见</div>
+          <div class="card__b">进步不可见、坚持无回应——家庭康复最稳定的失败，是无人见证下的放弃。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMATIVE STUDY -->
+  <section class="section" id="formative">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="t-eyebrow t-eyebrow--teal">Formative Study</span>
+        <h2 class="t-h2">从临床指南与交互研究中找答案</h2>
+        <p class="t-body">系统文献综述，覆盖三类来源：ACL 临床康复指南、家庭康复反馈系统研究（CHI / IMWUT / Sensors）、数字康复临床证据（RCT）。每一条发现，都落成一个设计决策。</p>
+      </div>
+      <div class="cards cards--3">
+        <div class="card reveal">
+          <div class="card__k">发现 01 · 临床指南</div>
+          <div class="card__t">进阶由标准驱动，而非周数</div>
+          <div class="card__b">是否进阶依据 ROM、疼痛、动作控制与功能表现，而非固定时间——<strong>这成为三阶段框架的骨架</strong>。</div>
+          <div class="card__cite">van Melick 2016 · Adams 2012 · Meredith 2020</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__k">发现 02 · 反馈设计</div>
+          <div class="card__t">测量不等于理解</div>
+          <div class="card__b">反馈普遍停留在分数与图表，缺少「为什么、错在哪、先改什么」——<strong>催生可解释反馈与训练前 / 中 / 后三层动作理解</strong>。</div>
+          <div class="card__cite">Brennan 2019 · Tang 2015 · Wang 2023</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__k">发现 03 · 计划执行</div>
+          <div class="card__t">区分失败原因，再调整</div>
+          <div class="card__b">太痛、太难、太忙、太轻对应不同修订策略，比单纯提醒坚持更有效——<strong>催生失败分型与保护性回退</strong>。</div>
+          <div class="card__cite">Xu 2022 · Mohan 2019 · Janssen 2020</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__k">发现 04 · 进展理解</div>
+          <div class="card__t">用关键片段讲进展</div>
+          <div class="card__b">episode 式叙事比仪表盘更能支持理解与行动——<strong>催生 episode 式进展设计</strong>。</div>
+          <div class="card__cite">Raj 2023</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__k">发现 05 · 运动学习</div>
+          <div class="card__t">反馈不必依赖屏幕</div>
+          <div class="card__b">听觉 / 触觉反馈对动作学习同样有效，且不与动作争夺视觉注意——<strong>催生 Eyes-free UI 与四通道分工</strong>。</div>
+          <div class="card__cite">Sigrist 2012 · Petancevski 2022</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__k">证据 · RCT</div>
+          <div class="card__t">数字康复确实有效</div>
+          <div class="card__b">传感 / 数字康复系统已被随机对照试验证明能提升依从性与康复结果——问题不在该不该做，而在<strong>怎么做得可理解</strong>。</div>
+          <div class="card__cite">Dunphy 2021 · Höher 2023 · Lim 2024 · Schmidt 2024</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -40,8 +117,8 @@
     <div class="wrap">
       <div class="section__head reveal">
         <span class="t-eyebrow t-eyebrow--teal">Three-Stage Framework</span>
-        <h2 class="t-h2">三阶段康复框架</h2>
-        <p class="t-body">以客观标准（criteria）而非单纯周数驱动进阶。每个阶段定义不同的目标、限制与反馈密度，系统的每一层都被阶段引导。</p>
+        <h2 class="t-h2">研究产出：三阶段训练模式</h2>
+        <p class="t-body">上述发现指向同一个答案：康复支持必须随恢复阶段变化。我们以客观标准（criteria）而非单纯周数驱动进阶，每个阶段定义不同的目标、限制与反馈密度。</p>
       </div>
       <div class="stages" style="margin-bottom:40px">
         <div class="stage stage--1 reveal">
@@ -67,74 +144,275 @@
     </div>
   </section>
 
-  <!-- ROM PROGRESSION -->
-  <section class="section">
+  <!-- WHY STAGING WORKS -->
+  <section class="section" id="benefits">
     <div class="wrap">
-      <div class="feature">
-        <div class="feature__media reveal"><img src="../assets/img/diagrams/fig5_rom_curve.svg" alt="屈曲 ROM 进阶曲线与角度墙" /></div>
+      <div class="section__head reveal">
+        <span class="t-eyebrow t-eyebrow--teal">Why Staging Works</span>
+        <h2 class="t-h2">阶段化，到底好在哪？</h2>
+      </div>
+      <div class="cards cards--2">
+        <div class="card reveal">
+          <div class="card__k">01 · Safety</div>
+          <div class="card__t">安全</div>
+          <div class="card__b">每阶段有明确目标与限制，角度墙始终冗余在目标之上，进阶不冒进——符合 criteria-based 临床共识。</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__k">02 · Explainability</div>
+          <div class="card__t">可解释</div>
+          <div class="card__b">阶段把医学术语变成可操作信息：当前目标是什么、重点是什么、进阶还差什么——患者知道为什么进阶、为什么不进阶。</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__k">03 · Motivation</div>
+          <div class="card__t">保持动机</div>
+          <div class="card__b">目标始终「再多一点点」，进步被看见；做不到时按原因（太痛 / 太难 / 太忙 / 太轻）修订而非指责，回退有返回路径。</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__k">04 · Autonomy</div>
+          <div class="card__t">走向自主</div>
+          <div class="card__b">反馈密度随阶段递减，从被辅助过渡到自主管理——递减本身被感受为信任。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section section--soft" id="mechanisms">
+    <div class="wrap wrap--wide">
+      <div class="section__head reveal">
+        <span class="t-eyebrow t-eyebrow--teal">How It Works</span>
+        <h2 class="t-h2">阶段化如何落地</h2>
+        <p class="t-body">三个机制，把「阶段」变成身体能感受到的体验。</p>
+      </div>
+
+      <div class="feature feature--lg" style="margin-bottom:clamp(56px,8vw,96px)">
+        <div class="feature__media feature__media--card reveal"><img src="../assets/img/diagrams/fig5_rom_curve.svg" alt="屈曲 ROM 进阶曲线与角度墙" /></div>
         <div class="feature__body reveal">
           <span class="t-eyebrow t-eyebrow--teal">Range of Motion</span>
           <h3 class="t-h3">目标随周数抬升，<br />角度墙如影随形</h3>
           <p class="t-body">屈曲 ROM 目标按阶段逐步提高，硬件角度墙始终略高于当日目标作为安全冗余。患者总能感到「再多一点点」的挑战，但永远撞不穿那堵保护墙。</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section section--soft">
-    <div class="wrap">
-      <div class="feature feature--reverse">
-        <div class="feature__media reveal"><img src="../assets/img/diagrams/fig4_return_assist.svg" alt="回退与返回路径机制" /></div>
+      <div class="feature feature--lg feature--reverse" style="margin-bottom:clamp(56px,8vw,96px)">
+        <div class="feature__media feature__media--card reveal"><img src="../assets/img/diagrams/fig4_return_assist.svg" alt="回退与返回路径机制" /></div>
         <div class="feature__body reveal">
           <span class="t-eyebrow t-eyebrow--teal">Adapt &amp; Recover</span>
           <h3 class="t-h3">回退是保护，不是惩罚</h3>
           <p class="t-body"><strong>软回退</strong>仅本次降目标、不留痕迹，语气是「今天我们走慢一点」；<strong>硬回退</strong>进入阶段轨迹，但必须附带返回路径承诺——「做 A，连续 N 次稳定后回到 B」。疼痛跨阈值即单次触发，其余指标需累积。</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- MULTI-CHANNEL -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section__head reveal">
-        <span class="t-eyebrow t-eyebrow--teal">Multi-Channel Feedback</span>
-        <h2 class="t-h2">四通道反馈，按事件分级</h2>
-        <p class="t-body">力 · 触觉 · 声音 · 视觉，不是平等并列，而是按事件性质分工：安全冗余 vs. 学习差异化。</p>
-      </div>
-      <div class="figure reveal" style="margin-bottom:40px">
-        <img src="../assets/img/diagrams/four-channel.png" alt="四通道反馈架构图" />
-      </div>
-      <div class="cards cards--2">
-        <div class="card reveal">
-          <div class="card__k">安全相关事件</div>
-          <div class="card__t">多通道冗余</div>
-          <div class="card__b">接近角度墙、超墙、急停——多个通道同时触发。任何一个被错过都可能造成伤害，所以必须冗余。</div>
-        </div>
-        <div class="card reveal">
-          <div class="card__k">学习相关事件</div>
-          <div class="card__t">单通道差异化</div>
-          <div class="card__b">节律错误走力反馈微振，角度偏短走组间脉冲计数，速度偏快走支具力反馈——同一时刻每个错误只占一个通道，可精确分辨。</div>
+      <div class="feature feature--lg">
+        <div class="feature__media feature__media--card reveal"><img src="../assets/img/diagrams/four-channel.png" alt="四通道反馈架构图" /></div>
+        <div class="feature__body reveal">
+          <span class="t-eyebrow t-eyebrow--teal">Multi-Channel Feedback</span>
+          <h3 class="t-h3">四通道反馈，<br />按事件分级</h3>
+          <p class="t-body">力 · 触觉 · 声音 · 视觉不是平等并列，而是按事件性质分工：<strong>安全相关事件多通道冗余</strong>——接近角度墙、超墙、急停，多个通道同时触发；<strong>学习相关事件单通道差异化</strong>——同一时刻每个错误只占一个通道，可精确分辨。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DESIGN PRINCIPLES -->
-  <section class="section section--dark">
+  <!-- DESIGN PRINCIPLES (dark, horizontal scroll cards) -->
+  <section class="section section--dark" id="principles">
     <div class="wrap">
       <div class="section__head reveal">
         <span class="t-eyebrow">Design Principles</span>
         <h2 class="t-h1">五条原则，零情感表演</h2>
-        <p class="t-body" style="max-width:640px;margin:18px auto 0">贯穿所有具体设计。系统传达「被看到」，但绝不假装关心。</p>
+        <p class="t-body" style="max-width:640px;margin:18px auto 0">从研究中沉淀，贯穿所有具体设计。系统传达「被看到」，但绝不假装关心。</p>
       </div>
-      <div class="cards cards--3">
-        <div class="card card--dark reveal"><div class="card__k">01</div><div class="card__t">回退是保护性叙事</div><div class="card__b">不使用任何「失败 / 退步 / 落后」语义，每次硬回退附带返回路径承诺。</div></div>
-        <div class="card card--dark reveal"><div class="card__k">02</div><div class="card__t">Eyes-free 训练</div><div class="card__b">动作中视觉信息非必要，反馈走力 / 触觉 / 声音，让注意力回到身体。</div></div>
-        <div class="card card--dark reveal"><div class="card__k">03</div><div class="card__t">Non-anthropomorphic Empathy</div><div class="card__b">承担陪伴感但不表演情感、不命名、不用第一人称——研究的伦理立场。</div></div>
-        <div class="card card--dark reveal"><div class="card__k">04</div><div class="card__t">反馈密度随阶段递减</div><div class="card__b">从「被辅助」过渡到「自主控制」，递减本身被感受为信任。</div></div>
-        <div class="card card--dark reveal"><div class="card__k">05</div><div class="card__t">多通道分工</div><div class="card__b">安全冗余、学习差异化，本体感觉是反馈环的一部分。</div></div>
-        <div class="card card--dark reveal"><div class="card__k">＋</div><div class="card__t">用力反馈承载「语气」</div><div class="card__b">阶段参数的变化本身，就是非语言的陪伴。</div></div>
+    </div>
+    <div class="hl">
+      <div class="hl__track" aria-label="设计原则卡片，可左右滑动">
+
+        <article class="hl-card hl-card--principle reveal">
+          <div class="pcard__media">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',sans-serif" aria-hidden="true">
+              <rect width="400" height="220" fill="#0e1217"/>
+              <line x1="40" y1="60" x2="360" y2="60" stroke="#1c2129"/>
+              <line x1="40" y1="110" x2="360" y2="110" stroke="#1c2129"/>
+              <line x1="40" y1="160" x2="360" y2="160" stroke="#1c2129"/>
+              <polyline points="40,175 90,155 140,130 175,118" fill="none" stroke="#2997ff" stroke-width="2.5" stroke-linecap="round"/>
+              <polyline points="175,118 205,148" fill="none" stroke="#d67d3e" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="205" cy="148" r="5" fill="#d67d3e"/>
+              <path d="M205,148 Q236,98 263,109" fill="none" stroke="#36c5d8" stroke-width="2.5" stroke-dasharray="6 5" stroke-linecap="round"/>
+              <path d="M256,103 L264,109 L255,113" fill="none" stroke="#36c5d8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="265,110 320,95 360,86" fill="none" stroke="#2997ff" stroke-width="2.5" stroke-linecap="round"/>
+              <text x="208" y="170" font-size="11" fill="#8a8f98">回退 · 不留痕迹</text>
+              <text x="252" y="88" font-size="11" fill="#36c5d8">返回路径承诺</text>
+            </svg>
+          </div>
+          <div class="pcard__text">
+            <span class="hl-card__eyebrow">01</span>
+            <h3 class="hl-card__name">回退是保护性叙事</h3>
+            <p class="hl-card__body">不使用任何「失败 / 退步 / 落后」语义，每次硬回退附带返回路径承诺——「做 A，稳定后回到 B」。</p>
+          </div>
+        </article>
+
+        <article class="hl-card hl-card--principle reveal">
+          <div class="pcard__media">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',sans-serif" aria-hidden="true">
+              <rect width="400" height="220" fill="#0e1217"/>
+              <rect x="58" y="55" width="68" height="118" rx="14" fill="#16181d" stroke="#2a2f36" stroke-width="1.5"/>
+              <rect x="65" y="62" width="54" height="104" rx="9" fill="#0b0c0e"/>
+              <circle cx="92" cy="114" r="2.5" fill="#3a3d42"/>
+              <text x="92" y="195" font-size="11" fill="#8a8f98" text-anchor="middle">屏幕退场</text>
+              <line x1="196" y1="74" x2="258" y2="121" stroke="#c7c7cc" stroke-width="6" stroke-linecap="round"/>
+              <line x1="258" y1="121" x2="220" y2="182" stroke="#c7c7cc" stroke-width="6" stroke-linecap="round"/>
+              <circle cx="258" cy="121" r="13" fill="#16181d" stroke="#36c5d8" stroke-width="2.5"/>
+              <path d="M285,103 A33,33 0 0 1 285,139" fill="none" stroke="#36c5d8" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M297,93 A48,48 0 0 1 297,149" fill="none" stroke="#36c5d8" stroke-width="2.5" stroke-opacity="0.55" stroke-linecap="round"/>
+              <path d="M309,84 A63,63 0 0 1 309,158" fill="none" stroke="#36c5d8" stroke-width="2.5" stroke-opacity="0.28" stroke-linecap="round"/>
+              <text x="282" y="195" font-size="11" fill="#8a8f98" text-anchor="middle">反馈走力 · 触觉 · 声音</text>
+            </svg>
+          </div>
+          <div class="pcard__text">
+            <span class="hl-card__eyebrow">02</span>
+            <h3 class="hl-card__name">Eyes-free 训练</h3>
+            <p class="hl-card__body">动作中视觉信息非必要，反馈走力 / 触觉 / 声音，让注意力回到身体。</p>
+          </div>
+        </article>
+
+        <article class="hl-card hl-card--principle reveal">
+          <div class="pcard__media">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',sans-serif" aria-hidden="true">
+              <rect width="400" height="220" fill="#0e1217"/>
+              <path d="M60,65 h84 a14,14 0 0 1 14,14 v38 a14,14 0 0 1 -14,14 h-52 l-16,16 v-16 h-16 a14,14 0 0 1 -14,-14 v-38 a14,14 0 0 1 14,-14 z" fill="#16181d" stroke="#3a3d42" stroke-width="1.5"/>
+              <circle cx="88" cy="90" r="4" fill="#8a8f98"/>
+              <circle cx="116" cy="90" r="4" fill="#8a8f98"/>
+              <path d="M84,106 Q102,118 120,106" fill="none" stroke="#8a8f98" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="48" y1="152" x2="160" y2="56" stroke="#d67d3e" stroke-width="2.5" stroke-linecap="round"/>
+              <text x="102" y="195" font-size="11" fill="#8a8f98" text-anchor="middle">不表演情感</text>
+              <circle cx="290" cy="105" r="9" fill="#36c5d8"/>
+              <circle cx="290" cy="105" r="26" fill="none" stroke="#36c5d8" stroke-width="2" stroke-opacity="0.5"/>
+              <circle cx="290" cy="105" r="44" fill="none" stroke="#36c5d8" stroke-width="2" stroke-opacity="0.22"/>
+              <text x="290" y="195" font-size="11" fill="#8a8f98" text-anchor="middle">稳定在场</text>
+            </svg>
+          </div>
+          <div class="pcard__text">
+            <span class="hl-card__eyebrow">03</span>
+            <h3 class="hl-card__name">Non-anthropomorphic Empathy</h3>
+            <p class="hl-card__body">承担陪伴感但不表演情感、不命名、不用第一人称——研究的伦理立场。</p>
+          </div>
+        </article>
+
+        <article class="hl-card hl-card--principle reveal">
+          <div class="pcard__media">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',sans-serif" aria-hidden="true">
+              <rect width="400" height="220" fill="#0e1217"/>
+              <line x1="40" y1="170" x2="360" y2="170" stroke="#2a2f36" stroke-width="1.5"/>
+              <g fill="#2997ff">
+                <rect x="58" y="80" width="12" height="90" rx="3"/>
+                <rect x="76" y="95" width="12" height="75" rx="3"/>
+                <rect x="94" y="86" width="12" height="84" rx="3"/>
+                <rect x="112" y="102" width="12" height="68" rx="3"/>
+              </g>
+              <g fill="#2997ff" fill-opacity="0.6">
+                <rect x="172" y="118" width="12" height="52" rx="3"/>
+                <rect x="190" y="128" width="12" height="42" rx="3"/>
+                <rect x="208" y="122" width="12" height="48" rx="3"/>
+              </g>
+              <g fill="#36c5d8" fill-opacity="0.45">
+                <rect x="276" y="146" width="12" height="24" rx="3"/>
+                <rect x="294" y="152" width="12" height="18" rx="3"/>
+              </g>
+              <path d="M64,72 Q200,86 348,140" fill="none" stroke="#36c5d8" stroke-width="2" stroke-dasharray="6 5"/>
+              <g font-size="11" fill="#8a8f98" text-anchor="middle">
+                <text x="88" y="192">S1 被辅助</text>
+                <text x="196" y="192">S2 引导</text>
+                <text x="294" y="192">S3 自主</text>
+              </g>
+            </svg>
+          </div>
+          <div class="pcard__text">
+            <span class="hl-card__eyebrow">04</span>
+            <h3 class="hl-card__name">反馈密度随阶段递减</h3>
+            <p class="hl-card__body">从「被辅助」过渡到「自主控制」，递减本身被感受为信任。</p>
+          </div>
+        </article>
+
+        <article class="hl-card hl-card--principle reveal">
+          <div class="pcard__media">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',sans-serif" aria-hidden="true">
+              <rect width="400" height="220" fill="#0e1217"/>
+              <line x1="200" y1="42" x2="200" y2="178" stroke="#1c2129"/>
+              <text x="110" y="46" font-size="12" fill="#c7c7cc" text-anchor="middle">安全 · 冗余</text>
+              <g fill="#8a8f98" font-size="11" text-anchor="end">
+                <text x="48" y="78">力</text><text x="48" y="104">触</text><text x="48" y="130">声</text><text x="48" y="156">视</text>
+              </g>
+              <g fill="#8a8f98">
+                <circle cx="60" cy="74" r="4"/><circle cx="60" cy="100" r="4"/><circle cx="60" cy="126" r="4"/><circle cx="60" cy="152" r="4"/>
+              </g>
+              <g stroke="#2997ff" stroke-width="1.8" stroke-opacity="0.85">
+                <line x1="64" y1="74" x2="148" y2="113"/>
+                <line x1="64" y1="100" x2="148" y2="113"/>
+                <line x1="64" y1="126" x2="148" y2="113"/>
+                <line x1="64" y1="152" x2="148" y2="113"/>
+              </g>
+              <circle cx="156" cy="113" r="10" fill="#2997ff"/>
+              <text x="290" y="46" font-size="12" fill="#c7c7cc" text-anchor="middle">学习 · 分工</text>
+              <g fill="#8a8f98">
+                <circle cx="240" cy="74" r="4"/><circle cx="240" cy="100" r="4"/><circle cx="240" cy="126" r="4"/><circle cx="240" cy="152" r="4"/>
+              </g>
+              <g stroke="#36c5d8" stroke-width="1.8">
+                <line x1="244" y1="74" x2="330" y2="74"/>
+                <line x1="244" y1="100" x2="330" y2="100"/>
+                <line x1="244" y1="126" x2="330" y2="126"/>
+                <line x1="244" y1="152" x2="330" y2="152"/>
+              </g>
+              <g fill="#36c5d8">
+                <circle cx="336" cy="74" r="5"/><circle cx="336" cy="100" r="5"/><circle cx="336" cy="126" r="5"/><circle cx="336" cy="152" r="5"/>
+              </g>
+              <g font-size="11" fill="#8a8f98" text-anchor="middle">
+                <text x="110" y="196">多通道同时触发</text>
+                <text x="290" y="196">一个错误占一个通道</text>
+              </g>
+            </svg>
+          </div>
+          <div class="pcard__text">
+            <span class="hl-card__eyebrow">05</span>
+            <h3 class="hl-card__name">多通道分工</h3>
+            <p class="hl-card__body">安全冗余、学习差异化，本体感觉是反馈环的一部分。</p>
+          </div>
+        </article>
+
+        <article class="hl-card hl-card--principle reveal">
+          <div class="pcard__media">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',sans-serif" aria-hidden="true">
+              <rect width="400" height="220" fill="#0e1217"/>
+              <line x1="40" y1="110" x2="360" y2="110" stroke="#1c2129"/>
+              <path d="M40,110 Q67,58 95,110 Q122,162 150,110" fill="none" stroke="#2997ff" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M150,110 Q177,80 205,110 Q232,140 260,110" fill="none" stroke="#36c5d8" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M260,110 Q285,98 310,110 Q335,122 360,110" fill="none" stroke="#36c5d8" stroke-opacity="0.5" stroke-width="2.5" stroke-linecap="round"/>
+              <g font-size="11" fill="#8a8f98" text-anchor="middle">
+                <text x="95" y="192">S1 强介入</text>
+                <text x="205" y="192">S2 引导</text>
+                <text x="310" y="192">S3 安全网</text>
+              </g>
+              <line x1="95" y1="172" x2="95" y2="178" stroke="#2a2f36" stroke-width="1.5"/>
+              <line x1="205" y1="172" x2="205" y2="178" stroke="#2a2f36" stroke-width="1.5"/>
+              <line x1="310" y1="172" x2="310" y2="178" stroke="#2a2f36" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="pcard__text">
+            <span class="hl-card__eyebrow">＋</span>
+            <h3 class="hl-card__name">用力反馈承载「语气」</h3>
+            <p class="hl-card__body">阶段参数的变化本身，就是非语言的陪伴。</p>
+          </div>
+        </article>
+
+      </div>
+      <div class="wrap hl__controls">
+        <div class="hl__dots" aria-label="卡片位置指示"></div>
+        <div class="hl__nav">
+          <button class="hl__btn" data-dir="-1" aria-label="上一张">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="hl__btn" data-dir="1" aria-label="下一张">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -151,7 +429,7 @@
         <div class="stat reveal"><div class="stat__n gradient-text">N=10</div><div class="stat__l">被试内设计</div></div>
         <div class="stat reveal"><div class="stat__n gradient-text">3</div><div class="stat__l">实验条件对比</div></div>
         <div class="stat reveal"><div class="stat__n gradient-text">3</div><div class="stat__l">测量维度</div></div>
-        <div class="stat reveal"><div class="stat__n gradient-text">10+2</div><div class="stat__l">前期访谈 患者 / 医生</div></div>
+        <div class="stat reveal"><div class="stat__n gradient-text">3×3</div><div class="stat__l">拉丁方平衡</div></div>
       </div>
       <div class="cards cards--3">
         <div class="card reveal"><div class="card__k">Conditions</div><div class="card__t">C1 · C2a · C2c</div><div class="card__b">视觉基线 / 早期配置 / 后期配置，拉丁方平衡顺序效应。</div></div>
@@ -180,6 +458,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/project.js?v=20260605" defer></script>
+  <script src="../assets/js/project.js?v=20260604" defer></script>
 </body>
 </html>

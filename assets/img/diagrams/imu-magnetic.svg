@@ -1,0 +1,65 @@
+<svg viewBox="0 0 920 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arrM" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#9e9ea0"/>
+    </marker>
+  </defs>
+
+  <!-- ============ 左：支具模式 · 磁吸对位 + Pogo pin ============ -->
+  <!-- 支具连杆片段 -->
+  <rect x="180" y="70" width="26" height="300" rx="10" fill="#e3e4e6" stroke="#c9ccd0" stroke-width="1"/>
+  <rect x="188" y="76" width="10" height="288" rx="5" fill="#cfd2d6"/>
+
+  <!-- 连杆侧接口：黑色胶囊 = 两端对位磁铁 + 中间 Pogo pin -->
+  <rect x="203" y="176" width="13" height="68" rx="6.5" fill="#1d1d1f"/>
+  <circle cx="209.5" cy="186" r="4" fill="#b9bcc0" stroke="#8d9298" stroke-width="0.5"/>
+  <circle cx="209.5" cy="234" r="4" fill="#b9bcc0" stroke="#8d9298" stroke-width="0.5"/>
+  <circle cx="209.5" cy="201" r="2.3" fill="#c9a227"/>
+  <circle cx="209.5" cy="210" r="2.3" fill="#c9a227"/>
+  <circle cx="209.5" cy="219" r="2.3" fill="#c9a227"/>
+
+  <!-- IMU 模块（吸附态，圆角方壳，角部触点窗） -->
+  <rect x="216" y="172" width="76" height="76" rx="20" fill="#ffffff" stroke="#d2d2d7" stroke-width="1.5"/>
+  <circle cx="276" cy="188" r="5.5" fill="#1d1d1f"/>
+  <circle cx="276" cy="188" r="2" fill="#c9a227"/>
+
+  <!-- 取下的幽灵态：背面可见同款磁吸触点条 -->
+  <g opacity="0.55">
+    <rect x="316" y="100" width="76" height="76" rx="20" fill="none" stroke="#9e9ea0" stroke-width="1.6" stroke-dasharray="6 5"/>
+    <rect x="321" y="116" width="9" height="44" rx="4.5" fill="#1d1d1f" fill-opacity="0.75"/>
+    <circle cx="325.5" cy="122" r="2.8" fill="#b9bcc0"/>
+    <circle cx="325.5" cy="154" r="2.8" fill="#b9bcc0"/>
+    <circle cx="325.5" cy="133" r="1.8" fill="#c9a227"/>
+    <circle cx="325.5" cy="138" r="1.8" fill="#c9a227"/>
+    <circle cx="325.5" cy="143" r="1.8" fill="#c9a227"/>
+  </g>
+  <path d="M300,166 Q318,146 326,132" fill="none" stroke="#9e9ea0" stroke-width="1.8" marker-end="url(#arrM)"/>
+
+  <!-- 左侧标注 -->
+  <text x="250" y="402" font-size="16" font-weight="600" fill="#1d1d1f" text-anchor="middle">支具模式 · 吸附即连接</text>
+  <text x="250" y="424" font-size="13" fill="#6e6e73" text-anchor="middle">磁吸对位 + Pogo pin 触点，取下即走</text>
+
+  <!-- ============ 中：阶段推进箭头 ============ -->
+  <path d="M412,240 L508,240" fill="none" stroke="#9e9ea0" stroke-width="1.8" stroke-dasharray="7 6" marker-end="url(#arrM)"/>
+  <text x="460" y="222" font-size="13" fill="#6e6e73" text-anchor="middle">后期功能期</text>
+
+  <!-- ============ 右：独立模式 · 持续记录 ============ -->
+  <!-- 绑带 -->
+  <rect x="530" y="196" width="280" height="44" rx="22" fill="#1b2333"/>
+  <rect x="542" y="204" width="56" height="28" rx="14" fill="#2a3447"/>
+  <rect x="742" y="204" width="56" height="28" rx="14" fill="#2a3447"/>
+
+  <!-- IMU 模块（独立态） -->
+  <rect x="640" y="182" width="60" height="60" rx="16" fill="#ffffff" stroke="#d2d2d7" stroke-width="1.5"/>
+  <circle cx="688" cy="194" r="4.5" fill="#1d1d1f"/>
+  <circle cx="688" cy="194" r="1.7" fill="#c9a227"/>
+
+  <!-- 持续记录信号弧 -->
+  <path d="M662,174 A11,11 0 0 0 678,174" fill="none" stroke="#36c5d8" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M656,166 A19,19 0 0 0 684,166" fill="none" stroke="#36c5d8" stroke-width="2.5" stroke-opacity="0.6" stroke-linecap="round"/>
+  <path d="M650,158 A27,27 0 0 0 690,158" fill="none" stroke="#36c5d8" stroke-width="2.5" stroke-opacity="0.3" stroke-linecap="round"/>
+
+  <!-- 右侧标注 -->
+  <text x="670" y="402" font-size="16" font-weight="600" fill="#1d1d1f" text-anchor="middle">独立模式 · 持续记录膝角</text>
+  <text x="670" y="424" font-size="13" fill="#6e6e73" text-anchor="middle">无需电机助力后，作为轻量穿戴传感器</text>
+</svg>

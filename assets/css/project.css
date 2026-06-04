@@ -328,3 +328,47 @@ img { display: block; max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   .hl__dot { transition: none; }
 }
+
+/* ---------- Dark variant of highlights carousel (设计原则板块) ---------- */
+.section--dark .hl-card { background: #16181d; color: #f5f5f7; }
+.section--dark .hl-card__body { color: #a1a1a6; }
+.section--dark .hl-card__body strong { color: #f5f5f7; }
+.section--dark .hl-card__eyebrow { color: #2997ff; }
+.section--dark .hl__dot { background: #3a3d42; }
+.section--dark .hl__dot.on { background: #f5f5f7; }
+.section--dark .hl__btn { background: #26282e; color: #f5f5f7; }
+@media (hover: hover) and (pointer: fine) {
+  .section--dark .hl__btn:not([disabled]):hover { background: #33363d; }
+}
+
+/* 原则卡片：插画顶置全出血，文字下方 */
+.hl-card--principle { width: min(400px, 82vw); min-height: 0; padding: 0; overflow: hidden; }
+.pcard__media { background: #0e1217; }
+.pcard__media svg { width: 100%; display: block; }
+.pcard__text { padding: 24px 30px 32px; }
+.pcard__text .hl-card__name { margin-top: 10px; font-size: 22px; }
+.pcard__text .hl-card__body { margin-top: 10px; }
+
+/* 文献发现卡片的引用行 */
+.card__cite { margin-top: 14px; font-size: 12.5px; color: var(--ink-3); letter-spacing: .1px; }
+
+/* ---------- 机制板块：大图 feature + 悬浮卡片图 ---------- */
+.wrap--wide { max-width: 1320px; }
+@media (min-width: 900px) {
+  .feature--lg { grid-template-columns: 1.55fr 1fr; gap: 44px; }
+  .feature--lg.feature--reverse { grid-template-columns: 1fr 1.55fr; }
+}
+.feature__media--card {
+  background: #fff;
+  border-radius: var(--r-card);
+  padding: 12px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, .12), 0 6px 18px rgba(0, 0, 0, .06);
+  transition: transform .3s var(--ease-strong), box-shadow .3s var(--ease-strong);
+}
+.feature__media--card img { border-radius: calc(var(--r-card) - 8px); }
+@media (hover: hover) and (pointer: fine) {
+  .feature__media--card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, .16), 0 8px 22px rgba(0, 0, 0, .07);
+  }
+}
