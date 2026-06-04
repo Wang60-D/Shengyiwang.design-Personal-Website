@@ -1,6 +1,18 @@
-/* project.js — reveal-on-scroll + scrub annotation cross-fade.
-   Shared by hardware / research / ui pages. */
+/* project.js — reveal-on-scroll, scrub annotation cross-fade,
+   highlights carousel. Shared by hardware / research / ui pages.
+   Motion choices follow Emil Kowalski's design-eng skill:
+   staggers of 60ms, UI transitions <300ms, no keyboard-action animation. */
 (function () {
+  // Stagger grouped reveals (60ms between siblings, decorative only)
+  const groups = ['.statband', '.cards', '.phones', '.hl__track'];
+  groups.forEach((sel) => {
+    document.querySelectorAll(sel).forEach((box) => {
+      [...box.querySelectorAll(':scope > .reveal')].forEach((el, i) => {
+        el.style.transitionDelay = `${Math.min(i * 60, 300)}ms`;
+      });
+    });
+  });
+
   // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
@@ -39,5 +51,60 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
     update();
+  });
+
+  // Highlights carousel — scroll-snap track + dots + prev/next
+  document.querySelectorAll('.hl').forEach((hl) => {
+    const track = hl.querySelector('.hl__track');
+    const cards = [...track.children];
+    const dotsBox = hl.querySelector('.hl__dots');
+    const btns = [...hl.querySelectorAll('.hl__btn')];
+    if (!cards.length) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const padLeft = () => parseFloat(getComputedStyle(track).paddingLeft) || 0;
+
+    // Build dots
+    const dots = cards.map((_, i) => {
+      const d = document.createElement('button');
+      d.className = 'hl__dot';
+      d.setAttribute('aria-label', `第 ${i + 1} 张卡片`);
+      d.addEventListener('click', () => goTo(i));
+      dotsBox.appendChild(d);
+      return d;
+    });
+
+    const current = () => {
+      const x = track.scrollLeft + padLeft();
+      let best = 0, bestDist = Infinity;
+      cards.forEach((c, i) => {
+        const dist = Math.abs(c.offsetLeft - x);
+        if (dist < bestDist) { bestDist = dist; best = i; }
+      });
+      return best;
+    };
+
+    const goTo = (i) => {
+      const idx = Math.max(0, Math.min(cards.length - 1, i));
+      track.scrollTo({ left: cards[idx].offsetLeft - padLeft(), behavior: reduceMotion ? 'auto' : 'smooth' });
+    };
+
+    btns.forEach((b) => {
+      b.addEventListener('click', () => goTo(current() + parseInt(b.dataset.dir, 10)));
+    });
+
+    let raf = null;
+    const sync = () => {
+      raf = null;
+      const i = current();
+      dots.forEach((d, k) => d.classList.toggle('on', k === i));
+      if (btns.length === 2) {
+        btns[0].toggleAttribute('disabled', i === 0);
+        btns[1].toggleAttribute('disabled', i === cards.length - 1);
+      }
+    };
+    track.addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(sync); }, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
   });
 })();

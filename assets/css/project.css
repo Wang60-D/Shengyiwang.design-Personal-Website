@@ -82,12 +82,13 @@ img { display: block; max-width: 100%; }
   backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid rgba(0,0,0,.06);
 }
-.nav__row { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.nav__row { display: flex; align-items: center; justify-content: flex-start; width: 100%; }
 .nav__brand { font-weight: 600; font-size: 15px; letter-spacing: -.01em; }
-.nav__links { display: flex; gap: 26px; }
-.nav__links a { font-size: 13px; color: var(--ink-2); transition: color .2s; }
-.nav__links a:hover, .nav__links a.active { color: var(--ink); }
-.nav__back { font-size: 13px; color: var(--ink-3); }
+.nav__links { display: flex; gap: 26px; margin-left: auto; }
+.nav__links a { font-size: 13px; font-weight: 400; color: var(--ink-3); transition: color .2s; }
+.nav__links a:hover { color: var(--ink-2); }
+.nav__links a.active { color: var(--ink); font-weight: 500; }
+.nav__back { font-size: 13px; color: var(--ink-3); margin-left: 26px; }
 .nav__brand-sub { color: var(--ink-3); font-weight: 400; }
 /* On phones: keep the 硬件/研究/UI switcher visible (it's essential),
    drop the long brand subtitle and the back link to make room. */
@@ -175,6 +176,10 @@ img { display: block; max-width: 100%; }
 .card--dark .card__b { color: #a1a1a6; }
 .card__big { font-size: clamp(34px,4vw,52px); font-weight: 700; letter-spacing: -.02em; }
 
+/* scene photo */
+.scene { margin: 0; border-radius: 28px; overflow: hidden; background: var(--bg-soft); }
+.scene img { width: 100%; display: block; }
+
 /* media figure full-width */
 .figure { border-radius: var(--r-card); overflow: hidden; background: var(--bg-soft); }
 .figure img { width: 100%; }
@@ -236,4 +241,90 @@ img { display: block; max-width: 100%; }
   .phone { padding: 16px; }
   .feature { gap: 28px; }
   .pfooter__row { flex-direction: column; align-items: flex-start; gap: 14px; }
+}
+
+/* ============================================================
+   Motion tokens & highlights carousel
+   (animation decisions follow Emil Kowalski's design-eng skill:
+   strong custom ease-out, <300ms UI durations, scale-on-press,
+   no scale(0) entrances, hover gated to fine pointers)
+   ============================================================ */
+:root {
+  --ease-strong: cubic-bezier(0.23, 1, 0.32, 1);   /* strong ease-out */
+  --ease-inout: cubic-bezier(0.77, 0, 0.175, 1);   /* strong in-out  */
+}
+
+/* Apple "Get the highlights" 横滑卡片 */
+.hl { margin-top: clamp(28px, 4vw, 44px); }
+.hl__track {
+  display: flex; gap: 20px;
+  overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  padding: 8px max(22px, calc((100vw - 1076px) / 2));
+  scroll-padding-inline: max(22px, calc((100vw - 1076px) / 2));
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
+}
+.hl__track::-webkit-scrollbar { display: none; }
+
+.hl-card {
+  flex: 0 0 auto;
+  width: min(460px, 82vw);
+  min-height: 380px;
+  background: var(--bg-soft);
+  border-radius: 28px;
+  padding: 34px;
+  display: flex; flex-direction: column;
+  scroll-snap-align: start;
+}
+.hl-card--wide { width: min(740px, 88vw); }
+/* 设备卡片：横向布局，插画在左、文字在右 */
+.hl-card--device {
+  width: min(640px, 90vw); min-height: 300px;
+  flex-direction: row; align-items: center; gap: 28px;
+  padding: 30px 36px;
+}
+.hl-card--device .hl-card__device {
+  flex: 0 0 40%; margin: 0; padding: 0;
+  display: flex; justify-content: center; align-items: center;
+}
+.hl-card__device svg { max-width: 100%; }
+.hl-card__info { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.hl-card__name { margin-top: 10px; font-size: 24px; font-weight: 700; letter-spacing: -.01em; }
+.hl-card__role { margin-top: 4px; font-size: 13.5px; font-weight: 600; color: var(--teal); }
+.hl-card--device .hl-card__body { margin-top: 12px; }
+@media (max-width: 540px) {
+  .hl-card--device { flex-direction: column; align-items: stretch; gap: 12px; min-height: 0; }
+  .hl-card--device .hl-card__device { flex: 0 0 auto; }
+  .hl-card--device .hl-card__device svg { height: 150px; }
+}
+.hl-card__eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .3px; color: var(--teal); }
+.hl-card__big { margin: auto 0; font-size: clamp(38px, 4.6vw, 54px); font-weight: 700; letter-spacing: -.02em; line-height: 1.05; }
+.hl-card__body { font-size: 16px; line-height: 1.55; color: var(--ink-2); }
+.hl-card__body strong { color: var(--ink); font-weight: 600; }
+.hl-card__media { margin: auto 0; padding: 8px 0; }
+.hl-card__media img { width: 100%; }
+.hl-card--wide .hl-card__body { margin-top: 10px; }
+
+.hl__controls { margin-top: 20px; display: flex; align-items: center; justify-content: space-between; }
+.hl__dots { display: flex; gap: 8px; align-items: center; }
+.hl__dot {
+  width: 8px; height: 8px; border-radius: 4px; border: 0; padding: 0;
+  background: #d2d2d7; cursor: pointer;
+  transition: width .25s var(--ease-strong), background .25s var(--ease-strong);
+}
+.hl__dot.on { width: 26px; background: var(--ink); }
+.hl__nav { display: flex; gap: 10px; }
+.hl__btn {
+  width: 44px; height: 44px; border-radius: 50%; border: 0;
+  background: #e8e8ed; color: var(--ink);
+  display: grid; place-items: center; cursor: pointer;
+  transition: transform 160ms var(--ease-strong), background .2s ease, opacity .2s ease;
+}
+.hl__btn:active { transform: scale(0.92); }
+.hl__btn[disabled] { opacity: .35; cursor: default; }
+@media (hover: hover) and (pointer: fine) {
+  .hl__btn:not([disabled]):hover { background: #dcdce1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hl__dot { transition: none; }
 }

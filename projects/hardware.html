@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/project.css?v=20260604" />
+  <link rel="stylesheet" href="../assets/css/project.css?v=20260605" />
 </head>
 <body>
 
@@ -19,16 +19,16 @@
         <a href="hardware.html" class="active">硬件</a>
         <a href="research.html">研究</a>
         <a href="ui.html">UI</a>
+        <a href="../index.html">主页</a>
       </nav>
-      <a class="nav__back" href="../index.html">← 主页</a>
     </div>
   </header>
 
   <!-- INTRO -->
   <section class="wrap phero">
     <span class="t-eyebrow reveal">The Hardware</span>
-    <h1 class="t-hero reveal">一只<span class="gradient-text">会施力</span>的<br />膝关节外骨骼</h1>
-    <p class="t-lead reveal">主动力反馈，不只是测量。ESP32-S3 双 IMU 实时感知膝角，宇树关节电机直驱，把诊所里治疗师的「手」带回家庭康复——精确、安全、可被身体轻易抵抗。</p>
+    <h1 class="t-hero reveal">一副<span class="gradient-text">会施力</span>的<br />膝关节外骨骼</h1>
+    <p class="t-lead reveal">感知膝角，主动施力。给独自康复的人，多一层引导与保护。</p>
     <div class="phero__cta reveal">
       <a class="btn btn--blue" href="#tour">看它转一圈 <span class="chev">↓</span></a>
       <a class="btn btn--ghost" href="research.html">了解康复研究 <span class="chev">→</span></a>
@@ -46,18 +46,18 @@
         <div class="scrub__notes">
           <div class="scrub__note on">
             <div class="n-t">双 IMU 传感前端</div>
-            <div class="n-b">大腿与小腿各一颗 IMU，ESP32-S3 双 I²C 总线同步采集。</div>
+            <div class="n-b">大腿与小腿各一颗 IMU，ESP32-S3 双 I²C 总线同步采集膝角。</div>
           </div>
           <div class="scrub__note">
             <div class="n-t">重力向量法膝角融合</div>
-            <div class="n-b">零位校准 + 抗漂移，台架精度 R²≈0.97。</div>
+            <div class="n-b">零位校准 + 抗漂移，精度 R²≈0.97。</div>
           </div>
           <div class="scrub__note">
             <div class="n-t">关节电机直驱</div>
             <div class="n-b">宇树 Go-M8010-6，RS485 / RIS 协议，上位机直驱。</div>
           </div>
           <div class="scrub__note">
-            <div class="n-t">三段式虚拟墙</div>
+            <div class="n-t">三段式虚拟墙反馈</div>
             <div class="n-b">FREE — SOFT — WALL，50 Hz 闭环力反馈与安全急停。</div>
           </div>
         </div>
@@ -71,10 +71,23 @@
     <div class="wrap">
       <div class="statband">
         <div class="stat reveal"><div class="stat__n gradient-text">0.97</div><div class="stat__l">膝角融合 R²（台架）</div></div>
-        <div class="stat reveal"><div class="stat__n gradient-text">50 Hz</div><div class="stat__l">力反馈闭环频率</div></div>
-        <div class="stat reveal"><div class="stat__n gradient-text">2× IMU</div><div class="stat__l">双 I²C 总线同步</div></div>
+        <div class="stat reveal"><div class="stat__n gradient-text">50Hz</div><div class="stat__l">力反馈闭环频率</div></div>
+        <div class="stat reveal"><div class="stat__n gradient-text">2×IMU</div><div class="stat__l">双 I²C 总线同步</div></div>
         <div class="stat reveal"><div class="stat__n gradient-text">3 段</div><div class="stat__l">虚拟墙力反馈结构</div></div>
       </div>
+    </div>
+  </section>
+
+  <!-- SCENE: 家庭康复场景 -->
+  <section class="section" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="t-eyebrow t-eyebrow--teal">At Home</span>
+        <h2 class="t-h2">在客厅，完成今天的训练</h2>
+      </div>
+      <figure class="scene reveal">
+        <img src="../assets/img/photo/scene-main.jpg" alt="用户坐在客厅沙发上，右腿佩戴膝关节外骨骼进行坐姿屈伸训练" />
+      </figure>
     </div>
   </section>
 
@@ -83,17 +96,124 @@
     <div class="wrap">
       <div class="section__head reveal">
         <span class="t-eyebrow t-eyebrow--teal">Sensing &amp; Fusion</span>
-        <h2 class="t-h2">先把膝盖「看」准，再谈施力</h2>
-        <p class="t-body">传统单 IMU 角度估计在动态下漂移严重。这里用双 IMU 与重力向量法重建膝关节屈曲角度，零位校准抵消装配误差，抗漂移特性保证长时训练稳定。</p>
+        <h2 class="t-h2">准确感知，是施力的前提</h2>
+        <p class="t-body">传统单 IMU 角度估计在动态下漂移严重。使用双 IMU 与重力向量法重建膝关节屈曲角度，零位校准抵消装配误差，抗漂移特性保证长时训练稳定。</p>
       </div>
-      <div class="feature">
-        <div class="feature__media feature__media--dark reveal">
-          <img src="../assets/img/diagrams/device-arch.png" alt="支具 / Mac / iPhone / Apple Watch 多设备分工架构" />
-        </div>
-        <div class="feature__body reveal">
-          <span class="t-eyebrow t-eyebrow--teal">Architecture</span>
-          <h3 class="t-h3">四设备分工，各司其职</h3>
-          <p class="t-body">支具负责<strong>力</strong>，Mac 上位机负责<strong>运算与直驱</strong>，iPhone 承载<strong>反思界面</strong>，Apple Watch 提供<strong>触觉</strong>。安全事件多通道冗余，学习事件单通道差异化——按事件性质分配通道。</p>
+      <div class="section__head reveal" style="margin-bottom:0;text-align:left;max-width:none">
+        <span class="t-eyebrow t-eyebrow--teal">Architecture</span>
+        <h2 class="t-h2">四设备分工，各司其职</h2>
+      </div>
+    </div>
+    <div class="hl">
+      <div class="hl__track" aria-label="四设备分工卡片，可左右滑动">
+
+        <article class="hl-card hl-card--device reveal">
+          <div class="hl-card__device">
+            <svg viewBox="70 70 170 295" height="190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs><linearGradient id="metalA" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#eceded"/><stop offset="0.5" stop-color="#c7c9cc"/><stop offset="1" stop-color="#e8e9ea"/>
+              </linearGradient></defs>
+              <rect x="95" y="95" width="110" height="44" rx="14" fill="#ffffff" stroke="#d2d2d7" stroke-width="1.5"/>
+              <rect x="103" y="103" width="94" height="28" rx="10" fill="#1b2333"/>
+              <circle cx="185" cy="117" r="3" fill="#36c5d8"/>
+              <rect x="143" y="139" width="14" height="46" fill="#e3e4e6"/>
+              <rect x="147" y="141" width="6" height="42" rx="3" fill="#cfd2d6"/>
+              <circle cx="150" cy="225" r="40" fill="#ffffff" stroke="#d2d2d7" stroke-width="1.5"/>
+              <circle cx="150" cy="225" r="30" fill="#f0f0f2"/>
+              <circle cx="150" cy="225" r="22" fill="url(#metalA)"/>
+              <circle cx="150" cy="225" r="26" fill="none" stroke="#36c5d8" stroke-width="1.8" stroke-dasharray="122 41" stroke-linecap="round" transform="rotate(-90 150 225)"/>
+              <rect x="143" y="265" width="14" height="35" fill="#e3e4e6"/>
+              <rect x="147" y="267" width="6" height="31" rx="3" fill="#cfd2d6"/>
+              <rect x="95" y="300" width="110" height="44" rx="14" fill="#ffffff" stroke="#d2d2d7" stroke-width="1.5"/>
+              <rect x="103" y="308" width="94" height="28" rx="10" fill="#1b2333"/>
+              <circle cx="115" cy="322" r="8" fill="#3a3d42"/>
+            </svg>
+          </div>
+          <div class="hl-card__info">
+            <span class="hl-card__eyebrow">01 · Wearable</span>
+            <h3 class="hl-card__name">支具</h3>
+            <div class="hl-card__role">采集 · 力反馈</div>
+            <p class="hl-card__body">双 IMU 采集膝角，关节电机输出力反馈——与身体接触的唯一终端。</p>
+          </div>
+        </article>
+
+        <article class="hl-card hl-card--device reveal">
+          <div class="hl-card__device">
+            <svg viewBox="295 108 200 134" height="150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="320" y="120" width="150" height="100" rx="8" fill="#ffffff" stroke="#d2d2d7" stroke-width="1.5"/>
+              <rect x="330" y="130" width="130" height="80" rx="4" fill="#0e1217"/>
+              <line x1="334" y1="152" x2="456" y2="152" stroke="#2a2f36" stroke-width="1"/>
+              <line x1="334" y1="172" x2="456" y2="172" stroke="#2a2f36" stroke-width="1"/>
+              <line x1="334" y1="192" x2="456" y2="192" stroke="#2a2f36" stroke-width="1"/>
+              <polyline points="335,195 355,185 375,190 395,170 415,160 435,168 455,150" fill="none" stroke="#0071e3" stroke-width="2.5" stroke-linejoin="round"/>
+              <polyline points="335,201 380,199 420,197 455,197" fill="none" stroke="#36c5d8" stroke-width="1.5"/>
+              <rect x="305" y="220" width="180" height="12" rx="5" fill="#e3e4e6" stroke="#d2d2d7" stroke-width="0.8"/>
+            </svg>
+          </div>
+          <div class="hl-card__info">
+            <span class="hl-card__eyebrow">02 · Host</span>
+            <h3 class="hl-card__name">Mac 上位机</h3>
+            <div class="hl-card__role">运算 · 直驱</div>
+            <p class="hl-card__body">膝角融合与位置环运算，RS485 直驱电机；PyQt6 仪表盘实时监测与调参。</p>
+          </div>
+        </article>
+
+        <article class="hl-card hl-card--device reveal">
+          <div class="hl-card__device">
+            <svg viewBox="575 95 100 180" height="190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="585" y="105" width="80" height="160" rx="18" fill="#ffffff" stroke="#d2d2d7" stroke-width="1.5"/>
+              <rect x="592" y="112" width="66" height="146" rx="12" fill="#fbfbfd" stroke="#ececf1" stroke-width="1"/>
+              <rect x="612" y="119" width="26" height="9" rx="4.5" fill="#1d1d1f"/>
+              <rect x="598" y="140" width="54" height="36" rx="8" fill="#0a7281" fill-opacity="0.14"/>
+              <rect x="604" y="148" width="28" height="6" rx="3" fill="#0a7281" fill-opacity="0.8"/>
+              <rect x="604" y="160" width="40" height="4" rx="2" fill="#0a7281" fill-opacity="0.35"/>
+              <rect x="598" y="184" width="54" height="28" rx="8" fill="#ececf1"/>
+              <rect x="604" y="192" width="34" height="5" rx="2.5" fill="#c9ccd3"/>
+              <rect x="598" y="218" width="54" height="28" rx="8" fill="#ececf1"/>
+              <rect x="604" y="226" width="26" height="5" rx="2.5" fill="#c9ccd3"/>
+              <rect x="613" y="251" width="24" height="3" rx="1.5" fill="#d2d2d7"/>
+            </svg>
+          </div>
+          <div class="hl-card__info">
+            <span class="hl-card__eyebrow">03 · Mobile</span>
+            <h3 class="hl-card__name">iPhone</h3>
+            <div class="hl-card__role">交互界面</div>
+            <p class="hl-card__body">训练计划、阶段状态与总结回顾——屏幕作为反思通道，不在动作中打扰。</p>
+          </div>
+        </article>
+
+        <article class="hl-card hl-card--device reveal">
+          <div class="hl-card__device">
+            <svg viewBox="765 88 112 184" height="190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M796,125 L844,125 L838,98 L802,98 Z" fill="#e8e8ed"/>
+              <path d="M796,235 L844,235 L838,262 L802,262 Z" fill="#e8e8ed"/>
+              <rect x="780" y="125" width="80" height="110" rx="22" fill="#ffffff" stroke="#d2d2d7" stroke-width="1.5"/>
+              <rect x="789" y="134" width="62" height="92" rx="16" fill="#0e1217"/>
+              <rect x="860" y="158" width="6" height="20" rx="3" fill="#d2d2d7"/>
+              <rect x="860" y="188" width="6" height="26" rx="3" fill="#e3e4e6"/>
+              <path d="M816.5,174.6 A7,7 0 0 1 816.5,185.4" fill="none" stroke="#36c5d8" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M821,169.3 A14,14 0 0 1 821,190.7" fill="none" stroke="#36c5d8" stroke-width="2.5" stroke-opacity="0.65" stroke-linecap="round"/>
+              <path d="M825.5,163.9 A21,21 0 0 1 825.5,196.1" fill="none" stroke="#36c5d8" stroke-width="2.5" stroke-opacity="0.35" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hl-card__info">
+            <span class="hl-card__eyebrow">04 · Watch</span>
+            <h3 class="hl-card__name">Apple Watch</h3>
+            <div class="hl-card__role">触觉提示</div>
+            <p class="hl-card__body">训练中的轻触觉反馈——安全事件多通道冗余的一环。</p>
+          </div>
+        </article>
+
+      </div>
+      <div class="wrap hl__controls">
+        <div class="hl__dots" aria-label="卡片位置指示"></div>
+        <div class="hl__nav">
+          <button class="hl__btn" data-dir="-1" aria-label="上一张">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="hl__btn" data-dir="1" aria-label="下一张">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -103,13 +223,13 @@
   <section class="section section--soft">
     <div class="wrap">
       <div class="feature feature--reverse">
-        <div class="feature__media reveal">
-          <img src="../assets/img/diagrams/free-soft-wall.png" alt="FREE-SOFT-WALL 三段式虚拟墙结构" />
+        <div class="feature__media reveal" style="padding:24px">
+          <img src="../assets/img/diagrams/forcewall-zones.svg" alt="FREE-SOFT-WALL 三段式虚拟墙工作原理：坐姿伸膝时，小腿经过自由段、缓冲段，被硬墙段安全约束" />
         </div>
         <div class="feature__body reveal">
           <span class="t-eyebrow t-eyebrow--teal">Force Feedback</span>
           <h3 class="t-h3">FREE — SOFT — WALL</h3>
-          <p class="t-body">关节电机配合位置环，把屈膝角度空间切成三段：<strong>自由段</strong>无阻力、<strong>缓冲段</strong>阻力渐增、<strong>硬墙段</strong>强约束。角度墙始终略高于当日目标，既给挑战空间，又守住安全边界。任何主动施力都可被身体轻易抵抗，唯有预测性缓停与反应性急停例外。</p>
+          <p class="t-body">关节电机配合位置环，把屈膝角度空间切成三段：<strong>自由段</strong>无阻力、<strong>缓冲段</strong>阻力渐增、<strong>硬墙段</strong>强约束。角度墙始终略高于当日目标，既给挑战空间，又守住安全边界。任何主动施力都可被身体轻易抵抗。</p>
           <a class="btn btn--ghost" href="research.html" style="padding-left:0">阶段如何调节这堵墙 <span class="chev">→</span></a>
         </div>
       </div>
@@ -121,12 +241,12 @@
     <div class="wrap">
       <div class="feature">
         <div class="feature__media feature__media--dark reveal">
-          <img src="../assets/img/ui/host-dashboard.png" alt="PyQt6 上位机实时监测仪表盘" />
+          <img src="../assets/img/ui/host-dashboard-solo.png" alt="PyQt6 上位机实时监测仪表盘：电机角与 IMU 膝角双曲线、ROM 区状态与系统健康面板" />
         </div>
         <div class="feature__body reveal">
           <span class="t-eyebrow t-eyebrow--teal">Host &amp; Telemetry</span>
           <h3 class="t-h3">上位机实时监测与直驱</h3>
-          <p class="t-body">Mac 端 PyQt6 仪表盘承担电机直驱运算、膝角融合可视化、力反馈调试，并打通支具 / 手机 / 手表三条通信链路的协同测试。50 Hz 控制频率下，曲线实时回放，参数即调即见。</p>
+          <p class="t-body">PyQt6 仪表盘承担电机直驱与力反馈调试：<strong style="color:#d09a06">黄色电机角</strong>与<strong style="color:#0a8ca3">青色 IMU 膝角</strong>双曲线实时对比，FREE / SOFT / WALL 区状态随动作点亮，System Health 面板监控双 IMU、电机温度与漂移。</p>
         </div>
       </div>
     </div>
@@ -160,7 +280,7 @@
     </div>
   </footer>
 
-  <script src="../assets/js/scrubber.js" defer></script>
-  <script src="../assets/js/project.js" defer></script>
+  <script src="../assets/js/scrubber.js?v=20260605" defer></script>
+  <script src="../assets/js/project.js?v=20260605" defer></script>
 </body>
 </html>

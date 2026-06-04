@@ -1,0 +1,87 @@
+<svg viewBox="90 240 720 480" xmlns="http://www.w3.org/2000/svg" font-family="Inter, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eceded"/>
+      <stop offset="0.5" stop-color="#c7c9cc"/>
+      <stop offset="1" stop-color="#e8e9ea"/>
+    </linearGradient>
+    <!-- SOFT 段渐变：越接近 WALL 阻力越大 -->
+    <linearGradient id="softGrad" gradientUnits="userSpaceOnUse" x1="561" y1="540" x2="460" y2="585">
+      <stop offset="0" stop-color="#0071e3" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#0071e3" stop-opacity="0.42"/>
+    </linearGradient>
+    <marker id="arrMute" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#6e6e73"/>
+    </marker>
+  </defs>
+
+  <!-- ============ 角度区间扇环（屈曲方向：FREE 0–60° / SOFT 60–85° / WALL 85–100°） ============ -->
+  <path d="M692,340 A262,262 0 0 1 561,566.9 L530,513.2 A200,200 0 0 0 630,340 Z"
+        fill="#0071e3" fill-opacity="0.06" stroke="#0071e3" stroke-opacity="0.15" stroke-width="1.5"/>
+  <path d="M561,566.9 A262,262 0 0 1 452.8,601.0 L447.4,539.2 A200,200 0 0 0 530,513.2 Z"
+        fill="url(#softGrad)" stroke="#0071e3" stroke-opacity="0.25" stroke-width="1.5"/>
+  <path d="M452.8,601.0 A262,262 0 0 1 384.5,598.0 L395.3,537.0 A200,200 0 0 0 447.4,539.2 Z"
+        fill="#1d1d1f" fill-opacity="0.88"/>
+
+  <!-- ============ 支具：大腿侧（固定，水平向左） ============ -->
+  <path d="M348,331 L348,349 L240,352 L240,328 Z" fill="#e3e4e6" stroke="#c9ccd0" stroke-width="0.8"/>
+  <rect x="248" y="336" width="92" height="8" rx="4" fill="#cfd2d6"/>
+  <rect x="150" y="269" width="88" height="142" rx="20" fill="#ffffff" stroke="#d2d2d7" stroke-width="1.5"/>
+  <rect x="162" y="287" width="64" height="112" rx="14" fill="#1b2333"/>
+  <circle cx="175" cy="340" r="12" fill="#3a3d42"/>
+  <rect x="180" y="296" width="27" height="27" rx="8" fill="#ffffff" stroke="#d2d2d7" stroke-width="1.5"/>
+  <circle cx="193.5" cy="309.5" r="3.2" fill="#36c5d8"/>
+
+  <!-- ============ 支具：小腿侧 ============ -->
+  <!-- 起始位（腿近伸直，幽灵态） -->
+  <g transform="rotate(-82 430 340)" opacity="0.2">
+    <path d="M422,424 L438,424 L441,545 L419,545 Z" fill="#9aa0a6"/>
+    <rect x="426" y="430" width="8" height="110" rx="4" fill="#8d9298"/>
+    <rect x="355" y="545" width="150" height="64" rx="18" fill="#ffffff" stroke="#9aa0a6" stroke-width="1.5"/>
+    <rect x="367" y="556" width="126" height="42" rx="12" fill="#1b2333"/>
+  </g>
+  <!-- 最终位（下蹲屈膝至缓冲段，接近当日目标） -->
+  <g transform="rotate(-12 430 340)">
+    <path d="M422,424 L438,424 L441,545 L419,545 Z" fill="#e3e4e6" stroke="#c9ccd0" stroke-width="0.8"/>
+    <rect x="426" y="430" width="8" height="110" rx="4" fill="#cfd2d6"/>
+    <rect x="355" y="545" width="150" height="64" rx="18" fill="#ffffff" stroke="#d2d2d7" stroke-width="1.5"/>
+    <rect x="367" y="556" width="126" height="42" rx="12" fill="#1b2333"/>
+    <rect x="468" y="551" width="27" height="27" rx="8" fill="#ffffff" stroke="#d2d2d7" stroke-width="1.5"/>
+    <circle cx="481.5" cy="564.5" r="3.2" fill="#36c5d8"/>
+    <circle cx="372" cy="577" r="12" fill="#3a3d42"/>
+  </g>
+
+  <!-- ============ 关节电机盘 ============ -->
+  <circle cx="430" cy="340" r="78" fill="#ffffff" stroke="#d2d2d7" stroke-width="1.5"/>
+  <circle cx="430" cy="340" r="62" fill="#f0f0f2"/>
+  <circle cx="430" cy="340" r="48" fill="url(#metal)"/>
+  <circle cx="430" cy="340" r="30" fill="none" stroke="#b9bcc0" stroke-width="1.5"/>
+  <circle cx="430" cy="340" r="54" fill="none" stroke="#36c5d8" stroke-width="2" stroke-dasharray="254 85" stroke-linecap="round" transform="rotate(-90 430 340)"/>
+  <g fill="#c9ccd0">
+    <circle cx="430" cy="270" r="3"/><circle cx="430" cy="410" r="3"/>
+    <circle cx="360" cy="340" r="3"/><circle cx="500" cy="340" r="3"/>
+    <circle cx="380.5" cy="290.5" r="3"/><circle cx="479.5" cy="290.5" r="3"/>
+    <circle cx="380.5" cy="389.5" r="3"/><circle cx="479.5" cy="389.5" r="3"/>
+  </g>
+
+  <!-- 屈曲方向弧线（内圈） -->
+  <path d="M592.3,383.5 A168,168 0 0 1 538,468.7" fill="none" stroke="#6e6e73" stroke-width="2.5" marker-end="url(#arrMute)"/>
+  <text x="540" y="412" font-size="17" fill="#6e6e73" text-anchor="middle">屈曲方向</text>
+
+  <!-- 当日目标 虚线（压在最终位之上） -->
+  <line x1="447.0" y1="534.3" x2="454.4" y2="618.9" stroke="#0a7281" stroke-width="3" stroke-dasharray="7 6"/>
+  <text x="452" y="514" font-size="19" font-weight="600" fill="#0a7281" text-anchor="middle">当日目标</text>
+
+  <!-- ============ 区间标注 ============ -->
+  <text x="660" y="505" font-size="23" font-weight="600" fill="#1d1d1f">FREE · 自由段</text>
+  <text x="660" y="529" font-size="17" fill="#6e6e73">无阻力</text>
+
+  <text x="495" y="648" font-size="23" font-weight="600" fill="#0071e3" text-anchor="middle">SOFT · 缓冲段</text>
+  <text x="495" y="672" font-size="17" fill="#6e6e73" text-anchor="middle">阻力渐增</text>
+
+  <text x="368" y="600" font-size="23" font-weight="600" fill="#1d1d1f" text-anchor="end">WALL · 硬墙段</text>
+  <text x="368" y="624" font-size="17" fill="#6e6e73" text-anchor="end">安全约束</text>
+
+  <!-- 底注 -->
+  <text x="110" y="706" font-size="15" fill="#86868b">下蹲屈膝示意 · 三段区间随当日目标动态调整</text>
+</svg>
