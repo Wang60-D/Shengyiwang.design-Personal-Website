@@ -261,16 +261,20 @@ img { display: block; max-width: 100%; }
 .hl__track {
   display: flex; gap: 20px;
   overflow-x: auto; overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-  padding: 8px max(22px, calc((100vw - 1076px) / 2));
-  scroll-padding-inline: max(22px, calc((100vw - 1076px) / 2));
+  scroll-snap-type: x proximity;
+  /* 左右内边距与 wrap 的视觉边缘对齐，但加上限避免大屏上 padding 占满视窗 */
+  padding: 8px clamp(22px, calc((100vw - 1076px) / 2), 80px);
+  scroll-padding-inline: clamp(22px, calc((100vw - 1076px) / 2), 80px);
   scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  /* 关键：只声明水平 pan，垂直手势直接穿透到页面，避免锁住纵向滚动 */
+  touch-action: pan-x;
 }
 .hl__track::-webkit-scrollbar { display: none; }
 
 .hl-card {
   flex: 0 0 auto;
   width: min(460px, 82vw);
+  max-width: 460px;
   min-height: 380px;
   background: var(--bg-soft);
   border-radius: 28px;
@@ -381,24 +385,55 @@ img { display: block; max-width: 100%; }
 /* feature 里放浮动截图卡：去掉容器的裁切与底色，阴影不再被切 */
 .feature__media--bare { background: none; border-radius: 0; overflow: visible; }
 
-/* 整屏 UI 截图：圆角矩形浮动卡 */
+/* 整屏 UI 截图：圆角矩形浮动卡
+   圆角与真机 iPhone 一致：约为元素宽度的 12%（iPhone 14/15 实测比例） */
 .shot--phone {
   width: min(320px, 86vw);
   margin: 0 auto;
-  border-radius: 26px;
+  border-radius: 38px;
   border: 0;
   box-shadow: 0 24px 60px rgba(0, 0, 0, .16), 0 5px 16px rgba(0, 0, 0, .08);
 }
+@media (max-width: 540px) {
+  .shot--phone { border-radius: clamp(34px, 10.5vw, 44px); }
+}
 
-/* IA 五屏并排 */
-.ia-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 24px; }
-@media (min-width: 920px) { .ia-grid { grid-template-columns: repeat(5, 1fr); gap: 26px; } }
+/* IA 五屏并排（桌面 5 列网格；移动端切横滑卡片） */
+.ia-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 26px; }
 .ia-item { margin: 0; }
-.ia-item .shot--phone { width: 100%; border-radius: 20px; }
+/* IA 桌面 5 列：单卡较窄（~210-240px），按 iPhone ~12% 给固定圆角 */
+.ia-item .shot--phone { width: 100%; border-radius: 28px; }
 .ia-item figcaption { margin-top: 20px; padding: 0 4px; }
 .ia-item__k { font-size: 12.5px; font-weight: 600; letter-spacing: .3px; color: var(--teal); }
 .ia-item__t { margin-top: 6px; font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
 .ia-item__b { margin-top: 6px; font-size: 13.5px; line-height: 1.5; color: var(--ink-2); }
+
+/* 移动端：IA 五张图改为左右横滑卡片，复用 hl 轮播的滑动行为 */
+@media (max-width: 919px) {
+  .ia-grid {
+    display: flex;
+    grid-template-columns: none;
+    gap: 18px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* 让卡片可贴近 wrap 视觉边缘滑动：抵消 wrap 的 22px 内边距 */
+    margin-inline: -22px;
+    padding: 8px 22px 12px;
+    scroll-padding-inline: 22px;
+  }
+  .ia-grid::-webkit-scrollbar { display: none; }
+  .ia-item {
+    flex: 0 0 70vw;
+    max-width: 300px;
+    scroll-snap-align: start;
+  }
+  .ia-item .shot--phone { border-radius: clamp(28px, 10vw, 36px); }
+  .ia-item figcaption { margin-top: 16px; }
+}
 
 /* Demo 屏：固定竖屏比例，承载截图封面或 iframe */
 .demo__screen { position: relative; aspect-ratio: 390 / 820; background: #f2f2f7; }
