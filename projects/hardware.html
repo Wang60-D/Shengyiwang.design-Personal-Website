@@ -9,6 +9,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/project.css?v=20260605" />
+  <style>
+    /* photo annotations */
+    .annot { position: relative; }
+    .annot__tag {
+      position: absolute; transform: translate(-50%, -50%);
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,.82); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      color: #1d1d1f; font-size: 12px; font-weight: 600; letter-spacing: .01em;
+      padding: 7px 12px; border-radius: 999px; white-space: nowrap;
+      box-shadow: 0 2px 10px rgba(0,0,0,.14);
+    }
+    .annot__tag i { width: 6px; height: 6px; border-radius: 50%; background: #0071e3; flex: none; }
+    @media (max-width: 640px) { .annot__tag { font-size: 10px; padding: 5px 9px; } }
+    /* step captions under fidlock photo */
+    .figsteps { display: flex; padding: 14px 18px 18px; gap: 12px; }
+    .figsteps div { flex: 1; text-align: center; }
+    .figsteps .n { font-size: 11px; font-weight: 700; color: #0071e3; letter-spacing: .08em; }
+    .figsteps .t { font-size: 13px; font-weight: 600; color: #1d1d1f; margin-top: 2px; }
+  </style>
 </head>
 <body>
 
@@ -95,8 +114,13 @@
   <section class="section">
     <div class="wrap">
       <div class="feature feature--reverse">
-        <div class="feature__media reveal" style="padding:24px">
-          <img src="../assets/img/diagrams/fidlock-cuff.svg" alt="开合式腿环穿戴三步：打开穿入、FIDLOCK 磁吸扣合、旋转锁紧" />
+        <div class="feature__media reveal">
+          <img src="../assets/img/photo/fidlock-steps.jpg" alt="开合式腿环穿戴三步：打开穿入、FIDLOCK 磁吸扣合、旋转锁紧" />
+          <div class="figsteps" aria-hidden="true">
+            <div><div class="n">01</div><div class="t">打开穿入</div></div>
+            <div><div class="n">02</div><div class="t">磁吸扣合</div></div>
+            <div><div class="n">03</div><div class="t">旋转锁紧</div></div>
+          </div>
         </div>
         <div class="feature__body reveal">
           <span class="t-eyebrow t-eyebrow--teal">Wearability</span>
@@ -108,16 +132,18 @@
   </section>
 
   <!-- FEATURE: sensing + fusion -->
-  <section class="section">
+  <section class="section" style="padding-top:0">
     <div class="wrap">
       <div class="section__head reveal">
         <span class="t-eyebrow t-eyebrow--teal">Sensing &amp; Fusion</span>
         <h2 class="t-h2">准确感知，是施力的前提</h2>
         <p class="t-body">传统单 IMU 角度估计在动态下漂移严重。使用双 IMU 与重力向量法重建膝关节屈曲角度，零位校准抵消装配误差，抗漂移特性保证长时训练稳定。</p>
       </div>
-      <div class="feature" style="margin-bottom:var(--section)">
-        <div class="feature__media reveal" style="padding:24px">
-          <img src="../assets/img/diagrams/imu-magnetic.svg" alt="磁吸式 IMU 两种形态：支具模式磁吸固定在框架上；后期取下吸附于绑带，作为独立穿戴传感器持续记录膝角" />
+      <div class="feature" style="margin-bottom:clamp(72px, 11vw, 140px)">
+        <div class="feature__media reveal annot">
+          <img src="../assets/img/photo/imu-dock.jpg" alt="磁吸式 IMU 模块与支具框架上的对位触点：磁吸对位加 Pogo pin 触点，吸上即连，取下即走" />
+          <span class="annot__tag" style="left:40%;top:22%"><i></i>框架触点 · 磁吸对位</span>
+          <span class="annot__tag" style="left:72%;top:86%"><i></i>IMU 模块 · JY901S</span>
         </div>
         <div class="feature__body reveal">
           <span class="t-eyebrow t-eyebrow--teal">Magnetic IMU</span>
@@ -240,6 +266,23 @@
           <button class="hl__btn" data-dir="1" aria-label="下一张">
             <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE: joint motor -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="feature">
+        <div class="feature__media feature__media--dark reveal annot">
+          <img src="../assets/img/photo/motor-joint.jpg" alt="膝关节外骨骼侧面：宇树 Go-M8010-6 关节电机与膝关节同轴安装，上下连接开合式腿环" />
+          <span class="annot__tag" style="left:65%;top:61%"><i></i>宇树 Go-M8010-6</span>
+        </div>
+        <div class="feature__body reveal">
+          <span class="t-eyebrow t-eyebrow--teal">Actuation</span>
+          <h3 class="t-h3">力，从这一颗关节输出</h3>
+          <p class="t-body">宇树 <strong>Go-M8010-6</strong> 关节电机与膝关节<strong>同轴直驱</strong>——无绳轮、无连杆，力的方向与屈伸完全一致。上位机经 <strong>RS485 / RIS 协议</strong>直接运行位置环，输出经三段虚拟墙调制：电机给出的是边界与引导，而不是替你完成动作。</p>
         </div>
       </div>
     </div>
