@@ -169,6 +169,8 @@ img { display: block; max-width: 100%; }
 @media (min-width: 700px){ .cards--2 { grid-template-columns: repeat(2,1fr); } }
 @media (min-width: 920px){ .cards--3 { grid-template-columns: repeat(3,1fr); } }
 .card { background: var(--bg-soft); border-radius: var(--r-card); padding: 32px; }
+/* 灰底板块里卡片转白，保持「卡片感」 */
+.section--soft .card:not(.card--dark) { background: #fff; }
 .card--dark { background: #16181d; color: #f5f5f7; }
 .card__k { font-size: 13px; font-weight: 600; color: var(--teal); letter-spacing:.3px; }
 .card__t { margin-top: 12px; font-size: 22px; font-weight: 600; letter-spacing: -.01em; }
@@ -372,3 +374,80 @@ img { display: block; max-width: 100%; }
     box-shadow: 0 32px 80px rgba(0, 0, 0, .16), 0 8px 22px rgba(0, 0, 0, .07);
   }
 }
+
+/* ============================================================
+   UI 页组件：手机外框 / 截图边界卡 / 局部特写 / Demo 嵌入
+   ============================================================ */
+/* feature 里放浮动截图卡：去掉容器的裁切与底色，阴影不再被切 */
+.feature__media--bare { background: none; border-radius: 0; overflow: visible; }
+
+/* 整屏 UI 截图：圆角矩形浮动卡 */
+.shot--phone {
+  width: min(320px, 86vw);
+  margin: 0 auto;
+  border-radius: 26px;
+  border: 0;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .16), 0 5px 16px rgba(0, 0, 0, .08);
+}
+
+/* IA 五屏并排 */
+.ia-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 24px; }
+@media (min-width: 920px) { .ia-grid { grid-template-columns: repeat(5, 1fr); gap: 26px; } }
+.ia-item { margin: 0; }
+.ia-item .shot--phone { width: 100%; border-radius: 20px; }
+.ia-item figcaption { margin-top: 20px; padding: 0 4px; }
+.ia-item__k { font-size: 12.5px; font-weight: 600; letter-spacing: .3px; color: var(--teal); }
+.ia-item__t { margin-top: 6px; font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
+.ia-item__b { margin-top: 6px; font-size: 13.5px; line-height: 1.5; color: var(--ink-2); }
+
+/* Demo 屏：固定竖屏比例，承载截图封面或 iframe */
+.demo__screen { position: relative; aspect-ratio: 390 / 820; background: #f2f2f7; }
+.demo__screen iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+/* Demo 封面：真实截图 + 点按启动 iframe */
+.demo__poster {
+  position: relative; display: block; width: 100%; height: 100%;
+  padding: 0; border: 0; background: none; cursor: pointer;
+}
+.demo__poster img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.demo__play {
+  position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%);
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 20px; border-radius: var(--r-pill); white-space: nowrap;
+  background: rgba(11, 12, 14, .80); color: #fff; font-size: 14px; font-weight: 500;
+  backdrop-filter: blur(8px);
+  transition: transform .2s var(--ease-strong), background .2s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .demo__poster:hover .demo__play { background: rgba(11, 12, 14, .95); transform: translateX(-50%) scale(1.04); }
+}
+
+/* 截图悬浮卡：UI 的「边界」 */
+.shot {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--hair);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, .10), 0 4px 12px rgba(0, 0, 0, .05);
+}
+.shot img, .shot svg { width: 100%; display: block; }
+/* 局部特写：只露相关区域，--crop 控制焦点位置 */
+.shot--crop { aspect-ratio: 4 / 3; }
+.shot--crop img { height: 100%; object-fit: cover; object-position: var(--crop, top center); }
+
+/* IA 横滑：截图卡（浅色 hl 轮播内使用） */
+.hl-card--screen { width: min(290px, 76vw); min-height: 0; padding: 24px 24px 28px; }
+.hl-card--screen .hl-card__name { margin-top: 8px; font-size: 19px; }
+.hl-card--screen .hl-card__body { margin-top: 6px; font-size: 14.5px; }
+.hl-card--screen .shot { margin-top: 18px; aspect-ratio: 390 / 520; }
+.hl-card--screen .shot img { height: 100%; object-fit: cover; object-position: top center; }
+
+/* 设计系统卡片头图 */
+.card__fig { background: #fff; border-radius: 14px; overflow: hidden; margin-bottom: 18px; }
+.card__fig svg { width: 100%; display: block; }
+
+/* Demo 嵌入板块 */
+.demo { display: grid; gap: 40px; align-items: center; }
+@media (min-width: 900px) { .demo { grid-template-columns: 1fr auto; gap: 72px; } }
+.demo__body > * + * { margin-top: 16px; }
+.demo__hint { margin-top: 14px; text-align: center; font-size: 13px; color: #86868b; }

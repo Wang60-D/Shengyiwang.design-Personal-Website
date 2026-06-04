@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>移动端 UI 设计 — 王盛逸 Shengyi Wang</title>
-  <meta name="description" content="ACL 康复 App 的交互设计：Eyes-free 训练范式、反思通道、信息架构与各界面原型。" />
+  <meta name="description" content="ACL 康复 App 的交互设计：Eyes-free 训练范式、阶段优先的信息架构、训练前中后三层动作理解、克制的语言系统与可交互 Demo。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/project.css?v=20260605" />
+  <link rel="stylesheet" href="../assets/css/project.css?v=20260607" />
 </head>
 <body>
 
@@ -28,21 +28,33 @@
   <section class="wrap phero">
     <span class="t-eyebrow reveal">The Interface</span>
     <h1 class="t-hero reveal">屏幕，<br />是<span class="gradient-text">反思通道</span>，<br />不是仪表盘</h1>
-    <p class="t-lead reveal">动作进行中，任何视觉信息都不应是必要的。In-action 反馈走力、触觉、声音；屏幕只在组间休息、训练总结、阶段切换与安全事件时出现——让注意力回到身体。React Native 实现。</p>
+    <p class="t-lead reveal">动作进行中，任何视觉信息都不应是必要的。</p>
     <div class="phero__cta reveal">
-      <a class="btn btn--blue" href="#screens">看界面 <span class="chev">↓</span></a>
-      <a class="btn btn--ghost" href="research.html">背后的研究 <span class="chev">→</span></a>
+      <a class="btn btn--blue" href="#ia">看界面 <span class="chev">↓</span></a>
+      <a class="btn btn--ghost" href="#demo">亲手试试 Demo <span class="chev">→</span></a>
     </div>
   </section>
 
-  <!-- EYES-FREE CONCEPT -->
+  <!-- EYES-FREE -->
   <section class="section section--soft">
     <div class="wrap">
       <div class="section__head reveal">
         <span class="t-eyebrow t-eyebrow--teal">Eyes-free Paradigm</span>
         <h2 class="t-h2">把注意力还给身体</h2>
-        <p class="t-body">术后早期患者因频繁看屏幕而忽略本体感觉，反而延缓恢复。Eyes-free 不只是 UX 选择，而是一种康复手段。</p>
+        <p class="t-body">运动学习研究表明，反馈不必依赖屏幕。术后早期患者因频繁看屏幕而忽略本体感觉，反而延缓恢复——Eyes-free 不只是 UX 选择，而是一种康复手段。</p>
       </div>
+
+      <div class="feature" style="margin-bottom:clamp(48px,7vw,80px)">
+        <div class="feature__media feature__media--bare reveal">
+          <div class="shot shot--phone"><img src="../assets/img/ui/eyes-free.png" alt="训练中界面：屏幕几乎全空，只有「把手机放下，支具会陪你完成这一组」与急停按钮" /></div>
+        </div>
+        <div class="feature__body reveal">
+          <span class="t-eyebrow t-eyebrow--teal">What is Eyes-free</span>
+          <h3 class="t-h3">训练中的屏幕，<br />几乎是空的</h3>
+          <p class="t-body">训练页只剩组次、急停和一句「把手机放下」——动作指令走力反馈与声音，屏幕不承担必要信息。它重塑了整个交互设计：<strong>字号与层级按「一瞥可读」设计</strong>；<strong>关键事件不靠视觉</strong>，安全事件四通道齐发；<strong>语言只出现在反思窗口</strong>——组间休息与训练总结。</p>
+        </div>
+      </div>
+
       <div class="cards cards--2">
         <div class="card reveal">
           <div class="card__k">务实 Eyes-free</div>
@@ -58,48 +70,261 @@
     </div>
   </section>
 
-  <!-- SCREENS -->
-  <section class="section" id="screens">
-    <div class="wrap">
+  <!-- INFORMATION ARCHITECTURE (five phones side by side) -->
+  <section class="section" id="ia">
+    <div class="wrap wrap--wide">
       <div class="section__head reveal">
-        <span class="t-eyebrow t-eyebrow--teal">App Screens</span>
-        <h2 class="t-h2">四个关键界面</h2>
-        <p class="t-body">围绕三阶段框架组织信息架构：让用户知道自己在哪个阶段、目标与限制是什么、为什么进阶或调整。</p>
+        <span class="t-eyebrow t-eyebrow--teal">Information Architecture</span>
+        <h2 class="t-h2">先回答「我在哪」，再谈数据</h2>
+        <p class="t-body">信息架构围绕三阶段框架组织，五个模块各回答患者的一个真实问题——而不是先呈现一堆曲线图。</p>
       </div>
-      <div class="phones">
-        <div class="phone reveal"><img src="../assets/img/ui/proto-home.png" alt="首页原型" /><div class="cap">首页 · 阶段状态</div></div>
-        <div class="phone reveal"><img src="../assets/img/ui/proto-plan.png" alt="训练计划与阶段管理原型" /><div class="cap">计划 · 阶段管理</div></div>
-        <div class="phone reveal"><img src="../assets/img/ui/proto-training.png" alt="训练执行界面原型" /><div class="cap">训练 · 实时反馈</div></div>
-        <div class="phone reveal"><img src="../assets/img/ui/proto-modal.png" alt="安全与阶段模态弹窗原型" /><div class="cap">模态 · 安全事件</div></div>
+      <div class="ia-grid">
+        <figure class="ia-item reveal">
+          <div class="shot shot--phone"><img src="../assets/img/ui/ia-stage.png" alt="首页：当前阶段与今日任务" /></div>
+          <figcaption>
+            <span class="ia-item__k">01 · 阶段管理</span>
+            <div class="ia-item__t">我现在处于哪里</div>
+            <p class="ia-item__b">当前阶段、阶段目标与限制、进阶还差什么。</p>
+          </figcaption>
+        </figure>
+        <figure class="ia-item reveal">
+          <div class="shot shot--phone"><img src="../assets/img/ui/ia-plan.png" alt="计划页：每日任务与阶段管理" /></div>
+          <figcaption>
+            <span class="ia-item__k">02 · 训练计划</span>
+            <div class="ia-item__t">我今天该做什么</div>
+            <p class="ia-item__b">每日任务、动作安排、组次与完成记录。</p>
+          </figcaption>
+        </figure>
+        <figure class="ia-item reveal">
+          <div class="shot shot--phone"><img src="../assets/img/ui/ia-feedback.png" alt="训练页：实时反馈" /></div>
+          <figcaption>
+            <span class="ia-item__k">03 · 动作反馈</span>
+            <div class="ia-item__t">我刚才做得对不对</div>
+            <p class="ia-item__b">实时角度、节律提示、错误识别与纠正建议。</p>
+          </figcaption>
+        </figure>
+        <figure class="ia-item reveal">
+          <div class="shot shot--phone"><img src="../assets/img/ui/ia-progress.png" alt="进展页：ROM 变化与关键 episode" /></div>
+          <figcaption>
+            <span class="ia-item__k">04 · 进展理解</span>
+            <div class="ia-item__t">我有没有变好</div>
+            <p class="ia-item__b">ROM 变化、完成率、阶段里程碑与关键 episode。</p>
+          </figcaption>
+        </figure>
+        <figure class="ia-item reveal">
+          <div class="shot shot--phone"><img src="../assets/img/ui/ia-revision.png" alt="计划修订：回退调整与原因说明" /></div>
+          <figcaption>
+            <span class="ia-item__k">05 · 计划修订</span>
+            <div class="ia-item__t">如果做不到怎么办</div>
+            <p class="ia-item__b">疼痛、难度、失败原因分型与调整说明。</p>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- REFLECTION CHANNEL -->
-  <section class="section section--soft">
+  <!-- THREE LAYERS -->
+  <section class="section section--soft" id="layers">
     <div class="wrap">
+      <div class="section__head reveal">
+        <span class="t-eyebrow t-eyebrow--teal">Three Layers of Understanding</span>
+        <h2 class="t-h2">训练前、中、后，各答一个问题</h2>
+        <p class="t-body">家庭康复系统最常见的问题不是「没有测量」，而是「不会解释」。动作理解被拆成三层，每层有自己的界面与时机。</p>
+      </div>
+
+      <div class="feature" style="margin-bottom:clamp(56px,8vw,96px)">
+        <div class="feature__media feature__media--bare reveal">
+          <div class="shot shot--phone reveal"><img src="../assets/img/ui/action-brief.png" alt="训练前：动作说明、为什么是现在、达标标准" /></div>
+        </div>
+        <div class="feature__body reveal">
+          <span class="t-eyebrow t-eyebrow--teal">Before ·「这个动作是干什么的」</span>
+          <h3 class="t-h3">先懂，再练</h3>
+          <p class="t-body">每个动作页回答四件事：动作目标、<strong>当前阶段为什么做这个动作</strong>、本次注意事项、达标标准。训练任务与阶段目标连起来，而不是机械执行清单。</p>
+        </div>
+      </div>
+
+      <div class="feature feature--reverse" style="margin-bottom:clamp(56px,8vw,96px)">
+        <div class="feature__media feature__media--bare reveal">
+          <div class="shot shot--phone reveal"><img src="../assets/img/ui/set-summary.png" alt="组间小结：完成次数、目标角度到位次数、节律对比与下一组重点" /></div>
+        </div>
+        <div class="feature__body reveal">
+          <span class="t-eyebrow t-eyebrow--teal">During ·「我哪里错了」</span>
+          <h3 class="t-h3">一次只纠正一个错误</h3>
+          <p class="t-body">可瞥视但不依赖。<strong>一次只纠正一个主要错误，先给方向、不先给数字</strong>——先说问题，再说怎么改。其余反馈走力、触觉与声音，不打断动作。</p>
+        </div>
+      </div>
+
       <div class="feature">
-        <div class="feature__media reveal"><img src="../assets/img/ui/proto-training.png" alt="训练执行界面 · 可瞥视状态" /></div>
+        <div class="feature__media feature__media--bare reveal">
+          <div class="shot shot--phone reveal"><img src="../assets/img/ui/session-summary.png" alt="训练总结：今天完成了什么、最稳的一组、下次重点与主观感受记录" /></div>
+        </div>
+        <div class="feature__body reveal">
+          <span class="t-eyebrow t-eyebrow--teal">After ·「我今天练得怎么样」</span>
+          <h3 class="t-h3">总结，而不是打分</h3>
+          <p class="t-body">每次训练结束生成简短总结：今天完成了什么、<strong>做得最好的一点、最需要改进的一点</strong>、下次训练重点。比总分更有指导性，也把单次表现和长期进展连起来。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANGUAGE SYSTEM -->
+  <section class="section" id="language">
+    <div class="wrap">
+      <div class="feature" style="margin-bottom:clamp(40px,5vw,56px)">
+        <div class="feature__media feature__media--bare reveal">
+          <div class="shot"><img src="../assets/img/ui/set-summary-top.png" alt="组间小结的语言局部：完成 8 次，目标角度 7 次到位，节律比上一组更稳定" /></div>
+        </div>
         <div class="feature__body reveal">
           <span class="t-eyebrow t-eyebrow--teal">Reflection, not realtime</span>
           <h3 class="t-h3">语言只在反思窗口出现</h3>
-          <p class="t-body">训练执行界面提供「可瞥视状态」，但不依赖它。屏幕上的文字遵守<strong>具体、有数据锚、有路径</strong>三原则——不安慰、不夸赞、不用感叹号与 emoji。组间休息与总结时，才回到屏幕回看这一组发生了什么。</p>
+          <p class="t-body">屏幕上的文字遵守<strong>具体、有数据锚、有路径</strong>三原则——不安慰、不夸赞、不用感叹号与 emoji。组间休息与总结时，才回到屏幕回看这一组发生了什么。</p>
+        </div>
+      </div>
+      <div class="cards cards--2">
+        <div class="card reveal">
+          <div class="card__k" style="color:#b04a3e">✗ 一般系统 · 只翻译数值</div>
+          <div class="card__t">「速度过快」</div>
+          <div class="card__b">一个结论扔给用户：错在哪、为什么重要、该怎么改，全都没说。</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__k" style="color:#2f9e6b">✓ 我们的训练总结 · 实机界面</div>
+          <div class="shot shot--crop" style="margin:16px 0 14px;aspect-ratio:16/9;--crop:center 8%"><img src="../assets/img/ui/session-summary.png" alt="训练总结实机文案：今天三组都完成了。最稳的是第二组——节律比第一组慢了一点。下一次试试整组都用第二组的速度。" /></div>
+          <div class="card__b">先说事实（三组都完成），再给数据锚（最稳的是第二组），最后给路径（下次试试第二组的速度）。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAN REVISION -->
+  <section class="section section--soft" id="revision">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="t-eyebrow t-eyebrow--teal">Plan Revision</span>
+        <h2 class="t-h2">失败有四种，回应各不同</h2>
+        <p class="t-body">「做不到」不该只有一种回应。系统区分原因再调整——并且调整不只发生在后台，<strong>前台必须解释「为什么变了」</strong>。</p>
+      </div>
+      <div class="cards cards--2">
+        <div class="card reveal">
+          <div class="card__k">太痛</div>
+          <div class="card__t">先退一步观察</div>
+          <div class="card__b">疼痛上升、训练中断 → 降低目标 ROM、减少组次，提示观察记录。</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__k">太难</div>
+          <div class="card__t">聚焦一个要点</div>
+          <div class="card__b">连续未达标、错误多 → 降阶，一次只关注一个动作要点。</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__k">太忙</div>
+          <div class="card__t">拆小，别拆掉</div>
+          <div class="card__b">多次未完成但主观难度不高 → 拆分任务、缩短单次训练时长。</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__k">太轻</div>
+          <div class="card__t">适度进阶</div>
+          <div class="card__b">稳定达标、主观轻松 → 提高目标区间或训练量。</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- DESIGN SYSTEM -->
-  <section class="section">
+  <section class="section" id="system">
     <div class="wrap">
       <div class="section__head reveal">
         <span class="t-eyebrow t-eyebrow--teal">Design System</span>
         <h2 class="t-h2">一套克制的视觉语言</h2>
       </div>
       <div class="cards cards--3">
-        <div class="card reveal"><div class="card__k">Tone</div><div class="card__t">非命令、非表演</div><div class="card__b">语言具体、有数据锚、有路径；没有感叹号、emoji 或拟人化称谓。</div></div>
-        <div class="card reveal"><div class="card__k">Density</div><div class="card__t">随阶段递减</div><div class="card__b">早期信息密集、引导强；后期界面淡出，把控制权交还用户。</div></div>
-        <div class="card reveal"><div class="card__k">Hierarchy</div><div class="card__t">卡片化阶段叙事</div><div class="card__b">以 episode 而非仪表盘讲述进展，让用户理解「为什么」。</div></div>
+        <div class="card reveal">
+          <div class="card__fig">
+            <svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',sans-serif" aria-hidden="true">
+              <rect width="400" height="180" fill="#ffffff"/>
+              <rect x="36" y="42" width="150" height="44" rx="12" fill="#f5f5f7"/>
+              <text x="58" y="69" font-size="15" fill="#86868b">加油！💪</text>
+              <line x1="40" y1="98" x2="182" y2="34" stroke="#b04a3e" stroke-width="2" stroke-linecap="round"/>
+              <rect x="214" y="36" width="150" height="56" rx="12" fill="#f5f5f7"/>
+              <rect x="228" y="50" width="92" height="7" rx="3.5" fill="#86868b"/>
+              <rect x="228" y="65" width="60" height="7" rx="3.5" fill="#c9ccd3"/>
+              <rect x="296" y="63" width="38" height="11" rx="5.5" fill="#0a7281" fill-opacity="0.16"/>
+              <text x="315" y="72" font-size="8.5" fill="#0a7281" text-anchor="middle">+5°</text>
+              <text x="111" y="135" font-size="12" fill="#8a96a3" text-anchor="middle">不安慰 · 不夸赞</text>
+              <text x="289" y="135" font-size="12" fill="#8a96a3" text-anchor="middle">具体 · 数据锚 · 路径</text>
+            </svg>
+          </div>
+          <div class="card__k">Tone</div>
+          <div class="card__t">非命令、非表演</div>
+          <div class="card__b">语言具体、有数据锚、有路径；没有感叹号、emoji 或拟人化称谓。</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__fig">
+            <svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',sans-serif" aria-hidden="true">
+              <rect width="400" height="180" fill="#ffffff"/>
+              <line x1="40" y1="128" x2="360" y2="128" stroke="#e3e4e6" stroke-width="1.5"/>
+              <g fill="#0071e3">
+                <rect x="56" y="48" width="11" height="80" rx="3"/><rect x="72" y="60" width="11" height="68" rx="3"/><rect x="88" y="53" width="11" height="75" rx="3"/>
+              </g>
+              <g fill="#0071e3" fill-opacity="0.55">
+                <rect x="170" y="83" width="11" height="45" rx="3"/><rect x="186" y="92" width="11" height="36" rx="3"/>
+              </g>
+              <rect x="286" y="108" width="11" height="20" rx="3" fill="#0a7281" fill-opacity="0.5"/>
+              <path d="M62,40 Q200,62 330,102" fill="none" stroke="#0a7281" stroke-width="2" stroke-dasharray="6 5"/>
+              <g font-size="12" fill="#8a96a3" text-anchor="middle">
+                <text x="77" y="150">S1</text><text x="183" y="150">S2</text><text x="291" y="150">S3</text>
+              </g>
+            </svg>
+          </div>
+          <div class="card__k">Density</div>
+          <div class="card__t">随阶段递减</div>
+          <div class="card__b">早期信息密集、引导强；后期界面淡出，把控制权交还用户。</div>
+        </div>
+        <div class="card reveal">
+          <div class="card__fig">
+            <svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',sans-serif" aria-hidden="true">
+              <rect width="400" height="180" fill="#ffffff"/>
+              <rect x="48" y="34" width="200" height="44" rx="12" fill="#f5f5f7"/>
+              <circle cx="72" cy="56" r="9" fill="#0a7281" fill-opacity="0.2"/>
+              <path d="M68,56 l3,3 l6,-7" fill="none" stroke="#0a7281" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="92" y="46" width="120" height="7" rx="3.5" fill="#86868b"/>
+              <rect x="92" y="60" width="84" height="7" rx="3.5" fill="#c9ccd3"/>
+              <rect x="64" y="88" width="200" height="44" rx="12" fill="#f5f5f7"/>
+              <circle cx="88" cy="110" r="9" fill="#0071e3" fill-opacity="0.2"/>
+              <rect x="108" y="100" width="110" height="7" rx="3.5" fill="#86868b"/>
+              <rect x="108" y="114" width="70" height="7" rx="3.5" fill="#c9ccd3"/>
+              <rect x="80" y="142" width="200" height="24" rx="12" fill="#f5f5f7" opacity="0.7"/>
+              <text x="332" y="62" font-size="12" fill="#8a96a3" text-anchor="middle">episode</text>
+              <text x="332" y="78" font-size="12" fill="#8a96a3" text-anchor="middle">不是仪表盘</text>
+            </svg>
+          </div>
+          <div class="card__k">Hierarchy</div>
+          <div class="card__t">卡片化阶段叙事</div>
+          <div class="card__b">以 episode 而非仪表盘讲述进展，让用户理解「为什么」。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE DEMO -->
+  <section class="section section--dark" id="demo">
+    <div class="wrap">
+      <div class="demo">
+        <div class="demo__body reveal">
+          <span class="t-eyebrow">Live Demo</span>
+          <h2 class="t-h1">别听我说，<br />亲手试试</h2>
+          <p class="t-body">右边就是完整程序的 Web 预览（Expo），可以直接点按交互：切换阶段、查看计划、走一遍训练流程。</p>
+          <div class="phero__cta" style="justify-content:flex-start;margin-top:24px">
+            <a class="btn btn--light" href="https://knee-demo.shengyiwang.design" target="_blank" rel="noopener">全屏打开 <span class="chev">↗</span></a>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="shot shot--phone demo__screen">
+            <button class="demo__poster" type="button" aria-label="启动可交互 Demo">
+              <img src="../assets/img/ui/ia-stage.png" alt="App 首页真机截图" />
+              <span class="demo__play">▶ 点按启动交互 Demo</span>
+            </button>
+          </div>
+          <div class="demo__hint">可交互 · 数据为演示数据</div>
+        </div>
       </div>
     </div>
   </section>
@@ -123,6 +348,19 @@
     </div>
   </footer>
 
-  <script src="../assets/js/project.js?v=20260605" defer></script>
+  <script src="../assets/js/project.js?v=20260607" defer></script>
+  <script>
+    // Demo 封面：点按后才加载可交互 iframe（落版始终是真实截图）
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.demo__poster').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var f = document.createElement('iframe');
+          f.src = 'https://knee-demo.shengyiwang.design';
+          f.title = '膝关节康复 App · 可交互 Web Demo';
+          btn.replaceWith(f);
+        }, { once: true });
+      });
+    });
+  </script>
 </body>
 </html>
