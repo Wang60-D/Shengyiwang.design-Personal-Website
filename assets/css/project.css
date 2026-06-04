@@ -386,16 +386,16 @@ img { display: block; max-width: 100%; }
 .feature__media--bare { background: none; border-radius: 0; overflow: visible; }
 
 /* 整屏 UI 截图：圆角矩形浮动卡
-   圆角与真机 iPhone 一致：约为元素宽度的 12%（iPhone 14/15 实测比例） */
+   iPhone 14/15 Pro 实测圆角比例约为元素宽度的 14-15% */
 .shot--phone {
   width: min(320px, 86vw);
   margin: 0 auto;
-  border-radius: 38px;
+  border-radius: 48px;
   border: 0;
   box-shadow: 0 24px 60px rgba(0, 0, 0, .16), 0 5px 16px rgba(0, 0, 0, .08);
 }
 @media (max-width: 540px) {
-  .shot--phone { border-radius: clamp(34px, 10.5vw, 44px); }
+  .shot--phone { border-radius: clamp(40px, 13vw, 52px); }
 }
 
 /* IA 五屏并排（桌面 5 列网格；移动端切横滑卡片） */
@@ -435,8 +435,12 @@ img { display: block; max-width: 100%; }
   .ia-item figcaption { margin-top: 16px; }
 }
 
-/* Demo 屏：固定竖屏比例，承载截图封面或 iframe */
-.demo__screen { position: relative; aspect-ratio: 390 / 820; background: #f2f2f7; }
+/* Demo 屏：固定竖屏比例，承载截图封面或 iframe
+   比普通 .shot--phone 更宽，给 Expo Web 内的元素更多空间不挤 */
+.shot--phone.demo__screen {
+  position: relative; aspect-ratio: 390 / 820; background: #f2f2f7;
+  width: min(460px, 92vw);
+}
 .demo__screen iframe { width: 100%; height: 100%; border: 0; display: block; }
 
 /* Demo 封面：真实截图 + 点按启动 iframe */
