@@ -18,6 +18,8 @@
     const prefix = root.dataset.prefix || 'frame_';
     const pad    = parseInt(root.dataset.pad || '3', 10);
     const ext    = root.dataset.ext || 'jpg';
+    const offsetYPct = parseFloat(root.dataset.offsetY || '0');
+    const endOffsetXPct = parseFloat(root.dataset.endOffsetX || '0');
 
     const frames = new Array(count);
     let loaded = 0;
@@ -34,14 +36,17 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
-    function draw(img) {
+    function draw(img, idx) {
       if (!img || !img.complete || !img.naturalWidth) return;
       const cw = canvas.clientWidth, ch = canvas.clientHeight;
       ctx.clearRect(0, 0, cw, ch);
       // contain
       const s = Math.min(cw / img.naturalWidth, ch / img.naturalHeight);
       const w = img.naturalWidth * s, h = img.naturalHeight * s;
-      ctx.drawImage(img, (cw - w) / 2, (ch - h) / 2, w, h);
+      const t = (count > 1 && typeof idx === 'number') ? idx / (count - 1) : 0;
+      const dx = cw * (endOffsetXPct * t) / 100;
+      const dy = ch * offsetYPct / 100;
+      ctx.drawImage(img, (cw - w) / 2 + dx, (ch - h) / 2 + dy, w, h);
     }
 
     function frameForScroll() {
@@ -59,7 +64,8 @@
       raf = requestAnimationFrame(() => {
         raf = null;
         if (!ready) return;
-        draw(frames[frameForScroll()]);
+        const idx = frameForScroll();
+        draw(frames[idx], idx);
       });
     }
 
@@ -68,7 +74,7 @@
       const img = new Image();
       img.onload = () => {
         loaded++;
-        if (i === 0) { sizeCanvas(); draw(img); }
+        if (i === 0) { sizeCanvas(); draw(img, 0); }
         if (loaded >= count) { ready = true; onScroll(); }
       };
       img.onerror = () => { loaded++; if (loaded >= count) { ready = true; onScroll(); } };
